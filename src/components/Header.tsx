@@ -111,7 +111,7 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 lg:hidden"
+          className="fixed inset-0 z-[60] lg:hidden"
           style={{ background: 'rgba(13,27,42,0.55)', backdropFilter: 'blur(4px)' }}
           onClick={() => setMobileOpen(false)}
         >
@@ -125,7 +125,7 @@ export default function Header() {
             }}
             onClick={(e) => e?.stopPropagation()}
           >
-            {/* Mobile Header */}
+            {/* Mobile Header — single logo + close button */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-border">
               <AppLogo size={140} />
               <button
