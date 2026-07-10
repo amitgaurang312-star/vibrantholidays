@@ -110,15 +110,6 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 pt-32 px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
-        {/* Location pill */}
-        <div className={`mb-5 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-          <span className="glass-panel text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-white/70 text-xs uppercase tracking-widest">{heroSlides[currentSlide].country}</span>
-            <span className="w-px h-3 bg-white/20" />
-            {heroSlides[currentSlide].tagline}
-          </span>
-        </div>
 
         {/* Headline */}
         <h1 className={`font-display text-hero-xl text-white font-semibold leading-tight mb-5 max-w-4xl opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
@@ -141,7 +132,7 @@ export default function HeroSection() {
         </div>
 
         {/* CTAs */}
-        <div className={`flex flex-col sm:flex-row gap-4 mb-14 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
+        <div className={`flex flex-col sm:flex-row gap-4 mb-6 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
           <Link
             href="/tour-packages"
             className="flex items-center justify-center gap-2.5 text-white px-9 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105"
@@ -161,6 +152,16 @@ export default function HeroSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </Link>
+        </div>
+
+        {/* Location pill */}
+        <div className={`mb-14 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+          <span className="glass-panel text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-white/70 text-xs uppercase tracking-widest">{heroSlides[currentSlide].country}</span>
+            <span className="w-px h-3 bg-white/20" />
+            {heroSlides[currentSlide].tagline}
+          </span>
         </div>
 
         {/* Slide indicators */}
