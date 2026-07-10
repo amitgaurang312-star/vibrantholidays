@@ -10,6 +10,7 @@ interface Review {
   rating: number;
   date: string;
   review: string;
+  reviewCount?: number;
   photos?: string[];
 }
 
@@ -47,7 +48,8 @@ const reviews: Review[] = [
     avatar: 'RD',
     rating: 5,
     date: '2 days ago',
-    review: 'Virant holidays has given very excellent service through out our journey. The Hotels booked for tour were 4 star categories with reasonable tariff. The vehicle provided (Tempo Traveler) was very good condition and driver was very cooperative and helpful throughout the journey.',
+    reviewCount: 2,
+    review: 'Virant holidays has given very excellent service through out our journey. The Hotels booked for tour were 4 star categories with reasonable tariff. The vehicle provided ( Tempo Traveler) was very good condition and driver was very polite and act as our tour guide. Vehicle was very clean and neat. Our tour start at Madurai and ends at Trivendrum via Rameshwaram and Kanyakumari. Mr Kedar from Vibrant holiday was always touch with us for necessary guidance and safe journey. Thanks and will look forward for next trip. Regards Rajkumar Dhas.',
   },
   {
     id: 'r5',
@@ -188,7 +190,7 @@ export default function ReviewsGrid() {
                     <p className="font-semibold text-foreground text-sm">{r.name}</p>
                     <div className="flex items-center gap-1 mt-0.5">
                       <GoogleIcon />
-                      <p className="text-muted-foreground text-xs">Google Review</p>
+                      <p className="text-muted-foreground text-xs">Google Review{r.reviewCount ? ` · ${r.reviewCount} reviews` : ''}</p>
                     </div>
                   </div>
                 </div>
