@@ -6,6 +6,7 @@ import Link from 'next/link';
 const destinations = [
 {
   name: 'Kashmir',
+  slug: 'kashmir',
   tagline: 'Paradise on Earth',
   video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
   poster: "https://images.unsplash.com/photo-1615423923021-04132cf158b1?w=800&q=80",
@@ -16,6 +17,7 @@ const destinations = [
 },
 {
   name: 'Kerala',
+  slug: 'kerala',
   tagline: "God\'s Own Country",
   video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1584906608816-1089f128b201?w=800&q=80",
@@ -26,6 +28,7 @@ const destinations = [
 },
 {
   name: 'Goa',
+  slug: 'goa',
   tagline: 'Sun, Sand & Serenity',
   video: "https://videos.pexels.com/video-files/1739010/1739010-hd_1920_1080_30fps.mp4",
   poster: "https://images.unsplash.com/photo-1545957300-ccd3e8dbc719?w=800&q=80",
@@ -36,6 +39,7 @@ const destinations = [
 },
 {
   name: 'Himachal Pradesh',
+  slug: 'himachal-pradesh',
   tagline: 'Mountains & Magic',
   video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1662828755858-6e0efcd113bd?w=800&q=80",
@@ -46,6 +50,7 @@ const destinations = [
 },
 {
   name: 'Uttarakhand',
+  slug: 'uttarakhand',
   tagline: 'Land of Gods',
   video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
   poster: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
@@ -56,6 +61,7 @@ const destinations = [
 },
 {
   name: 'North East India',
+  slug: 'north-east-india',
   tagline: 'Seven Sisters Await',
   video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1693342167497-3b6a6c66f5cd?w=800&q=80",
@@ -134,7 +140,7 @@ function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0
             ))}
           </div>
           <Link
-            href="/tour-packages"
+            href={`/packages/${dest.slug}`}
             className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-accent hover:text-white opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0"
             style={{ transition: 'opacity 0.35s cubic-bezier(0.23,1,0.32,1), transform 0.35s cubic-bezier(0.23,1,0.32,1), background-color 0.2s ease, color 0.2s ease', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}
           >

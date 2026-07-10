@@ -1,0 +1,1685 @@
+export interface DayItinerary {
+  day: number;
+  title: string;
+  description: string;
+  meals?: string;
+  accommodation?: string;
+}
+
+export interface PackageData {
+  slug: string;
+  destination: string;
+  packageName: string;
+  tagline: string;
+  duration: string;
+  durationNights: string;
+  price: string;
+  heroImage: string;
+  heroVideo?: string;
+  overview: string;
+  destinationsCovered: string[];
+  highlights: string[];
+  inclusions: string[];
+  exclusions: string[];
+  hotelCategory: string;
+  transportation: string;
+  mealPlan: string;
+  itinerary: DayItinerary[];
+  optionalActivities: string[];
+  bestTimeToVisit: string;
+  thingsToCarry: string[];
+  relatedSlugs: string[];
+  type: 'domestic' | 'international';
+  whatsappNumber: string;
+}
+
+const WHATSAPP = '919876543210';
+
+export const packages: PackageData[] = [
+// ─── DOMESTIC ───────────────────────────────────────────────────────────────
+
+{
+  slug: 'kashmir',
+  destination: 'Kashmir',
+  packageName: 'Himalayan Eden Retreat',
+  tagline: 'Where Heaven Meets Earth',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹18,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_13f5fedfe-1783683715163.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_13f5fedfe-1783683715163.png",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Nestled in the lap of the mighty Himalayas, Kashmir is a destination that defies description. The Himalayan Eden Retreat is a carefully curated 6-day journey through the crown jewel of India — from the shimmering expanse of Dal Lake and the flower-carpeted meadows of Pahalgam to the snow-dusted ski slopes of Gulmarg. This package blends natural grandeur with cultural richness, offering you a front-row seat to some of the most breathtaking landscapes on the planet. Every moment here feels like a painting come to life.',
+  destinationsCovered: ['Srinagar', 'Gulmarg', 'Pahalgam', 'Sonmarg'],
+  highlights: [
+  'Shikara ride on the iconic Dal Lake at sunrise',
+  'Cable car ascent to Gulmarg Gondola Phase II (13,400 ft)',
+  'Betaab Valley and Aru Valley exploration in Pahalgam',
+  'Mughal Gardens tour — Shalimar Bagh, Nishat Bagh, Chashme Shahi',
+  'Sonmarg glacier excursion with pony ride option',
+  'Stay in a traditional Kashmiri houseboat on Dal Lake',
+  'Shopping for Pashmina shawls and saffron at local bazaars'],
+
+  inclusions: [
+  'Accommodation for 5 nights (2N houseboat + 1N Gulmarg + 1N Pahalgam + 1N Srinagar hotel)',
+  'Daily breakfast and dinner (MAP basis)',
+  'All transfers by private non-AC vehicle (AC not effective in hills)',
+  'Srinagar airport/railway station pick-up and drop',
+  'Shikara ride on Dal Lake (1 hour)',
+  'Gulmarg Gondola Phase I ticket',
+  'Betaab Valley and Chandanwari entry fees',
+  'Mughal Gardens entry fees',
+  'Experienced local guide for sightseeing days',
+  'All applicable taxes and service charges'],
+
+  exclusions: [
+  'Airfare / train fare to and from Srinagar',
+  'Gulmarg Gondola Phase II ticket (approx. ₹900/person)',
+  'Pony rides, ATV, snow activities (on direct payment)',
+  'Lunch at restaurants',
+  'Personal expenses, tips, and laundry',
+  'Travel insurance',
+  'Any activity not mentioned in inclusions'],
+
+  hotelCategory: '3-Star Hotels & Deluxe Houseboat',
+  transportation: 'Private Non-AC Tempo Traveller / Innova Crysta',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Srinagar — Welcome to Paradise',
+    description:
+    'Your journey begins as you land at Sheikh ul-Alam International Airport, Srinagar. Our representative will greet you warmly and transfer you to your traditional Kashmiri houseboat on the serene Dal Lake. After freshening up, embark on a magical one-hour Shikara ride across the lake, gliding past floating gardens, lotus beds, and colourful market boats. As the sun dips below the Zabarwan hills, the lake transforms into a canvas of gold and crimson. Enjoy a traditional Wazwan dinner onboard your houseboat.',
+    meals: 'Dinner',
+    accommodation: 'Deluxe Houseboat, Dal Lake'
+  },
+  {
+    day: 2,
+    title: 'Srinagar Local Sightseeing — Mughal Splendour',
+    description:
+    'After a hearty Kashmiri breakfast, set out to explore the legendary Mughal Gardens. Begin with Shalimar Bagh, the "Abode of Love" built by Emperor Jahangir, with its terraced lawns and fountains. Move on to Nishat Bagh, the "Garden of Bliss," offering panoramic views of Dal Lake. Visit Chashme Shahi, the smallest but most pristine of the royal gardens. In the afternoon, explore the old city — the intricately carved Jama Masjid, the revered Hazratbal Shrine, and the bustling Lal Chowk market where you can shop for Kashmiri handicrafts, dried fruits, and the world-famous Kashmiri saffron.',
+    meals: 'Breakfast & Dinner',
+    accommodation: 'Deluxe Houseboat, Dal Lake'
+  },
+  {
+    day: 3,
+    title: 'Srinagar to Gulmarg — The Meadow of Flowers',
+    description:
+    'After breakfast, check out and drive approximately 56 km to Gulmarg (2,650 m), one of the world\'s highest golf courses and a premier ski destination. The drive through pine-forested mountain roads is a delight in itself. Upon arrival, board the famous Gulmarg Gondola — one of the highest cable cars in the world — for Phase I, ascending to Kongdori (3,050 m) for sweeping views of the Himalayan range. Adventure seekers can opt for Phase II (additional cost) to reach Apharwat Peak at 13,400 ft, where snow lingers even in summer. Spend the afternoon exploring the meadows on foot or horseback. Check in to your hotel and enjoy a warm dinner.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Gulmarg'
+  },
+  {
+    day: 4,
+    title: 'Gulmarg to Pahalgam — Valley of Shepherds',
+    description:
+    'Post breakfast, drive to Pahalgam (2,130 m), approximately 140 km via Srinagar — a scenic journey through apple orchards and saffron fields. Pahalgam, meaning "Village of Shepherds," sits at the confluence of the Lidder River and Sheshnag Lake streams. Check in to your hotel and head out to explore Betaab Valley, named after the Bollywood film shot here, with its lush meadows and crystal-clear streams. Continue to Aru Valley, a pristine alpine meadow ideal for nature walks and photography. In the evening, stroll along the Lidder River promenade and browse local shops for Kashmiri willow cricket bats and woollen crafts.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Pahalgam'
+  },
+  {
+    day: 5,
+    title: 'Pahalgam to Sonmarg — The Golden Meadow',
+    description:
+    'After breakfast, drive back towards Srinagar and continue to Sonmarg (2,730 m), meaning "Meadow of Gold" — a name earned from the golden hues of its wildflowers in summer. The 87 km drive from Pahalgam via Srinagar takes you through some of Kashmir\'s most dramatic landscapes. At Sonmarg, hire a pony or walk to the Thajiwas Glacier, a year-round snow field where you can enjoy snow activities. The glacier trek offers stunning views of snow-capped peaks and alpine flora. Return to Srinagar in the evening, check in to your hotel, and enjoy a farewell dinner with live Kashmiri folk music.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Srinagar'
+  },
+  {
+    day: 6,
+    title: 'Departure — Carry Kashmir in Your Heart',
+    description:
+    'Enjoy a leisurely breakfast and spend the morning at leisure for last-minute shopping at the Polo View Market or Suffering Moses — Srinagar\'s most famous handicraft store. Pick up Pashmina shawls, Kashmiri carpets, papier-mâché boxes, and aromatic Kahwa tea blends as souvenirs. Our driver will transfer you to the airport or railway station in time for your onward journey. As you depart, you carry with you the fragrance of chinar leaves, the echo of Shikara oars, and memories of a paradise that will call you back.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Gulmarg Gondola Phase II to Apharwat Peak (₹900/person)',
+  'White-water rafting on the Lidder River, Pahalgam',
+  'Pony ride to Thajiwas Glacier, Sonmarg',
+  'ATV/quad biking in Gulmarg meadows',
+  'Kashmiri cooking class in Srinagar',
+  'Sunrise photography tour of Dal Lake'],
+
+  bestTimeToVisit:
+  'March to June for spring blooms and pleasant weather; December to February for snow and skiing in Gulmarg. Avoid July–August (peak monsoon) for Sonmarg and Pahalgam treks.',
+  thingsToCarry: [
+  'Warm layers (fleece jacket, thermal innerwear) even in summer',
+  'Waterproof trekking shoes or sturdy walking shoes',
+  'Sunscreen SPF 50+ and UV-protection sunglasses',
+  'Personal medications and a basic first-aid kit',
+  'Valid government-issued photo ID (mandatory for houseboat check-in)',
+  'Cash (ATMs are limited in Gulmarg and Pahalgam)',
+  'Camera with extra batteries (cold drains batteries fast)',
+  'Light rain poncho or compact umbrella'],
+
+  relatedSlugs: ['himachal-pradesh', 'uttarakhand', 'north-east-india']
+},
+
+{
+  slug: 'kerala',
+  destination: 'Kerala',
+  packageName: 'Emerald Backwaters Odyssey',
+  tagline: "Drift Through God's Own Country",
+  duration: '5 Days / 4 Nights',
+  durationNights: '4 Nights',
+  price: '₹15,000',
+  heroImage: "https://images.unsplash.com/photo-1701523945170-600f13233771",
+  heroVideo: "https://images.unsplash.com/photo-1701523945170-600f13233771",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Kerala, draped in fifty shades of green, is a sensory journey unlike any other. The Emerald Backwaters Odyssey takes you through the misty tea gardens of Munnar, the tranquil waterways of Alleppey, and the sun-kissed shores of Kovalam — three distinct facets of a destination that has enchanted travellers for centuries. This 5-day package is designed for those who seek beauty in stillness: the gentle lapping of backwater canals, the scent of cardamom in mountain air, and the warmth of Kerala\'s legendary hospitality.',
+  destinationsCovered: ['Cochin', 'Munnar', 'Alleppey (Alappuzha)', 'Kovalam'],
+  highlights: [
+  'Overnight houseboat cruise through Alleppey backwaters',
+  'Sunrise trek to Eravikulam National Park (Nilgiri Tahr habitat)',
+  'Tea estate walk and factory tour in Munnar',
+  'Kathakali dance performance in Cochin',
+  'Chinese fishing nets and Fort Kochi heritage walk',
+  'Ayurvedic spa session at a traditional Kerala wellness centre',
+  'Sunset at Kovalam Lighthouse Beach'],
+
+  inclusions: [
+  'Accommodation for 4 nights (1N Cochin + 1N Munnar + 1N Alleppey houseboat + 1N Kovalam)',
+  'Daily breakfast and dinner',
+  'Alleppey houseboat for 1 night with all meals included onboard',
+  'All transfers by private AC vehicle',
+  'Cochin airport/railway station pick-up and drop',
+  'Kathakali performance tickets in Cochin',
+  'Tea factory tour in Munnar',
+  'Experienced local guide for all sightseeing',
+  'All applicable taxes'],
+
+  exclusions: [
+  'Airfare / train fare to and from Cochin',
+  'Eravikulam National Park entry fee (₹125/person)',
+  'Ayurvedic treatments (on direct payment)',
+  'Lunch at restaurants',
+  'Personal expenses and tips',
+  'Travel insurance',
+  'Water sports at Kovalam (on direct payment)'],
+
+  hotelCategory: '3-Star Hotels & Premium Houseboat',
+  transportation: 'Private AC Toyota Innova / Tempo Traveller',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Cochin — Spice Coast Welcome',
+    description:
+    'Arrive at Cochin International Airport and meet your Vibrant Holidays representative. Transfer to your hotel in Fort Kochi, the historic heart of the city. After freshening up, embark on a leisurely heritage walk through Fort Kochi — marvel at the iconic Chinese Fishing Nets silhouetted against the Arabian Sea, explore the Dutch Palace (Mattancherry Palace) with its stunning Kerala murals, and wander through the Jewish Quarter and Paradesi Synagogue. In the evening, witness a captivating Kathakali performance — Kerala\'s classical dance-drama — where elaborately costumed performers narrate mythological tales through precise facial expressions and hand gestures. Dinner at a rooftop restaurant overlooking the harbour.',
+    meals: 'Dinner',
+    accommodation: '3-Star Hotel, Fort Kochi'
+  },
+  {
+    day: 2,
+    title: 'Cochin to Munnar — Into the Misty Mountains',
+    description:
+    'After breakfast, drive approximately 130 km to Munnar (1,600 m), the tea capital of South India. The winding road climbs through rubber plantations, spice gardens, and cascading waterfalls — Cheeyappara and Valara waterfalls are perfect photo stops. Upon reaching Munnar, check in and visit the KDHP Tea Museum to understand the fascinating history of tea cultivation in these hills. In the afternoon, walk through a working tea estate, pluck fresh tea leaves, and tour the processing factory to see how the world-famous Munnar tea is made. Evening at leisure — sip a freshly brewed cup of single-estate tea on your hotel balcony as mist rolls in over the hills.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Munnar'
+  },
+  {
+    day: 3,
+    title: 'Munnar Sightseeing — Peaks, Parks & Plantations',
+    description:
+    'Rise early for a sunrise drive to Eravikulam National Park, home to the endangered Nilgiri Tahr mountain goat. The park\'s rolling grasslands and shola forests are a UNESCO-recognised biodiversity hotspot. Continue to Mattupetty Dam and Indo-Swiss Livestock Project for scenic views of the reservoir surrounded by tea gardens. Visit Echo Point, where the hills create a natural acoustic phenomenon. In the afternoon, explore Kundala Lake and the Top Station viewpoint (1,700 m) — on clear days, you can see the plains of Tamil Nadu stretching to the horizon. Return to Munnar for dinner and an early night before the next day\'s journey.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Munnar'
+  },
+  {
+    day: 4,
+    title: 'Munnar to Alleppey — Houseboat Dreams',
+    description:
+    'After breakfast, drive approximately 175 km to Alleppey (Alappuzha), the "Venice of the East." Check in to your traditional Kerala kettuvallam (houseboat) — a beautifully crafted wooden vessel with thatched roof, furnished bedrooms, a sit-out deck, and a fully equipped kitchen. Cast off into the labyrinthine network of backwater canals, lagoons, and lakes that form the Kuttanad region. Glide past paddy fields, coconut groves, and village life that has remained unchanged for centuries. Watch local fishermen cast their nets, children playing on canal banks, and women washing clothes at the water\'s edge. Enjoy a traditional Kerala Sadhya (feast) for lunch and fresh fish curry for dinner — all prepared onboard by your personal chef.',
+    meals: 'Breakfast, Lunch & Dinner (onboard)',
+    accommodation: 'Premium Houseboat, Alleppey Backwaters'
+  },
+  {
+    day: 5,
+    title: 'Alleppey to Kovalam — Coastal Finale',
+    description:
+    'Wake up to the sound of birdsong and the gentle rocking of your houseboat. Enjoy a final breakfast onboard before disembarking. Drive approximately 155 km to Kovalam, Kerala\'s most celebrated beach destination. Check in to your beachside hotel and spend the afternoon at leisure on the crescent-shaped Lighthouse Beach — swim in the warm Arabian Sea, sunbathe on golden sands, or simply watch the colourful fishing boats return with their catch. In the evening, climb to the iconic Kovalam Lighthouse for a panoramic sunset view. Enjoy a seafood dinner at a beachfront restaurant — fresh lobster, tiger prawns, and Kerala-style fish moilee are highly recommended. Overnight at Kovalam.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Kovalam'
+  }],
+
+  optionalActivities: [
+  'Ayurvedic Panchakarma treatment (2–3 hours, ₹2,500–₹5,000)',
+  'Surfing lessons at Kovalam Beach',
+  'Periyar Wildlife Sanctuary day trip from Munnar',
+  'Cooking class — traditional Kerala cuisine',
+  'Sunset catamaran cruise from Kovalam',
+  'Bamboo rafting on Periyar Lake'],
+
+  bestTimeToVisit:
+  'September to March for pleasant weather and clear skies. October–November is ideal for backwaters. Avoid June–August (heavy monsoon), though Munnar is magical in the rains for those who enjoy misty landscapes.',
+  thingsToCarry: [
+  'Light cotton clothing (Kerala is humid)',
+  'Waterproof sandals or flip-flops for houseboat',
+  'Sunscreen SPF 50+ and insect repellent',
+  'Modest clothing for temple visits',
+  'Personal medications and motion sickness tablets (for winding mountain roads)',
+  'Camera with waterproof cover',
+  'Cash for local markets and tips'],
+
+  relatedSlugs: ['goa', 'kashmir', 'north-east-india']
+},
+
+{
+  slug: 'goa',
+  destination: 'Goa',
+  packageName: 'Golden Shores Coastal Escape',
+  tagline: 'Sun, Spice & Serenity',
+  duration: '4 Days / 3 Nights',
+  durationNights: '3 Nights',
+  price: '₹12,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_122274e3b-1783683714756.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_122274e3b-1783683714756.png",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Goa is India\'s most beloved coastal playground — a sun-drenched paradise where Portuguese colonial heritage meets vibrant beach culture, where spice-laden cuisine mingles with fresh seafood, and where every sunset feels like a celebration. The Golden Shores Coastal Escape is a perfectly paced 4-day journey through both North and South Goa, covering the most iconic beaches, historic churches, spice plantations, and waterfront markets. Whether you\'re seeking adventure, relaxation, or cultural exploration, this package delivers an authentic Goan experience.',
+  destinationsCovered: ['North Goa', 'South Goa', 'Old Goa', 'Panjim'],
+  highlights: [
+  'Dudhsagar Waterfall excursion through the Western Ghats',
+  'Old Goa UNESCO World Heritage churches tour',
+  'North Goa beach trail — Baga, Calangute, Anjuna, Vagator',
+  'Spice plantation tour with traditional Goan lunch',
+  'Sunset cruise on the Mandovi River',
+  'Panjim heritage walk through Latin Quarter (Fontainhas)',
+  'Water sports at Baga Beach — parasailing, jet ski, banana boat'],
+
+  inclusions: [
+  'Accommodation for 3 nights in North Goa (3-star beach resort)',
+  'Daily breakfast',
+  'Goa airport/railway station pick-up and drop',
+  'North Goa sightseeing by private vehicle (half day)',
+  'South Goa and Old Goa sightseeing by private vehicle (full day)',
+  'Dudhsagar Waterfall jeep safari (shared)',
+  'Sunset cruise on Mandovi River',
+  'Spice plantation tour with lunch',
+  'All applicable taxes'],
+
+  exclusions: [
+  'Airfare / train fare to and from Goa',
+  'Water sports (on direct payment, approx. ₹800–₹2,500/activity)',
+  'Lunch and dinner (except spice plantation lunch)',
+  'Personal expenses, tips, and shopping',
+  'Travel insurance',
+  'Casino entry (if interested)'],
+
+  hotelCategory: '3-Star Beach Resort',
+  transportation: 'Private AC Vehicle + Shared Jeep Safari for Dudhsagar',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Goa — Beaches & Bazaars',
+    description:
+    'Arrive at Goa International Airport (Dabolim) or Madgaon Railway Station and transfer to your North Goa beach resort. After check-in and freshening up, head to the iconic Baga Beach for your first taste of Goa\'s legendary beach culture. Rent a sun lounger, dip your toes in the warm Arabian Sea, and watch the beach come alive with activity. As the afternoon progresses, explore the Calangute Market for beach wear, souvenirs, and local trinkets. In the evening, stroll along the Baga-Calangute promenade lined with shacks serving fresh seafood, cold beer, and live music. Dinner at a beachfront shack — try the prawn balchão, fish recheado, and bebinca dessert.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Beach Resort, North Goa'
+  },
+  {
+    day: 2,
+    title: 'North Goa Beach Trail & Sunset Cruise',
+    description:
+    'After breakfast, embark on a North Goa beach trail. Start at Anjuna Beach, famous for its Wednesday flea market (if visiting on Wednesday) and dramatic laterite rock formations. Continue to Vagator Beach and the iconic Chapora Fort — the "Dil Chahta Hai" fort — for panoramic views of the Arabian Sea and the Chapora River estuary. Visit Morjim Beach, a nesting ground for Olive Ridley sea turtles, and the relatively quieter Ashwem Beach for a peaceful afternoon swim. In the evening, board a traditional wooden vessel for a 1.5-hour sunset cruise on the Mandovi River, complete with Goan folk music, dance performances, and a welcome drink. Return to the resort for dinner at leisure.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Beach Resort, North Goa'
+  },
+  {
+    day: 3,
+    title: 'Old Goa, Spice Plantation & South Goa',
+    description:
+    'After breakfast, drive to Old Goa — a UNESCO World Heritage Site and the former capital of Portuguese India. Visit the magnificent Basilica of Bom Jesus, which houses the mortal remains of St. Francis Xavier, and the Se Cathedral, one of the largest churches in Asia. Explore the Archaeological Museum and the Church of St. Cajetan. Continue to a traditional Goan spice plantation for a guided tour through nutmeg, cardamom, pepper, and vanilla groves. Enjoy a traditional Goan lunch served on banana leaves. In the afternoon, explore South Goa\'s pristine beaches — Colva, Benaulim, and Palolem — which are quieter and more scenic than their northern counterparts. Return via Panjim\'s Latin Quarter (Fontainhas) for a heritage walk through colourful Portuguese-era houses.',
+    meals: 'Breakfast & Lunch (spice plantation)',
+    accommodation: '3-Star Beach Resort, North Goa'
+  },
+  {
+    day: 4,
+    title: 'Dudhsagar Waterfall & Departure',
+    description:
+    'Rise early for the most adventurous day of your Goa trip — the Dudhsagar Waterfall excursion. Board a shared jeep at the Mollem National Park checkpoint for a thrilling off-road drive through the dense Western Ghats forest. Arrive at the base of Dudhsagar Falls — one of India\'s tallest waterfalls at 310 metres — where the milky-white cascade thunders into a turquoise pool. Take a refreshing dip in the natural pool (seasonal). Return to the resort for a quick lunch and check-out. Transfer to the airport or railway station for your onward journey, carrying with you the golden warmth of Goa\'s sun and the taste of its spiced sea breeze.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Parasailing at Baga Beach (₹800/person)',
+  'Jet skiing at Calangute (₹600/10 min)',
+  'Scuba diving at Grande Island (₹3,500/person)',
+  'Casino night at a floating casino on Mandovi River',
+  'Yoga and meditation session at Arambol Beach',
+  'Cooking class — Goan fish curry and sorpotel'],
+
+  bestTimeToVisit:
+  'November to February for perfect beach weather, clear skies, and festive atmosphere. October and March are shoulder months with fewer crowds. Avoid June–September (monsoon season) as beaches are rough and many shacks close.',
+  thingsToCarry: [
+  'Light cotton and linen clothing',
+  'Swimwear and beach cover-ups',
+  'Waterproof sandals and flip-flops',
+  'Sunscreen SPF 50+ and after-sun lotion',
+  'Insect repellent for evening beach walks',
+  'Cash for beach shacks and local markets',
+  'Waterproof bag for Dudhsagar excursion'],
+
+  relatedSlugs: ['kerala', 'kashmir', 'himachal-pradesh']
+},
+
+{
+  slug: 'himachal-pradesh',
+  destination: 'Himachal Pradesh',
+  packageName: 'Alpine Peaks & Valley Dreams',
+  tagline: 'Where Mountains Tell Stories',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹16,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_11d668f2d-1768440186997.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_11d668f2d-1768440186997.png",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Himachal Pradesh is a land of dramatic contrasts — where colonial hill stations give way to snow-capped Himalayan passes, where apple orchards border ancient Buddhist monasteries, and where every valley holds a new adventure. The Alpine Peaks & Valley Dreams package takes you through the best of Shimla, Manali, and the Kullu Valley over 6 immersive days. From the colonial charm of Shimla\'s Mall Road to the adrenaline rush of Rohtang Pass, this journey is a perfect blend of culture, nature, and mountain magic.',
+  destinationsCovered: ['Shimla', 'Kufri', 'Manali', 'Solang Valley', 'Rohtang Pass', 'Kullu'],
+  highlights: [
+  'Rohtang Pass snow excursion (subject to permit availability)',
+  'Solang Valley adventure sports — zorbing, paragliding, skiing',
+  'Hadimba Devi Temple and Old Manali exploration',
+  'Shimla heritage walk — Mall Road, Christ Church, Jakhu Temple',
+  'Kufri snow activities and Himalayan Nature Park',
+  'Kullu River rafting on the Beas River',
+  'Vashisht hot springs and ancient temple visit'],
+
+  inclusions: [
+  'Accommodation for 5 nights (2N Shimla + 3N Manali)',
+  'Daily breakfast and dinner',
+  'All transfers by private non-AC vehicle (Shimla–Manali–Shimla)',
+  'Shimla railway station/bus stand pick-up and drop',
+  'Shimla local sightseeing by private vehicle',
+  'Manali local sightseeing by private vehicle',
+  'Solang Valley visit',
+  'Rohtang Pass permit charges (if open)',
+  'All applicable taxes'],
+
+  exclusions: [
+  'Airfare / train fare to and from Shimla or Chandigarh',
+  'Adventure sports charges at Solang Valley',
+  'Rohtang Pass snow activities (on direct payment)',
+  'Lunch at restaurants',
+  'Personal expenses and tips',
+  'Travel insurance',
+  'Kullu River rafting (on direct payment, ₹600–₹1,200)'],
+
+  hotelCategory: '3-Star Hotels',
+  transportation: 'Private Non-AC Tempo Traveller / Innova',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Shimla — Queen of Hill Stations',
+    description:
+    'Arrive at Shimla Railway Station or Chandigarh Airport and transfer to Shimla (2,205 m). The journey from Chandigarh to Shimla (120 km) is itself a highlight — the famous Kalka-Shimla toy train route (UNESCO World Heritage) winds through 102 tunnels and 864 bridges. Check in to your hotel on or near Mall Road. In the evening, take a leisurely stroll along the iconic Mall Road — Shimla\'s colonial-era promenade lined with Victorian architecture, boutique shops, and bustling cafés. Visit the neo-Gothic Christ Church, one of the oldest churches in North India, and the Gaiety Theatre. Dinner at a restaurant on Mall Road.',
+    meals: 'Dinner',
+    accommodation: '3-Star Hotel, Shimla'
+  },
+  {
+    day: 2,
+    title: 'Shimla Sightseeing — Colonial Charm & Mountain Views',
+    description:
+    'After breakfast, explore Shimla\'s most iconic landmarks. Begin with Jakhu Temple (2,455 m), dedicated to Lord Hanuman, reached by a 2 km trek through dense rhododendron forests — the resident monkeys are both entertaining and mischievous. Visit the Viceregal Lodge (now Rashtrapati Niwas), a stunning Tudor-style mansion that once served as the summer residence of British India\'s Viceroy. Explore the State Museum for Himachali art and artefacts. In the afternoon, drive to Kufri (2,600 m), a small hill station 16 km from Shimla, for snow activities (seasonal) and a visit to the Himalayan Nature Park, home to snow leopards, Himalayan bears, and musk deer. Return to Shimla for dinner.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Shimla'
+  },
+  {
+    day: 3,
+    title: 'Shimla to Manali — The Great Himalayan Drive',
+    description:
+    'After breakfast, check out and begin the spectacular 270 km drive to Manali — one of India\'s most scenic road journeys. The route follows the Beas River through the Kullu Valley, passing through Mandi (the "Varanasi of the Hills"), Pandoh Dam, and the apple-orchard-lined Kullu Valley. Stop at Kullu for a quick visit to the Raghunath Temple and the famous Kullu shawl emporiums. Arrive in Manali (2,050 m) by evening. Check in to your hotel and take a short walk through the Old Manali bazaar — a bohemian enclave of cafés, craft shops, and budget guesthouses popular with backpackers. Dinner at the hotel.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Manali'
+  },
+  {
+    day: 4,
+    title: 'Manali Local Sightseeing — Temples, Springs & Forests',
+    description:
+    'After breakfast, explore Manali\'s cultural and natural highlights. Begin with the ancient Hadimba Devi Temple (1553 AD), a unique pagoda-style wooden temple set amidst a cedar forest — the goddess Hadimba is the patron deity of the Kullu royal family. Visit the Manu Temple, dedicated to the sage Manu who is believed to have meditated here after the great flood. Explore the Tibetan Monastery and the colourful Tibetan Market for handcrafted jewellery, thangka paintings, and Tibetan artefacts. In the afternoon, drive to Vashisht village for a dip in the natural sulphur hot springs — believed to have therapeutic properties — and visit the ancient Vashisht Temple. Evening at leisure in Old Manali.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Manali'
+  },
+  {
+    day: 5,
+    title: 'Rohtang Pass & Solang Valley — Snow & Adventure',
+    description:
+    'The most exhilarating day of your Himachal journey. Drive to Rohtang Pass (3,978 m) — the gateway to Lahaul and Spiti — for a snow experience at 13,050 ft. The pass is open from May to October (subject to weather and permit availability). Enjoy snow activities — sledging, snowball fights, and photography against a backdrop of glaciers and high-altitude peaks. On the return, stop at Solang Valley (2,480 m), Manali\'s adventure hub, for optional activities including zorbing (rolling downhill in a transparent sphere), paragliding, skiing (winter), and ATV rides. The valley itself is a stunning alpine meadow with views of the Beas Kund glacier. Return to Manali for a celebratory dinner.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Manali'
+  },
+  {
+    day: 6,
+    title: 'Manali to Shimla — Farewell to the Mountains',
+    description:
+    'After breakfast, check out and begin the return drive to Shimla for your onward journey. En route, stop at the Kullu Valley viewpoints and the Pandoh Dam for a final look at the Beas River. If time permits, visit the Bijli Mahadev Temple near Kullu — a 360-step climb rewarded with panoramic valley views. Arrive at Shimla or Chandigarh for your departure. As you leave the mountains behind, you carry with you the crisp mountain air, the warmth of apple orchards, and the memory of snow-capped peaks that touched the sky.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Paragliding at Solang Valley (₹2,500/person)',
+  'River rafting on Beas River, Kullu (₹600–₹1,200)',
+  'Zorbing at Solang Valley (₹500/person)',
+  'Camping under the stars near Manali',
+  'Mountain biking on Manali trails',
+  'Spiti Valley extension (2 additional days)'],
+
+  bestTimeToVisit:
+  'March to June for pleasant weather and Rohtang Pass access. October–November for clear skies and autumn colours. December–February for snow lovers and skiing at Solang Valley.',
+  thingsToCarry: [
+  'Heavy woolens and down jacket (Rohtang Pass is extremely cold)',
+  'Waterproof trekking boots',
+  'Sunscreen SPF 50+ and lip balm',
+  'Altitude sickness medication (Diamox) — consult doctor',
+  'Valid ID for Rohtang Pass permit',
+  'Cash (limited ATMs beyond Manali)',
+  'Warm gloves, woollen cap, and thermal innerwear'],
+
+  relatedSlugs: ['kashmir', 'uttarakhand', 'north-east-india']
+},
+
+{
+  slug: 'uttarakhand',
+  destination: 'Uttarakhand',
+  packageName: 'Sacred Peaks Spiritual Journey',
+  tagline: 'Where the Ganges Meets the Divine',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹14,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1f7adc0bd-1783683715564.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1f7adc0bd-1783683715564.png",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Uttarakhand — the Land of Gods — is where the sacred and the spectacular converge. The Sacred Peaks Spiritual Journey is a 6-day immersion into the spiritual heartland of India, taking you from the yoga capital of the world (Rishikesh) to the ancient pilgrimage city of Haridwar, and up into the Garhwal Himalayas towards the divine Kedarnath shrine. This package is designed for travellers who seek both spiritual renewal and natural grandeur — the thundering Ganga Aarti, the adrenaline of white-water rafting, and the soul-stirring sight of snow-capped peaks at dawn.',
+  destinationsCovered: ['Haridwar', 'Rishikesh', 'Devprayag', 'Kedarnath', 'Badrinath'],
+  highlights: [
+  'Ganga Aarti at Har Ki Pauri, Haridwar — a transcendent spiritual experience',
+  'White-water rafting on the Ganges, Rishikesh (Grade III–IV rapids)',
+  'Bungee jumping at Mohan Chatti — India\'s highest fixed platform',
+  'Kedarnath Temple darshan (one of the 12 Jyotirlingas)',
+  'Badrinath Temple visit and Mana Village (last Indian village before Tibet)',
+  'Devprayag — sacred confluence of Alaknanda and Bhagirathi rivers',
+  'Beatles Ashram (Chaurasi Kutia) exploration in Rishikesh'],
+
+  inclusions: [
+  'Accommodation for 5 nights (1N Haridwar + 2N Rishikesh + 1N Kedarnath base + 1N Badrinath)',
+  'Daily breakfast and dinner',
+  'All transfers by private vehicle',
+  'Haridwar railway station pick-up and drop',
+  'Kedarnath helicopter booking assistance (on direct payment)',
+  'Local guide for Kedarnath and Badrinath',
+  'All applicable taxes'],
+
+  exclusions: [
+  'Train/flight fare to and from Haridwar/Dehradun',
+  'Kedarnath helicopter charges (₹3,500–₹5,000 one way)',
+  'White-water rafting charges (₹600–₹1,500)',
+  'Bungee jumping and other adventure activities',
+  'Lunch at restaurants',
+  'Personal expenses and tips',
+  'Travel insurance'],
+
+  hotelCategory: '3-Star Hotels & Guesthouses',
+  transportation: 'Private AC Vehicle (plains) + Non-AC (hills)',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Haridwar — Gateway to the Gods',
+    description:
+    'Arrive at Haridwar Railway Station and transfer to your hotel. Haridwar, one of the seven holiest cities in Hinduism, sits at the point where the Ganges descends from the Himalayas onto the plains. After freshening up, visit Har Ki Pauri — the most sacred ghat in Haridwar, where the Ganges is believed to flow at its purest. As dusk falls, witness the magnificent Ganga Aarti — a mesmerising ritual of fire, flowers, and devotion performed by priests on the ghat steps. The sight of thousands of oil lamps floating downstream on the sacred river is profoundly moving. Explore the Mansa Devi Temple (accessible by cable car) for panoramic views of the city. Dinner and overnight in Haridwar.',
+    meals: 'Dinner',
+    accommodation: '3-Star Hotel, Haridwar'
+  },
+  {
+    day: 2,
+    title: 'Haridwar to Rishikesh — Yoga Capital of the World',
+    description:
+    'After breakfast, drive 24 km to Rishikesh — the global headquarters of yoga and meditation, set at the foothills of the Himalayas where the Ganges flows swift and clear. Check in and explore the iconic Laxman Jhula and Ram Jhula — iron suspension bridges over the Ganges that connect the two banks and offer stunning river views. Visit the famous Triveni Ghat for the evening Ganga Aarti. Explore the ashrams and yoga centres that line the riverbanks — the Beatles Ashram (Chaurasi Kutia), where the Fab Four composed much of the White Album in 1968, is a fascinating ruin now open to visitors. Dinner at a riverside café.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Rishikesh'
+  },
+  {
+    day: 3,
+    title: 'Rishikesh Adventure Day — Rafting & Thrills',
+    description:
+    'After an early breakfast, gear up for the most thrilling day of your Uttarakhand journey. Head to Shivpuri (16 km upstream) for a white-water rafting expedition on the Ganges — navigating Grade III and IV rapids with names like "Three Blind Mice," "Golf Course," and the legendary "The Wall." The 16 km rafting stretch takes approximately 2–3 hours and ends at Rishikesh. For the truly adventurous, Mohan Chatti offers India\'s highest fixed-platform bungee jump (83 metres) and a giant swing. In the afternoon, visit the Neelkanth Mahadev Temple (32 km from Rishikesh) — a revered Shiva shrine set amidst dense forests at 1,330 m. Return to Rishikesh for a yoga session at sunset.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Rishikesh'
+  },
+  {
+    day: 4,
+    title: 'Rishikesh to Kedarnath Base Camp',
+    description:
+    'After breakfast, drive approximately 220 km to Gaurikund — the base camp for the Kedarnath trek. En route, stop at Devprayag, the sacred confluence where the Alaknanda and Bhagirathi rivers merge to form the Ganges — a profoundly spiritual sight. Continue through Rudraprayag and Agastyamuni to Gaurikund (1,982 m). Check in to your guesthouse and prepare for the next day\'s trek. The evening is ideal for acclimatisation — take a short walk around Gaurikund, visit the Gauri Devi Temple, and soak in the natural hot springs. Early dinner and rest for the demanding trek ahead.',
+    meals: 'Breakfast & Dinner',
+    accommodation: 'Guesthouse, Gaurikund'
+  },
+  {
+    day: 5,
+    title: 'Kedarnath Temple Darshan — Divine Encounter',
+    description:
+    'Rise at 4 AM for the 16 km trek to Kedarnath Temple (3,583 m) — one of the 12 sacred Jyotirlingas and part of the Char Dham pilgrimage circuit. The trek ascends through rhododendron forests, alpine meadows, and rocky terrain, with the snow-capped Kedarnath Peak (6,940 m) as a constant companion. Alternatively, opt for a helicopter from Phata or Sirsi (additional cost). Arrive at the temple for morning darshan — the ancient stone shrine, believed to be over 1,200 years old, stands against a backdrop of towering glaciers. The spiritual energy here is palpable and overwhelming. After darshan, trek back to Gaurikund (or take helicopter return) and drive to Badrinath for overnight.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Badrinath'
+  },
+  {
+    day: 6,
+    title: 'Badrinath & Mana Village — Departure',
+    description:
+    'Rise early for darshan at the Badrinath Temple (3,133 m) — one of the four Char Dham shrines, dedicated to Lord Vishnu. The temple\'s colourful facade against the backdrop of the Neelkanth Peak is one of the most photographed sights in the Himalayas. After darshan, drive 3 km to Mana Village — the last inhabited village before the Indo-Tibetan border. Visit the Vyas Gufa (cave where sage Vyas dictated the Mahabharata), Ganesh Gufa, and the Saraswati River — which disappears underground here. Return to Haridwar or Rishikesh for your onward journey, carrying the blessings of the Himalayas.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Bungee jumping at Mohan Chatti, Rishikesh (₹3,500/person)',
+  'Yoga and meditation retreat (1–3 days)',
+  'Valley of Flowers trek (July–September)',
+  'Auli skiing (January–March)',
+  'Camping on Ganges riverbank',
+  'Helicopter to Kedarnath (₹3,500–₹5,000 one way)'],
+
+  bestTimeToVisit:
+  'May to June and September to October for Char Dham yatra (temples are closed in winter). December–February for snow activities at Auli. Avoid July–August (heavy monsoon, landslide risk on mountain roads).',
+  thingsToCarry: [
+  'Warm layers for high-altitude areas (Kedarnath, Badrinath)',
+  'Sturdy trekking shoes with ankle support',
+  'Rain poncho (essential for monsoon months)',
+  'Altitude sickness medication — consult doctor',
+  'Personal medications and first-aid kit',
+  'Cash (no ATMs beyond Rudraprayag)',
+  'Torch/headlamp for early morning trek',
+  'Energy bars and dry fruits for Kedarnath trek'],
+
+  relatedSlugs: ['kashmir', 'himachal-pradesh', 'north-east-india']
+},
+
+{
+  slug: 'north-east-india',
+  destination: 'North East India',
+  packageName: 'Seven Sisters Wilderness Trail',
+  tagline: 'Untamed, Unexplored, Unforgettable',
+  duration: '7 Days / 6 Nights',
+  durationNights: '6 Nights',
+  price: '₹20,000',
+  heroImage: "https://images.unsplash.com/photo-1580503563600-c84b97aa1877",
+  heroVideo: "https://images.unsplash.com/photo-1580503563600-c84b97aa1877",
+  type: 'domestic',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'The North East of India is the country\'s best-kept secret — a region of extraordinary biodiversity, ancient tribal cultures, living root bridges, and landscapes that seem to belong to another world. The Seven Sisters Wilderness Trail takes you through three of the most captivating states: Meghalaya (the "Abode of Clouds"), Assam (land of tea and one-horned rhinos), and Sikkim (the Himalayan kingdom). This 7-day journey is for the curious traveller who seeks authenticity over luxury, and wonder over comfort.',
+  destinationsCovered: ['Guwahati', 'Kaziranga', 'Shillong', 'Cherrapunji', 'Gangtok', 'Pelling'],
+  highlights: [
+  'Kaziranga National Park jeep safari — one-horned rhino and elephant sightings',
+  'Living Root Bridges trek in Cherrapunji (Sohra)',
+  'Nohkalikai Falls — India\'s tallest plunge waterfall',
+  'Gangtok cable car ride with Kanchenjunga views',
+  'Rumtek Monastery — one of the most important Buddhist monasteries in India',
+  'Pelling — Kanchenjunga panorama and Pemayangtse Monastery',
+  'Shillong — Scotland of the East, Ward\'s Lake and Don Bosco Museum'],
+
+  inclusions: [
+  'Accommodation for 6 nights (1N Guwahati + 1N Kaziranga + 2N Shillong + 2N Gangtok)',
+  'Daily breakfast and dinner',
+  'All transfers by private vehicle',
+  'Guwahati airport pick-up and drop',
+  'Kaziranga jeep safari (1 round)',
+  'Cherrapunji day trip from Shillong',
+  'Gangtok cable car ticket',
+  'Inner Line Permit for Sikkim (arranged by us)',
+  'All applicable taxes'],
+
+  exclusions: [
+  'Airfare / train fare to and from Guwahati',
+  'Kaziranga elephant safari (on direct payment)',
+  'Living Root Bridge trek guide charges',
+  'Lunch at restaurants',
+  'Personal expenses and tips',
+  'Travel insurance',
+  'Pelling day trip (optional add-on)'],
+
+  hotelCategory: '3-Star Hotels',
+  transportation: 'Private AC Vehicle',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Guwahati — Gateway to the North East',
+    description:
+    'Arrive at Lokpriya Gopinath Bordoloi International Airport, Guwahati — the gateway to North East India. Transfer to your hotel. Guwahati, situated on the banks of the mighty Brahmaputra River, is the largest city in the region and a melting pot of cultures. In the afternoon, visit the Kamakhya Temple — one of the most important Shakti Peethas in India — perched atop the Nilachal Hill with panoramic views of the Brahmaputra. Take a sunset cruise on the Brahmaputra River, watching the golden light play on the world\'s widest river. Dinner at a restaurant serving authentic Assamese cuisine — try the masor tenga (sour fish curry) and pitha (rice cakes).',
+    meals: 'Dinner',
+    accommodation: '3-Star Hotel, Guwahati'
+  },
+  {
+    day: 2,
+    title: 'Guwahati to Kaziranga — Rhino Country',
+    description:
+    'After breakfast, drive approximately 215 km to Kaziranga National Park — a UNESCO World Heritage Site and the last stronghold of the Indian one-horned rhinoceros. Check in to your jungle resort on the park boundary. In the afternoon, embark on a jeep safari through the Central Range of Kaziranga — the most wildlife-rich zone of the park. Kaziranga is home to the world\'s largest population of one-horned rhinos (over 2,600), as well as wild elephants, water buffaloes, swamp deer, and tigers. The park\'s tall elephant grass, wetlands, and forests create a dramatic backdrop for wildlife photography. Return to the resort for dinner and an evening wildlife presentation.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Resort, Kaziranga'
+  },
+  {
+    day: 3,
+    title: 'Kaziranga to Shillong — Scotland of the East',
+    description:
+    'After an early morning elephant safari (optional, on direct payment) and breakfast, drive approximately 250 km to Shillong — the capital of Meghalaya and one of India\'s most charming hill stations. The drive through the Meghalaya plateau offers stunning views of rolling hills, pine forests, and cascading waterfalls. Check in to your hotel and explore Shillong\'s highlights: Ward\'s Lake (a picturesque artificial lake in the heart of the city), the Don Bosco Museum (one of Asia\'s finest cultural museums with 7 floors of North East Indian heritage), and the vibrant Police Bazaar for local shopping. Dinner at a restaurant serving Khasi cuisine — try jadoh (rice and pork) and tungrymbai (fermented soybean).',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Shillong'
+  },
+  {
+    day: 4,
+    title: 'Cherrapunji — Land of Living Bridges & Waterfalls',
+    description:
+    'After breakfast, drive 54 km to Cherrapunji (Sohra) — one of the wettest places on Earth and home to some of Meghalaya\'s most extraordinary natural wonders. Visit the Nohkalikai Falls — India\'s tallest plunge waterfall at 340 metres — where the water plunges into a turquoise pool surrounded by dense forest. Explore the Mawsmai Cave, a fascinating limestone cave with stalactites and stalagmites. The highlight of the day is the trek to the Double Decker Living Root Bridge — a UNESCO-nominated wonder where the Khasi people have trained the roots of rubber fig trees over centuries to form natural bridges across streams. The trek is moderately challenging (3–4 hours round trip) but profoundly rewarding. Return to Shillong for dinner.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Shillong'
+  },
+  {
+    day: 5,
+    title: 'Shillong to Gangtok — The Himalayan Kingdom',
+    description:
+    'After breakfast, drive to Bagdogra Airport or NJP Railway Station (approximately 4 hours) and fly/drive to Gangtok — the capital of Sikkim. Alternatively, drive directly from Shillong to Gangtok (approximately 8 hours via Siliguri). Check in to your hotel and take a cable car ride over the city for aerial views of Gangtok and, on clear days, the majestic Kanchenjunga (8,586 m) — the world\'s third highest peak. Visit the Enchey Monastery, a 200-year-old Nyingma monastery perched on a hilltop. Explore MG Marg — Gangtok\'s pedestrianised main street lined with cafés, craft shops, and restaurants. Dinner at a restaurant serving Sikkimese cuisine — try thukpa, momos, and gundruk.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Gangtok'
+  },
+  {
+    day: 6,
+    title: 'Gangtok Sightseeing — Monasteries & Mountain Views',
+    description:
+    'After breakfast, explore Gangtok\'s cultural and spiritual highlights. Visit Rumtek Monastery — one of the most significant Kagyu Buddhist monasteries in the world, housing sacred relics and thangka paintings. Continue to the Namgyal Institute of Tibetology, a premier research centre for Tibetan and Buddhist studies with a fascinating museum. Visit the Flower Exhibition Centre (seasonal) and the Do-Drul Chorten Stupa — one of the most important stupas in Sikkim. In the afternoon, drive to Tsomgo Lake (3,753 m) — a glacial lake 38 km from Gangtok, sacred to the local Sikkimese people, with yak rides available on the lakeshore. Return to Gangtok for a farewell dinner.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Gangtok'
+  },
+  {
+    day: 7,
+    title: 'Departure — Carrying the North East in Your Soul',
+    description:
+    'After breakfast, check out and transfer to Bagdogra Airport or NJP Railway Station for your onward journey. If time permits, visit the Sikkim Government Craft Centre for last-minute shopping — handwoven carpets, thangka paintings, and traditional Sikkimese jewellery make wonderful souvenirs. As you depart, you carry with you the fragrance of cardamom forests, the sound of Buddhist chants, the sight of living root bridges, and the memory of a region that exists in a world of its own.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Kaziranga elephant safari (₹1,200/person)',
+  'Pelling day trip — Kanchenjunga panorama and Pemayangtse Monastery',
+  'Trekking to Dzongri (Sikkim) — 5-day extension',
+  'River rafting on Teesta River, Sikkim',
+  'Homestay experience in a Khasi village, Meghalaya',
+  'Ziro Valley, Arunachal Pradesh extension'],
+
+  bestTimeToVisit:
+  'October to April for clear skies and wildlife viewing. March–April for rhododendron blooms in Sikkim. Avoid June–September (heavy monsoon, landslides, and park closures).',
+  thingsToCarry: [
+  'Valid government ID (mandatory for Inner Line Permit)',
+  'Warm layers for Sikkim and high-altitude areas',
+  'Waterproof jacket and rain gear',
+  'Trekking shoes for Living Root Bridge trek',
+  'Insect repellent',
+  'Cash (limited ATMs in remote areas)',
+  'Camera with extra memory cards'],
+
+  relatedSlugs: ['kashmir', 'himachal-pradesh', 'uttarakhand']
+},
+
+// ─── INTERNATIONAL ──────────────────────────────────────────────────────────
+
+{
+  slug: 'dubai',
+  destination: 'Dubai',
+  packageName: 'Arabian Grandeur Experience',
+  tagline: 'Where Tradition Meets Tomorrow',
+  duration: '5 Days / 4 Nights',
+  durationNights: '4 Nights',
+  price: '₹55,000',
+  heroImage: "https://images.unsplash.com/photo-1728487430251-b4a951af00ee",
+  heroVideo: "https://images.unsplash.com/photo-1728487430251-b4a951af00ee",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Dubai is a city that rewrites the rules of possibility — where the world\'s tallest building pierces the clouds, where ski slopes exist inside a shopping mall, and where ancient souks sit in the shadow of futuristic skyscrapers. The Arabian Grandeur Experience is a 5-day journey through the many faces of this extraordinary emirate: the golden dunes of the desert, the glittering skyline of Downtown Dubai, the historic lanes of Al Fahidi, and the pristine shores of Jumeirah Beach. This package delivers the complete Dubai experience — from the sublime to the spectacular.',
+  destinationsCovered: ['Downtown Dubai', 'Deira', 'Jumeirah', 'Dubai Desert', 'Dubai Marina'],
+  highlights: [
+  'Burj Khalifa At the Top (124th floor) — world\'s highest observation deck',
+  'Desert Safari with dune bashing, camel ride, and BBQ dinner',
+  'Dubai Frame — the world\'s largest picture frame',
+  'Dubai Creek Abra (traditional boat) ride and Gold/Spice Souk',
+  'Palm Jumeirah and Atlantis The Palm drive-by',
+  'Dubai Mall and Dubai Fountain show',
+  'Dhow Cruise dinner on Dubai Creek'],
+
+  inclusions: [
+  'Accommodation for 4 nights in a 4-star hotel, Dubai',
+  'Daily breakfast',
+  'Dubai airport pick-up and drop by private vehicle',
+  'Burj Khalifa At the Top (124th floor) tickets',
+  'Desert Safari with dune bashing, camel ride, henna, and BBQ dinner',
+  'Dhow Cruise dinner on Dubai Creek',
+  'Dubai city tour by private vehicle (half day)',
+  'Dubai Frame entry ticket',
+  'All applicable taxes and service charges'],
+
+  exclusions: [
+  'International airfare (India to Dubai return)',
+  'UAE Tourist Visa charges (approx. ₹5,500–₹7,000)',
+  'Burj Khalifa At the Top Sky (148th floor) — upgrade cost',
+  'Lunch at restaurants',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance',
+  'Any activity not mentioned in inclusions'],
+
+  hotelCategory: '4-Star Hotel',
+  transportation: 'Private AC Vehicle',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Dubai — City of Gold',
+    description:
+    'Arrive at Dubai International Airport — one of the world\'s busiest airports — and be greeted by your Vibrant Holidays representative. Transfer to your 4-star hotel in the heart of Dubai. After check-in and freshening up, head to the iconic Dubai Mall — the world\'s largest shopping mall by total area, housing over 1,200 stores, an Olympic-size ice rink, an indoor aquarium, and a dinosaur skeleton. As evening falls, witness the spectacular Dubai Fountain Show — the world\'s largest choreographed fountain system — set against the backdrop of the illuminated Burj Khalifa. Dinner at your choice of restaurant in the Dubai Mall food court or the surrounding Downtown Dubai promenade.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Dubai'
+  },
+  {
+    day: 2,
+    title: 'Burj Khalifa & Downtown Dubai — Touching the Sky',
+    description:
+    'After breakfast, begin the day with the crown jewel of Dubai — the Burj Khalifa (828 m), the world\'s tallest building. Ascend to the At the Top observation deck on the 124th floor for a 360-degree panorama of Dubai\'s skyline, the Arabian Gulf, and the desert beyond. The view at sunrise is particularly breathtaking. Continue to the Dubai Frame — a 150-metre-tall picture frame structure that offers views of old Dubai on one side and modern Dubai on the other, with a glass-floored sky bridge connecting the two towers. In the afternoon, explore the Dubai Design District (D3) and the futuristic Museum of the Future — a torus-shaped building inscribed with Arabic calligraphy, housing immersive exhibitions about humanity\'s future. Dinner at a rooftop restaurant in Downtown Dubai.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Dubai'
+  },
+  {
+    day: 3,
+    title: 'Old Dubai & Dhow Cruise — Heritage & Waterways',
+    description:
+    'After breakfast, step back in time with a visit to Old Dubai. Cross the Dubai Creek on a traditional Abra (wooden water taxi) to reach Deira — the historic trading heart of the city. Explore the Gold Souk, where over 300 jewellery shops display an estimated 10 tonnes of gold at any given time. Continue to the Spice Souk, where the air is thick with the fragrance of saffron, frankincense, cardamom, and dried roses. Visit the Al Fahidi Historical Neighbourhood — a beautifully preserved district of wind-tower architecture, art galleries, and the Dubai Museum. In the evening, board a traditional wooden Dhow for a 2-hour dinner cruise on Dubai Creek, gliding past the illuminated skyline while enjoying a buffet of Arabic and international cuisine with live entertainment.',
+    meals: 'Breakfast & Dinner (Dhow Cruise)',
+    accommodation: '4-Star Hotel, Dubai'
+  },
+  {
+    day: 4,
+    title: 'Desert Safari — Dunes, Camels & Starlit BBQ',
+    description:
+    'After a leisurely breakfast, spend the morning at leisure — perhaps a visit to the Jumeirah Mosque (the only mosque in Dubai open to non-Muslim visitors), a stroll along Jumeirah Beach, or shopping at the Mall of the Emirates (home to Ski Dubai, the indoor ski slope). In the afternoon, embark on the quintessential Dubai experience — the Desert Safari. Board a 4WD vehicle for a thrilling dune bashing session across the red sand dunes of the Dubai Desert Conservation Reserve. Arrive at a traditional Bedouin camp for a magical evening: camel riding, sandboarding, henna painting, and falconry demonstrations. As the stars emerge over the desert, enjoy a lavish BBQ dinner under the open sky with belly dancing and Tanoura (whirling dervish) performances.',
+    meals: 'Breakfast & Dinner (Desert Camp)',
+    accommodation: '4-Star Hotel, Dubai'
+  },
+  {
+    day: 5,
+    title: 'Palm Jumeirah & Departure',
+    description:
+    'After breakfast, check out and embark on a final drive along the iconic Palm Jumeirah — the world\'s largest man-made island, shaped like a palm tree and visible from space. Drive along the Palm Trunk and Fronds, passing the Atlantis The Palm resort and the Aquaventure Waterpark. Stop at the Palm Jumeirah Boardwalk for a final panoramic view of the Dubai skyline across the water. Visit the Dubai Marina — a stunning artificial canal city with a 3.5 km waterfront promenade lined with restaurants, yachts, and skyscrapers. Transfer to Dubai International Airport for your departure flight, carrying with you the golden glow of Arabian hospitality.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Burj Khalifa At the Top Sky (148th floor) upgrade (AED 100 extra)',
+  'Ski Dubai at Mall of the Emirates (AED 200/person)',
+  'Dubai Aquarium and Underwater Zoo (AED 100/person)',
+  'Hot air balloon over the Dubai Desert (AED 900/person)',
+  'Yacht charter in Dubai Marina (AED 500/hour)',
+  'Helicopter tour over Palm Jumeirah (AED 700/person)'],
+
+  bestTimeToVisit:
+  'November to March for pleasant weather (20–28°C). Avoid May–September (extreme heat, 40–48°C). Dubai Shopping Festival (January) and Dubai Food Festival (February) are excellent times to visit.',
+  thingsToCarry: [
+  'Sunscreen SPF 50+ and UV-protection sunglasses',
+  'Light, breathable clothing (cotton/linen)',
+  'Modest clothing for mosque visits (shoulders and knees covered)',
+  'Comfortable walking shoes',
+  'Valid passport (minimum 6 months validity)',
+  'UAE Tourist Visa (arranged before departure)',
+  'International travel insurance',
+  'Credit/debit card (widely accepted)'],
+
+  relatedSlugs: ['thailand', 'singapore', 'maldives']
+},
+
+{
+  slug: 'thailand',
+  destination: 'Thailand',
+  packageName: 'Siam Splendour Discovery',
+  tagline: 'Temples, Tides & Thai Smiles',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹45,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_12c5e97f3-1783683713057.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_12c5e97f3-1783683713057.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Thailand is a country that captures the heart effortlessly — with its gilded temples, turquoise islands, fragrant street food, and the warmest smiles in Southeast Asia. The Siam Splendour Discovery is a 6-day journey through the best of Thailand: the cultural grandeur of Bangkok, the island paradise of Phuket, and the emerald waters of Phi Phi Island. This package balances cultural immersion with beach relaxation, giving you a complete Thai experience that will leave you longing to return.',
+  destinationsCovered: ['Bangkok', 'Pattaya', 'Phuket', 'Phi Phi Island', 'Krabi'],
+  highlights: [
+  'Grand Palace and Wat Phra Kaew (Temple of the Emerald Buddha)',
+  'Phi Phi Island speedboat tour — Maya Bay, Viking Cave',
+  'Coral Island (Koh Larn) snorkelling from Pattaya',
+  'Floating Market visit — Damnoen Saduak or Amphawa',
+  'Elephant sanctuary ethical experience near Chiang Mai',
+  'Patong Beach nightlife and Bangla Road',
+  'Phang Nga Bay James Bond Island tour'],
+
+  inclusions: [
+  'Accommodation for 5 nights (2N Bangkok + 1N Pattaya + 2N Phuket)',
+  'Daily breakfast',
+  'Bangkok airport pick-up and drop',
+  'Bangkok city tour by private vehicle',
+  'Pattaya Coral Island tour (shared speedboat)',
+  'Phi Phi Island tour from Phuket (shared speedboat)',
+  'All inter-city transfers by private AC vehicle or domestic flight',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare (India to Bangkok return)',
+  'Thailand Tourist Visa on Arrival (approx. ₹2,000)',
+  'Grand Palace entry fee (THB 500)',
+  'Lunch and dinner',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance',
+  'Optional activities'],
+
+  hotelCategory: '3-Star Hotels',
+  transportation: 'Private AC Vehicle + Shared Speedboat',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Bangkok — City of Angels',
+    description:
+    'Arrive at Suvarnabhumi International Airport, Bangkok, and transfer to your hotel in the city centre. Bangkok — the "City of Angels" — is a sensory explosion of golden temples, chaotic traffic, aromatic street food, and neon-lit nightlife. After freshening up, take a tuk-tuk ride through the old city to Khao San Road — the legendary backpacker hub — for your first taste of Thai street food: pad thai, mango sticky rice, and fresh coconut water. In the evening, take a Chao Phraya River dinner cruise for a magical view of Bangkok\'s illuminated temples and skyline from the water. Overnight in Bangkok.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Bangkok'
+  },
+  {
+    day: 2,
+    title: 'Bangkok Cultural Tour — Temples & Palaces',
+    description:
+    'After breakfast, embark on a full-day cultural tour of Bangkok\'s most iconic landmarks. Begin with the Grand Palace — a dazzling complex of gilded spires, intricate mosaics, and ornate pavilions that served as the official residence of the Thai King for 150 years. Within the palace complex, visit Wat Phra Kaew (Temple of the Emerald Buddha) — Thailand\'s most sacred temple, housing a 66 cm jade Buddha image. Continue to Wat Pho, home to the magnificent 46-metre Reclining Buddha covered in gold leaf. Take a short boat ride across the Chao Phraya to Wat Arun (Temple of Dawn) — its distinctive Khmer-style prang (tower) encrusted with colourful porcelain fragments is one of Bangkok\'s most recognisable landmarks. In the afternoon, visit the Damnoen Saduak Floating Market for a colourful boat ride through canal-side vendors selling tropical fruits, flowers, and Thai snacks.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Bangkok'
+  },
+  {
+    day: 3,
+    title: 'Bangkok to Pattaya — Coral Island Paradise',
+    description:
+    'After breakfast, drive approximately 150 km to Pattaya — Thailand\'s most famous beach resort city on the Gulf of Thailand. Check in to your hotel and head to the pier for a speedboat trip to Koh Larn (Coral Island) — a small island 7.5 km offshore with crystal-clear turquoise waters and vibrant coral reefs. Enjoy snorkelling, swimming, and sunbathing on the island\'s pristine beaches. Return to Pattaya in the afternoon and explore the Walking Street — Pattaya\'s famous entertainment strip that comes alive after dark with restaurants, bars, and live music venues. Visit the Sanctuary of Truth — a magnificent all-wood temple and sculpture hall under construction since 1981, a testament to Thai craftsmanship.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Pattaya'
+  },
+  {
+    day: 4,
+    title: 'Pattaya to Phuket — Pearl of the Andaman',
+    description:
+    'After breakfast, transfer to Bangkok Airport for a domestic flight to Phuket — Thailand\'s largest island and the jewel of the Andaman Sea. Arrive in Phuket and transfer to your beachside hotel in Patong or Kata Beach. Spend the afternoon at leisure on Patong Beach — the most vibrant beach in Phuket, with a wide range of water sports, beach clubs, and restaurants. In the evening, explore the Patong Night Market for Thai street food and souvenirs. Visit Bangla Road — Phuket\'s most famous entertainment street — for a lively evening of live music, street performances, and Thai cuisine.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Phuket'
+  },
+  {
+    day: 5,
+    title: 'Phi Phi Island Tour — Emerald Waters & Sea Caves',
+    description:
+    'After breakfast, board a speedboat for the most spectacular day of your Thailand journey — the Phi Phi Island tour. The Phi Phi archipelago, made famous by the film "The Beach," comprises six islands of extraordinary beauty. Visit Maya Bay — the iconic crescent-shaped bay with turquoise waters and towering limestone cliffs. Snorkel at Loh Samah Bay and Pileh Lagoon — a hidden emerald lagoon enclosed by sheer limestone walls. Explore Viking Cave, where swiftlets build their nests (used in bird\'s nest soup). Swim at Monkey Beach, where cheeky macaques come down to greet visitors. Return to Phuket in the late afternoon for a sunset dinner at a beachfront restaurant.',
+    meals: 'Breakfast & Lunch (onboard)',
+    accommodation: '3-Star Hotel, Phuket'
+  },
+  {
+    day: 6,
+    title: 'Phuket Departure — Until We Meet Again, Thailand',
+    description:
+    'After breakfast, check out and spend the morning at leisure — perhaps a final swim at Kata Beach, a Thai massage at a local spa, or shopping at the Phuket Weekend Market (Naka Market) for handicrafts, clothing, and local produce. Transfer to Phuket International Airport for your departure flight. As you leave, you carry with you the golden glow of Thai temples, the turquoise memory of Phi Phi\'s waters, and the warmth of the Thai smile that welcomed you at every turn.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Elephant sanctuary ethical experience (THB 2,500/person)',
+  'Phang Nga Bay James Bond Island tour (THB 1,800/person)',
+  'Thai cooking class in Bangkok (THB 1,200/person)',
+  'Muay Thai boxing match tickets (THB 1,000–₹2,000)',
+  'Scuba diving at Similan Islands (THB 4,500/person)',
+  'Chiang Mai extension — 2 additional days'],
+
+  bestTimeToVisit:
+  'November to April for the best weather across Thailand. Phuket and the Andaman coast are best from November to April. Bangkok is pleasant year-round. Avoid May–October (monsoon season) for beach destinations.',
+  thingsToCarry: [
+  'Light, breathable clothing',
+  'Modest clothing for temple visits (shoulders and knees covered)',
+  'Swimwear and beach cover-ups',
+  'Sunscreen SPF 50+ and insect repellent',
+  'Waterproof sandals',
+  'Valid passport (minimum 6 months validity)',
+  'Small backpack for island day trips',
+  'Cash in Thai Baht (THB)'],
+
+  relatedSlugs: ['bali', 'vietnam', 'singapore']
+},
+
+{
+  slug: 'bali',
+  destination: 'Bali',
+  packageName: 'Island of the Gods Immersion',
+  tagline: 'Sacred Temples & Tropical Bliss',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹48,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1b8460fba-1783683712621.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Bali is more than a destination — it is a state of mind. The Island of the Gods Immersion is a 6-day journey through the many dimensions of this extraordinary Indonesian island: the spiritual heart of Ubud with its rice terraces and healing temples, the surf culture and beach clubs of Seminyak, and the dramatic clifftop temples of Uluwatu. This package is designed for travellers who seek beauty in every form — natural, spiritual, culinary, and artistic.',
+  destinationsCovered: ['Ubud', 'Kintamani', 'Seminyak', 'Uluwatu', 'Nusa Dua'],
+  highlights: [
+  'Tegallalang Rice Terraces — UNESCO-recognised subak irrigation system',
+  'Uluwatu Temple sunset Kecak fire dance performance',
+  'Mount Batur sunrise trek (1,717 m)',
+  'Ubud Monkey Forest and Royal Palace',
+  'Tanah Lot Temple — iconic sea temple at sunset',
+  'Seminyak Beach clubs and Bali swing',
+  'Traditional Balinese cooking class in Ubud'],
+
+  inclusions: [
+  'Accommodation for 5 nights (3N Ubud + 2N Seminyak)',
+  'Daily breakfast',
+  'Bali airport pick-up and drop',
+  'Ubud sightseeing by private vehicle',
+  'Kintamani volcano and Tegallalang tour',
+  'Uluwatu Temple and Kecak dance evening tour',
+  'Tanah Lot sunset tour',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare (India to Bali return)',
+  'Indonesia Tourist Visa on Arrival (USD 35)',
+  'Mount Batur sunrise trek guide (USD 35/person)',
+  'Lunch and dinner',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance',
+  'Bali swing (IDR 350,000/person)'],
+
+  hotelCategory: '3-Star Hotels & Boutique Villas',
+  transportation: 'Private AC Vehicle',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Bali — Island Welcome',
+    description:
+    'Arrive at Ngurah Rai International Airport, Denpasar, and transfer to your boutique villa in Ubud — Bali\'s cultural and spiritual heartland. The 1.5-hour drive from the airport takes you through rice paddies, temple-lined roads, and traditional villages. Check in and spend the afternoon exploring Ubud\'s vibrant art market and the Ubud Royal Palace (Puri Saren Agung) — a beautifully preserved royal compound where traditional Legong dance performances are held in the evenings. Stroll through the Ubud Art Market for handcrafted batik, silver jewellery, and wooden sculptures. Dinner at a restaurant overlooking the rice fields — try nasi goreng, babi guling, and fresh tropical fruit.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Boutique Villa, Ubud'
+  },
+  {
+    day: 2,
+    title: 'Ubud Cultural Immersion — Temples & Rice Terraces',
+    description:
+    'After breakfast, begin a full day of cultural exploration around Ubud. Visit the Sacred Monkey Forest Sanctuary — a natural forest reserve and Hindu temple complex inhabited by over 700 long-tailed macaques. Continue to the Tegallalang Rice Terraces — a UNESCO-recognised landscape of cascading rice paddies sculpted by the ancient subak irrigation system. The terraces are most photogenic in the morning light. Visit the Goa Gajah (Elephant Cave) — an 11th-century archaeological site with a carved cave entrance and bathing pools. In the afternoon, take a traditional Balinese cooking class — learn to prepare dishes like satay lilit, lawar, and black rice pudding using fresh ingredients from a local market.',
+    meals: 'Breakfast & Lunch (cooking class)',
+    accommodation: '3-Star Boutique Villa, Ubud'
+  },
+  {
+    day: 3,
+    title: 'Mount Batur & Kintamani — Volcanic Sunrise',
+    description:
+    'Rise at 2 AM for the Mount Batur sunrise trek — one of Bali\'s most rewarding experiences. The 2-hour ascent through volcanic terrain brings you to the summit (1,717 m) just as the sun rises over the caldera lake and the distant peak of Mount Agung. Cook eggs in the volcanic steam vents for a unique breakfast at the summit. Descend and drive to the Kintamani viewpoint for panoramic views of the Batur caldera and Lake Batur. Visit the Tirta Empul Temple — a sacred water temple where Balinese Hindus perform purification rituals in the holy spring pools. Return to Ubud for a well-deserved afternoon rest.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Boutique Villa, Ubud'
+  },
+  {
+    day: 4,
+    title: 'Ubud to Seminyak — Beach & Sunset Vibes',
+    description:
+    'After breakfast, check out and drive to Seminyak — Bali\'s most stylish beach destination, known for its designer boutiques, beach clubs, and world-class restaurants. En route, stop at the Tanah Lot Temple — one of Bali\'s most iconic landmarks, a Hindu sea temple perched on a rocky outcrop in the Indian Ocean, best visited at sunset when the silhouette against the golden sky is magical. Check in to your Seminyak hotel and spend the evening at Seminyak Beach — watch the legendary Bali sunset from a beach club, sipping a Bintang beer or fresh coconut. Dinner at one of Seminyak\'s acclaimed restaurants — Potato Head, Ku De Ta, or Merah Putih.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Seminyak'
+  },
+  {
+    day: 5,
+    title: 'Uluwatu — Clifftop Temple & Kecak Fire Dance',
+    description:
+    'After breakfast, drive to the Uluwatu Peninsula — the southernmost tip of Bali, where dramatic limestone cliffs plunge 70 metres into the Indian Ocean. Visit the Uluwatu Temple (Pura Luhur Uluwatu) — one of Bali\'s six key temples, perched on the cliff edge with sweeping ocean views. Explore the Uluwatu surf beach and the famous Single Fin beach club for lunch (own cost). In the late afternoon, return to the temple for the Kecak Fire Dance — a mesmerising performance of 70 bare-chested men chanting "cak" in rhythmic unison, re-enacting scenes from the Ramayana against a backdrop of the setting sun over the ocean. Return to Seminyak for a farewell dinner.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Seminyak'
+  },
+  {
+    day: 6,
+    title: 'Departure — Bali\'s Blessing Stays With You',
+    description:
+    'After breakfast, check out and spend the morning at leisure — a final swim at Seminyak Beach, a Balinese massage at a local spa, or last-minute shopping at Seminyak Square for batik clothing, silver jewellery, and Balinese art. Transfer to Ngurah Rai International Airport for your departure flight. As you leave the Island of the Gods, you carry with you the fragrance of frangipani, the echo of gamelan music, and the profound peace of a land where spirituality permeates every moment.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Bali swing at Tegallalang (IDR 350,000/person)',
+  'White-water rafting on Ayung River (IDR 350,000/person)',
+  'Nusa Penida island day trip (IDR 450,000/person)',
+  'Balinese traditional massage (IDR 150,000/hour)',
+  'Surfing lessons at Kuta Beach (IDR 250,000/person)',
+  'Lembongan Island snorkelling trip'],
+
+  bestTimeToVisit:
+  'April to October (dry season) for the best beach weather and outdoor activities. July–August is peak season with higher prices. November–March (wet season) is lush and green with fewer crowds and lower prices.',
+  thingsToCarry: [
+  'Light, breathable clothing',
+  'Sarong and sash (required for temple visits — often provided)',
+  'Swimwear and beach cover-ups',
+  'Sunscreen SPF 50+ and insect repellent',
+  'Comfortable walking shoes for temple visits',
+  'Valid passport (minimum 6 months validity)',
+  'Cash in Indonesian Rupiah (IDR)',
+  'Small backpack for day trips'],
+
+  relatedSlugs: ['thailand', 'vietnam', 'maldives']
+},
+
+{
+  slug: 'vietnam',
+  destination: 'Vietnam',
+  packageName: 'Indochine Heritage Voyage',
+  tagline: 'Ancient Kingdoms & Emerald Bays',
+  duration: '7 Days / 6 Nights',
+  durationNights: '6 Nights',
+  price: '₹52,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_14813fd4a-1783683714553.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_14813fd4a-1783683714553.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Vietnam is a country of extraordinary contrasts — where ancient imperial cities stand alongside French colonial architecture, where emerald limestone karsts rise from jade-green bays, and where the aroma of pho and fresh herbs fills every street corner. The Indochine Heritage Voyage is a 7-day north-to-south journey through Vietnam\'s most iconic destinations: the chaotic energy of Hanoi, the ethereal beauty of Ha Long Bay, the lantern-lit streets of Hoi An, and the vibrant modernity of Ho Chi Minh City.',
+  destinationsCovered: ['Hanoi', 'Ha Long Bay', 'Hue', 'Hoi An', 'Ho Chi Minh City'],
+  highlights: [
+  'Ha Long Bay overnight cruise — limestone karsts and emerald waters',
+  'Hoi An Ancient Town lantern festival (UNESCO World Heritage)',
+  'Hue Imperial Citadel and royal tombs',
+  'Cu Chi Tunnels — underground wartime network near Ho Chi Minh City',
+  'Hanoi Old Quarter cyclo tour and street food walk',
+  'Mekong Delta boat trip through floating markets',
+  'Cooking class in Hoi An — Vietnamese cuisine'],
+
+  inclusions: [
+  'Accommodation for 6 nights (2N Hanoi + 1N Ha Long Bay cruise + 1N Hue + 1N Hoi An + 1N Ho Chi Minh City)',
+  'Daily breakfast',
+  'Ha Long Bay overnight cruise with all meals',
+  'Hanoi airport pick-up and Ho Chi Minh City drop',
+  'All inter-city transfers by domestic flights or private vehicle',
+  'Hanoi Old Quarter cyclo tour',
+  'Hue city tour by private vehicle',
+  'Hoi An Ancient Town guided walk',
+  'Cu Chi Tunnels tour',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare (India to Hanoi / Ho Chi Minh City return)',
+  'Vietnam e-Visa (approx. ₹2,500)',
+  'Lunch and dinner (except Ha Long Bay cruise)',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance',
+  'Optional activities'],
+
+  hotelCategory: '3-Star Hotels & Boutique Cruise',
+  transportation: 'Private AC Vehicle + Domestic Flights',
+  mealPlan: 'Breakfast Only (CP) + Full Board on Ha Long Bay Cruise',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Hanoi — The Ancient Capital',
+    description:
+    'Arrive at Noi Bai International Airport, Hanoi, and transfer to your hotel in the Old Quarter. Hanoi, Vietnam\'s capital for over 1,000 years, is a city where French colonial boulevards meet ancient pagodas and chaotic motorbike traffic. After freshening up, explore the Hoan Kiem Lake and the iconic red Huc Bridge leading to the Ngoc Son Temple on a small island in the lake. In the evening, take a cyclo (three-wheeled bicycle rickshaw) tour through the 36 streets of the Old Quarter — each street historically specialised in a different trade. Join a street food walking tour: try bun cha (grilled pork noodles), banh mi, egg coffee, and fresh spring rolls at local eateries.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Hanoi'
+  },
+  {
+    day: 2,
+    title: 'Hanoi Sightseeing — Temples, Mausoleums & Museums',
+    description:
+    'After breakfast, explore Hanoi\'s most significant cultural landmarks. Visit the Ho Chi Minh Mausoleum complex — the final resting place of Vietnam\'s revolutionary leader, surrounded by the Presidential Palace, Ho Chi Minh\'s stilt house, and the One Pillar Pagoda (a unique 11th-century lotus-shaped temple built on a single stone pillar). Continue to the Temple of Literature (Van Mieu) — Vietnam\'s first university, founded in 1070, with beautiful courtyards and stone steles bearing the names of doctoral graduates. Visit the Vietnam Museum of Ethnology for a fascinating overview of Vietnam\'s 54 ethnic groups. In the afternoon, explore the French Quarter\'s elegant colonial architecture and the Hoa Lo Prison Museum (the "Hanoi Hilton").',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Hanoi'
+  },
+  {
+    day: 3,
+    title: 'Ha Long Bay Cruise — Emerald Waters & Limestone Karsts',
+    description:
+    'After breakfast, transfer to Ha Long Bay (170 km, approximately 3.5 hours). Board your overnight cruise vessel — a traditional wooden junk boat — and set sail into one of the world\'s most spectacular seascapes. Ha Long Bay, a UNESCO World Heritage Site, contains nearly 2,000 limestone islands and islets rising dramatically from the emerald-green waters of the Gulf of Tonkin. Cruise through the bay, stopping to explore Sung Sot Cave (Surprise Cave) — the largest and most impressive cave in Ha Long Bay, with cathedral-like chambers of stalactites and stalagmites. Kayak through hidden lagoons and floating fishing villages. As the sun sets over the karsts, enjoy a seafood dinner onboard with fresh squid, prawns, and clams caught that day.',
+    meals: 'Breakfast, Lunch & Dinner (onboard)',
+    accommodation: 'Overnight Cruise, Ha Long Bay'
+  },
+  {
+    day: 4,
+    title: 'Ha Long Bay to Hue — Imperial City',
+    description:
+    'Rise early for a sunrise tai chi session on the cruise deck, followed by breakfast. Disembark and transfer to Hanoi Airport for a domestic flight to Da Nang, then drive 1 hour to Hue — Vietnam\'s former imperial capital and a UNESCO World Heritage Site. Check in and visit the Imperial Citadel (Dai Noi) — a 10 km² walled complex modelled on Beijing\'s Forbidden City, housing the Forbidden Purple City (royal residence), nine dynastic urns, and the Flag Tower. In the afternoon, visit the Thien Mu Pagoda — a seven-storey octagonal tower on the banks of the Perfume River, one of Vietnam\'s most iconic landmarks. Dinner at a restaurant serving Hue royal cuisine — bun bo Hue, banh khoai, and com hen.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Hue'
+  },
+  {
+    day: 5,
+    title: 'Hue to Hoi An — The Lantern City',
+    description:
+    'After breakfast, drive approximately 120 km to Hoi An via the spectacular Hai Van Pass — a mountain pass offering panoramic views of Da Nang Bay and the South China Sea. Stop at the Marble Mountains — five marble and limestone hills containing caves, tunnels, and Buddhist sanctuaries. Arrive in Hoi An — a perfectly preserved 15th-century trading port and UNESCO World Heritage Site. Check in and explore the Ancient Town on foot: the iconic Japanese Covered Bridge (1593), the Phuc Kien Assembly Hall, the Old House of Tan Ky, and the colourful lantern-lit streets. In the evening, join a lantern-making workshop and release your handmade lantern into the Thu Bon River — a magical Hoi An tradition.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Hoi An'
+  },
+  {
+    day: 6,
+    title: 'Hoi An to Ho Chi Minh City — The Dynamic South',
+    description:
+    'After breakfast, take a morning cooking class in Hoi An — visit the local market with your chef, select fresh ingredients, and learn to prepare classic Vietnamese dishes including pho, fresh spring rolls, and Vietnamese crepes. Transfer to Da Nang Airport for a domestic flight to Ho Chi Minh City (Saigon) — Vietnam\'s largest city and economic powerhouse. Check in and explore the city\'s French colonial landmarks: the Notre-Dame Cathedral Basilica of Saigon, the Central Post Office (designed by Gustave Eiffel), and the Reunification Palace. In the evening, explore the Ben Thanh Market for street food and souvenirs, and the vibrant Bui Vien Walking Street for nightlife.',
+    meals: 'Breakfast & Lunch (cooking class)',
+    accommodation: '3-Star Hotel, Ho Chi Minh City'
+  },
+  {
+    day: 7,
+    title: 'Cu Chi Tunnels & Departure',
+    description:
+    'After breakfast, drive 70 km to the Cu Chi Tunnels — an extraordinary underground network of over 250 km of tunnels used by Viet Cong guerrillas during the Vietnam War. Crawl through the narrow tunnels, see the ingenious booby traps, and understand the remarkable resilience of the Vietnamese people. Return to Ho Chi Minh City for a final lunch of Vietnamese cuisine. Transfer to Tan Son Nhat International Airport for your departure flight. As you leave Vietnam, you carry with you the taste of pho, the glow of Hoi An lanterns, and the profound beauty of a country that has transformed itself from the ashes of war into one of Asia\'s most vibrant destinations.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Mekong Delta day trip from Ho Chi Minh City',
+  'Motorbiking tour of Hanoi Old Quarter',
+  'Sapa trekking extension (2 additional days)',
+  'Hoi An bicycle tour through rice paddies',
+  'Vietnamese cooking class in Hanoi',
+  'Phong Nha caves extension from Hue'],
+
+  bestTimeToVisit:
+  'February to April for the best weather across all regions. November–January is good for the south. May–October is monsoon season (varies by region — north is wet in summer, south in autumn).',
+  thingsToCarry: [
+  'Light, breathable clothing',
+  'Modest clothing for temple and pagoda visits',
+  'Comfortable walking shoes',
+  'Sunscreen and insect repellent',
+  'Valid passport (minimum 6 months validity)',
+  'Vietnam e-Visa (apply online before departure)',
+  'Cash in Vietnamese Dong (VND)',
+  'Small backpack for day trips'],
+
+  relatedSlugs: ['thailand', 'bali', 'singapore']
+},
+
+{
+  slug: 'singapore',
+  destination: 'Singapore',
+  packageName: 'Lion City Luxury Sojourn',
+  tagline: 'Where Cultures Converge in Splendour',
+  duration: '4 Days / 3 Nights',
+  durationNights: '3 Nights',
+  price: '₹58,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1959877df-1783683715178.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1959877df-1783683715178.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Singapore is the world\'s most efficient city-state — a gleaming metropolis where futuristic architecture meets colonial heritage, where hawker centres serve Michelin-starred street food, and where a tropical rainforest exists in the heart of the city. The Lion City Luxury Sojourn is a 4-day immersion into Singapore\'s many worlds: the iconic Marina Bay waterfront, the lush Gardens by the Bay, the multicultural neighbourhoods of Chinatown and Little India, and the resort paradise of Sentosa Island.',
+  destinationsCovered: ['Marina Bay', 'Orchard Road', 'Sentosa Island', 'Chinatown', 'Little India'],
+  highlights: [
+  'Gardens by the Bay — Supertree Grove and Cloud Forest Dome',
+  'Marina Bay Sands SkyPark Observation Deck',
+  'Sentosa Island — Universal Studios Singapore',
+  'Singapore Zoo or Night Safari',
+  'Chinatown and Little India heritage walks',
+  'Clarke Quay riverside dining and nightlife',
+  'Singapore Cable Car from Mount Faber to Sentosa'],
+
+  inclusions: [
+  'Accommodation for 3 nights in a 4-star hotel, Singapore',
+  'Daily breakfast',
+  'Singapore Changi Airport pick-up and drop',
+  'Gardens by the Bay (Flower Dome + Cloud Forest) tickets',
+  'Marina Bay Sands SkyPark Observation Deck ticket',
+  'Sentosa Island cable car ticket',
+  'Singapore city tour by private vehicle (half day)',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare (India to Singapore return)',
+  'Singapore Tourist Visa (if applicable)',
+  'Universal Studios Singapore tickets (SGD 83/person)',
+  'Singapore Zoo / Night Safari tickets',
+  'Lunch and dinner',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance'],
+
+  hotelCategory: '4-Star Hotel',
+  transportation: 'Private AC Vehicle + MRT (Metro)',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Singapore — The Lion City Welcomes You',
+    description:
+    'Arrive at Singapore Changi Airport — consistently rated the world\'s best airport, with its indoor waterfall, butterfly garden, and the spectacular Jewel Changi shopping complex. Transfer to your 4-star hotel in the Marina Bay area. After freshening up, take a stroll along the Marina Bay waterfront promenade — the iconic skyline of Marina Bay Sands, the Esplanade (Theatres on the Bay), and the Merlion statue are all within walking distance. In the evening, visit Gardens by the Bay for the spectacular Garden Rhapsody light and sound show at the Supertree Grove — 18-storey tree-like structures that come alive with music and light after dark. Dinner at the Satay by the Bay hawker centre for authentic Singaporean satay.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Marina Bay'
+  },
+  {
+    day: 2,
+    title: 'Marina Bay & Gardens by the Bay — Icons of Singapore',
+    description:
+    'After breakfast, begin the day at Gardens by the Bay — Singapore\'s most visited attraction. Explore the Cloud Forest Dome, a 35-metre indoor mountain shrouded in mist and covered in tropical plants, and the Flower Dome, the world\'s largest glass greenhouse housing plants from five Mediterranean-climate regions. Ascend the Marina Bay Sands SkyPark Observation Deck (57th floor) for a 360-degree panorama of Singapore\'s skyline, the Strait of Johor, and the Indonesian islands. In the afternoon, explore the Civic District — the colonial heart of Singapore — visiting the National Museum, the Asian Civilisations Museum, and the Padang. In the evening, take a bumboat (river taxi) along the Singapore River from Clarke Quay to Boat Quay for dinner at a riverside restaurant.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Marina Bay'
+  },
+  {
+    day: 3,
+    title: 'Sentosa Island & Cultural Neighbourhoods',
+    description:
+    'After breakfast, take the Singapore Cable Car from Mount Faber to Sentosa Island — a 4 km² resort island connected to the mainland by a causeway. Spend the morning at Universal Studios Singapore — Southeast Asia\'s only Universal Studios theme park, with 28 rides and attractions across 7 themed zones including Hollywood, New York, Sci-Fi City, Ancient Egypt, The Lost World, Far Far Away, and Madagascar. In the afternoon, explore Sentosa\'s beaches — Palawan Beach (the southernmost point of continental Asia), Siloso Beach, and Tanjong Beach. Return to the mainland and explore Chinatown for dinner — the Maxwell Food Centre is a legendary hawker centre where you can try Hainanese chicken rice, char kway teow, and laksa.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Marina Bay'
+  },
+  {
+    day: 4,
+    title: 'Little India, Orchard Road & Departure',
+    description:
+    'After breakfast, check out and explore Little India — Singapore\'s most vibrant and colourful neighbourhood, centred around Serangoon Road. Visit the Sri Veeramakaliamman Temple, the Tekka Centre wet market, and the colourful shophouses of Kampong Glam (the Malay Quarter), including the golden-domed Sultan Mosque. Continue to Orchard Road — Singapore\'s famous 2.2 km shopping boulevard lined with luxury malls, department stores, and international brands. Enjoy a final lunch at a hawker centre (own cost) before transferring to Changi Airport for your departure flight. Singapore\'s efficiency means even the airport farewell is a pleasure.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Universal Studios Singapore (SGD 83/person)',
+  'Singapore Zoo (SGD 48/person)',
+  'Night Safari (SGD 55/person)',
+  'S.E.A. Aquarium on Sentosa (SGD 41/person)',
+  'Singapore Flyer (giant observation wheel, SGD 33/person)',
+  'Jurong Bird Park (SGD 30/person)'],
+
+  bestTimeToVisit:
+  'Singapore is a year-round destination with a tropical climate (26–32°C). February–April is slightly drier. Avoid November–January (northeast monsoon, heavier rain). Chinese New Year (January/February) is a spectacular time to visit.',
+  thingsToCarry: [
+  'Light, breathable clothing (Singapore is hot and humid)',
+  'Compact umbrella or rain poncho (sudden showers are common)',
+  'Comfortable walking shoes',
+  'Sunscreen SPF 50+',
+  'Valid passport (minimum 6 months validity)',
+  'Credit/debit card (widely accepted)',
+  'Cash in Singapore Dollars (SGD)'],
+
+  relatedSlugs: ['singapore-malaysia', 'dubai', 'thailand']
+},
+
+{
+  slug: 'singapore-malaysia',
+  destination: 'Singapore–Malaysia',
+  packageName: 'Twin Kingdoms Grand Tour',
+  tagline: 'Two Nations, One Unforgettable Journey',
+  duration: '7 Days / 6 Nights',
+  durationNights: '6 Nights',
+  price: '₹65,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1a6a04c9f-1773131007599.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1a6a04c9f-1773131007599.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'The Twin Kingdoms Grand Tour combines the best of two extraordinary Southeast Asian nations in one seamless 7-day journey. Begin in Singapore — the gleaming Lion City of futuristic architecture and world-class food — then cross the causeway into Malaysia for the colonial grandeur of Kuala Lumpur, the island paradise of Langkawi, and the UNESCO-listed heritage city of Penang. This package is designed for travellers who want maximum diversity: two countries, multiple cities, and a lifetime of memories.',
+  destinationsCovered: ['Singapore', 'Kuala Lumpur', 'Genting Highlands', 'Langkawi', 'Penang'],
+  highlights: [
+  'Petronas Twin Towers observation deck — world\'s tallest twin towers',
+  'Langkawi Cable Car to Mat Cincang Peak (708 m)',
+  'Penang George Town heritage walk — UNESCO World Heritage',
+  'Batu Caves — 272-step climb to a Hindu temple inside a limestone cave',
+  'Singapore Gardens by the Bay and Marina Bay Sands SkyPark',
+  'Genting Highlands — Malaysia\'s mountain resort and theme park',
+  'Langkawi Island hopping — Dayang Bunting, Beras Basah'],
+
+  inclusions: [
+  'Accommodation for 6 nights (2N Singapore + 2N Kuala Lumpur + 1N Langkawi + 1N Penang)',
+  'Daily breakfast',
+  'Singapore Changi Airport pick-up',
+  'Penang Airport drop',
+  'All inter-city transfers by private vehicle or domestic flight',
+  'Gardens by the Bay tickets (Singapore)',
+  'Petronas Twin Towers observation deck ticket',
+  'Batu Caves visit',
+  'Langkawi Cable Car ticket',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare',
+  'Singapore and Malaysia Tourist Visas (if applicable)',
+  'Genting Highlands theme park tickets',
+  'Lunch and dinner',
+  'Personal expenses, shopping, and tips',
+  'Travel insurance'],
+
+  hotelCategory: '3-Star to 4-Star Hotels',
+  transportation: 'Private AC Vehicle + Domestic Flights',
+  mealPlan: 'Breakfast Only (CP)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Singapore — Gateway to Southeast Asia',
+    description:
+    'Arrive at Singapore Changi Airport and transfer to your hotel. Spend the afternoon exploring the iconic Marina Bay waterfront — the Merlion statue, the Esplanade, and the spectacular view of Marina Bay Sands. In the evening, visit Gardens by the Bay for the Garden Rhapsody light show at the Supertree Grove. Dinner at the Clarke Quay riverside dining precinct — choose from Singaporean, Chinese, Indian, or international cuisine.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Singapore'
+  },
+  {
+    day: 2,
+    title: 'Singapore Highlights — Sentosa & Cultural Quarters',
+    description:
+    'After breakfast, take the Singapore Cable Car to Sentosa Island for a morning of fun at Universal Studios Singapore (own cost) or the beaches. In the afternoon, explore Chinatown and Little India — Singapore\'s most atmospheric neighbourhoods. Visit the Sri Mariamman Temple (Singapore\'s oldest Hindu temple), the Buddha Tooth Relic Temple, and the colourful shophouses of Kampong Glam. Dinner at a hawker centre — try chicken rice, laksa, and chilli crab.',
+    meals: 'Breakfast',
+    accommodation: '4-Star Hotel, Singapore'
+  },
+  {
+    day: 3,
+    title: 'Singapore to Kuala Lumpur — The Malaysian Capital',
+    description:
+    'After breakfast, transfer to Woodlands Checkpoint and cross into Malaysia by private vehicle (approximately 5 hours to Kuala Lumpur). Arrive in KL and check in to your hotel. In the afternoon, visit the iconic Petronas Twin Towers — the world\'s tallest twin towers at 452 metres — and ascend to the observation deck on the 86th floor for panoramic city views. Explore the KLCC Park and the Suria KLCC shopping mall at the base of the towers. In the evening, visit Jalan Alor — KL\'s most famous street food destination — for a feast of Malaysian Chinese cuisine: char kway teow, BBQ chicken wings, and durian.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Kuala Lumpur'
+  },
+  {
+    day: 4,
+    title: 'Kuala Lumpur Sightseeing — Caves, Mosques & Markets',
+    description:
+    'After breakfast, drive to Batu Caves (13 km north of KL) — a series of limestone caves and cave temples dedicated to the Hindu deity Murugan. Climb the 272 rainbow-coloured steps to the main Temple Cave, guarded by a 42.7-metre golden statue of Lord Murugan — one of the tallest statues in the world. Return to KL and visit the National Mosque (Masjid Negara) and the Sultan Abdul Samad Building — a stunning Moorish-Gothic colonial building facing Merdeka Square. Explore Petaling Street (Chinatown) for bargain shopping and street food. In the afternoon, drive to Genting Highlands (2,000 m) for a cable car ride and the cool mountain air.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Kuala Lumpur'
+  },
+  {
+    day: 5,
+    title: 'Kuala Lumpur to Langkawi — Island Paradise',
+    description:
+    'After breakfast, transfer to KL International Airport for a domestic flight to Langkawi — Malaysia\'s most celebrated island destination, a duty-free archipelago of 99 islands in the Andaman Sea. Check in to your beachside resort. In the afternoon, take the Langkawi Cable Car to the summit of Mount Mat Cincang (708 m) — the second oldest rainforest in the world — for panoramic views of the island, the Andaman Sea, and the Thai islands on the horizon. Walk across the Langkawi Sky Bridge — a curved pedestrian bridge suspended 100 metres above the rainforest canopy. Sunset at Pantai Cenang Beach — Langkawi\'s most popular beach strip.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Resort, Langkawi'
+  },
+  {
+    day: 6,
+    title: 'Langkawi Island Hopping & Transfer to Penang',
+    description:
+    'After breakfast, embark on a Langkawi island hopping tour by speedboat. Visit Dayang Bunting (Island of the Pregnant Maiden) — a freshwater lake inside a limestone island, surrounded by jungle and inhabited by monkeys. Snorkel at Pulau Beras Basah (Rice Grain Island) — a tiny island with crystal-clear waters and a white sand beach. Visit the Eagle Square (Dataran Lang) — a 12-metre sculpture of the Brahminy Kite eagle, the symbol of Langkawi. In the afternoon, take a ferry to Penang (approximately 2.5 hours) and check in to your hotel in George Town.',
+    meals: 'Breakfast',
+    accommodation: '3-Star Hotel, Penang'
+  },
+  {
+    day: 7,
+    title: 'Penang Heritage Walk & Departure',
+    description:
+    'After breakfast, explore George Town — a UNESCO World Heritage Site and one of Southeast Asia\'s most vibrant cultural cities. Walk through the historic core, admiring the colonial architecture, Chinese clan houses, Hindu temples, mosques, and street art murals that make Penang unique. Visit the Khoo Kongsi — a magnificent Chinese clan temple with ornate carvings and paintings. Explore the Penang Hill funicular railway for panoramic island views. Penang is also Malaysia\'s food capital — try char kway teow, assam laksa, nasi kandar, and cendol at the famous hawker stalls. Transfer to Penang International Airport for your departure flight.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Universal Studios Singapore (SGD 83/person)',
+  'Genting Highlands theme park (MYR 150/person)',
+  'Langkawi mangrove kayaking tour',
+  'Penang cooking class — Nyonya cuisine',
+  'Cameron Highlands tea plantation visit',
+  'Tioman Island snorkelling extension'],
+
+  bestTimeToVisit:
+  'December to February for the best weather across both countries. March–May is also excellent. Avoid November (northeast monsoon affects east coast Malaysia). Singapore is pleasant year-round.',
+  thingsToCarry: [
+  'Light, breathable clothing',
+  'Modest clothing for mosque visits',
+  'Swimwear for Langkawi beaches',
+  'Comfortable walking shoes',
+  'Valid passport (minimum 6 months validity)',
+  'Cash in Singapore Dollars (SGD) and Malaysian Ringgit (MYR)',
+  'Compact umbrella'],
+
+  relatedSlugs: ['singapore', 'thailand', 'bali']
+},
+
+{
+  slug: 'sri-lanka',
+  destination: 'Sri Lanka',
+  packageName: 'Pearl of the Indian Ocean Trail',
+  tagline: 'Ancient Kingdoms & Emerald Highlands',
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹38,000',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1af77342c-1783683714296.png",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'Sri Lanka — the teardrop-shaped island at the southern tip of India — is one of Asia\'s most rewarding travel destinations. The Pearl of the Indian Ocean Trail is a 6-day journey through the island\'s extraordinary diversity: the ancient rock fortress of Sigiriya, the sacred city of Kandy, the misty tea highlands of Ella, and the pristine beaches of the south coast. This package packs an extraordinary amount of history, culture, wildlife, and natural beauty into six days, making it one of the most value-packed international packages in our portfolio.',
+  destinationsCovered: ['Colombo', 'Sigiriya', 'Kandy', 'Nuwara Eliya', 'Ella', 'Mirissa'],
+  highlights: [
+  'Sigiriya Rock Fortress — UNESCO World Heritage, 5th-century citadel',
+  'Dambulla Cave Temple — 2,000-year-old Buddhist cave complex',
+  'Kandy Esala Perahera (if visiting in July–August) and Temple of the Tooth',
+  'Ella Rock trek and Nine Arch Bridge',
+  'Nuwara Eliya tea plantation and factory tour',
+  'Mirissa Beach whale watching (November–April)',
+  'Yala National Park leopard safari'],
+
+  inclusions: [
+  'Accommodation for 5 nights (1N Sigiriya + 1N Kandy + 1N Nuwara Eliya + 1N Ella + 1N Mirissa)',
+  'Daily breakfast and dinner',
+  'Colombo airport pick-up and drop',
+  'All transfers by private AC vehicle',
+  'Sigiriya Rock Fortress entry ticket',
+  'Dambulla Cave Temple entry',
+  'Kandy Temple of the Tooth entry',
+  'Tea factory tour in Nuwara Eliya',
+  'Experienced local guide throughout',
+  'All applicable taxes'],
+
+  exclusions: [
+  'International airfare (India to Colombo return)',
+  'Sri Lanka ETA (Electronic Travel Authorisation, approx. ₹1,500)',
+  'Yala National Park jeep safari (on direct payment)',
+  'Whale watching at Mirissa (on direct payment)',
+  'Lunch at restaurants',
+  'Personal expenses and tips',
+  'Travel insurance'],
+
+  hotelCategory: '3-Star Hotels & Boutique Guesthouses',
+  transportation: 'Private AC Vehicle',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Colombo — Pearl of the Indian Ocean',
+    description:
+    'Arrive at Bandaranaike International Airport, Colombo, and transfer directly to Sigiriya (approximately 4 hours). En route, stop at Dambulla Cave Temple — a UNESCO World Heritage Site comprising five cave temples carved into a massive granite outcrop, housing 153 Buddha statues and 2,100 sq metres of ancient murals dating back to the 1st century BC. Continue to Sigiriya and check in to your hotel. In the evening, explore the village around Sigiriya Rock and enjoy a traditional Sri Lankan dinner — rice and curry with coconut sambol, dhal, and papadum.',
+    meals: 'Dinner',
+    accommodation: '3-Star Hotel, Sigiriya'
+  },
+  {
+    day: 2,
+    title: 'Sigiriya Rock Fortress — The Lion\'s Rock',
+    description:
+    'Rise early for the ascent of Sigiriya Rock Fortress — one of the most extraordinary archaeological sites in Asia. The 200-metre granite monolith was transformed by King Kashyapa in the 5th century AD into a fortified palace complex. Climb the 1,200 steps to the summit, passing the famous Sigiriya Frescoes (ancient paintings of celestial maidens), the Mirror Wall (covered in 8th-century graffiti poetry), and the Lion\'s Paw terrace. At the summit, explore the ruins of the royal palace with panoramic views of the surrounding jungle and reservoirs. Descend and visit the water gardens and boulder gardens at the base. In the afternoon, visit a local spice garden for a demonstration of Sri Lanka\'s famous spices — cinnamon, cardamom, pepper, and cloves.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Sigiriya'
+  },
+  {
+    day: 3,
+    title: 'Sigiriya to Kandy — The Sacred City',
+    description:
+    'After breakfast, drive approximately 90 km to Kandy — Sri Lanka\'s cultural capital and the last kingdom of the ancient kings. Check in and visit the Temple of the Sacred Tooth Relic (Sri Dalada Maligawa) — the most sacred Buddhist temple in Sri Lanka, housing a tooth relic of the Buddha. The evening puja (offering ceremony) at the temple is a deeply moving experience. Explore the Kandy Lake and the surrounding streets. Visit the Royal Botanical Gardens at Peradeniya (6 km from Kandy) — 147 acres of manicured gardens with over 4,000 species of plants, including a spectacular avenue of royal palms. Dinner and overnight in Kandy.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Kandy'
+  },
+  {
+    day: 4,
+    title: 'Kandy to Nuwara Eliya — Tea Country',
+    description:
+    'After breakfast, drive approximately 75 km to Nuwara Eliya (1,868 m) — Sri Lanka\'s highest town, known as "Little England" for its colonial bungalows, manicured gardens, and cool climate. The drive through the central highlands is one of Sri Lanka\'s most scenic journeys, passing through tea estates, waterfalls, and misty mountain passes. Visit a working tea estate and factory for a guided tour of the tea-making process — from plucking to withering, rolling, fermenting, and drying. Taste freshly brewed Ceylon tea in the factory\'s tasting room. Explore Nuwara Eliya town — the colonial post office, the Grand Hotel, and the Victoria Park. Dinner and overnight in Nuwara Eliya.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Hotel, Nuwara Eliya'
+  },
+  {
+    day: 5,
+    title: 'Nuwara Eliya to Ella — Nine Arches & Mountain Trains',
+    description:
+    'After breakfast, board the famous Kandy-Ella train (the most scenic railway journey in Sri Lanka) or drive approximately 60 km to Ella — a small hill town surrounded by tea estates and dramatic mountain scenery. Check in and hike to the Nine Arch Bridge — a stunning colonial-era viaduct built entirely of brick and stone, best photographed when a train crosses it against the backdrop of green tea hills. In the afternoon, trek to Ella Rock (3 hours round trip) for panoramic views of the Ella Gap — a dramatic valley that opens towards the southern coast. Visit Little Adam\'s Peak for a shorter but equally rewarding sunset hike.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '3-Star Guesthouse, Ella'
+  },
+  {
+    day: 6,
+    title: 'Ella to Mirissa & Departure',
+    description:
+    'After breakfast, drive approximately 150 km to Mirissa — Sri Lanka\'s most beautiful beach destination on the south coast. Mirissa\'s crescent-shaped bay with its golden sand, turquoise water, and coconut palms is picture-perfect. If visiting between November and April, join a whale watching boat trip — the waters off Mirissa are one of the best places in the world to see blue whales, sperm whales, and spinner dolphins. Spend the afternoon on the beach before driving to Colombo (approximately 3 hours) for your departure flight. Sri Lanka will stay with you long after you leave — in the taste of its cinnamon, the echo of its temple bells, and the warmth of its people.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Yala National Park leopard safari (LKR 15,000/person)',
+  'Whale watching at Mirissa (LKR 5,000/person)',
+  'White-water rafting on Kelani River, Kitulgala',
+  'Horton Plains National Park and World\'s End trek',
+  'Colombo city tour (half day)',
+  'Surfing at Arugam Bay (east coast)'],
+
+  bestTimeToVisit:
+  'December to March for the west and south coasts (Mirissa, Colombo). April to September for the east coast. The Cultural Triangle (Sigiriya, Kandy) is pleasant year-round. Avoid May–June (southwest monsoon) for the south coast.',
+  thingsToCarry: [
+  'Light cotton clothing',
+  'Warm layer for Nuwara Eliya and Ella (cool evenings)',
+  'Comfortable trekking shoes for Sigiriya and Ella Rock',
+  'Sunscreen and insect repellent',
+  'Modest clothing for temple visits (shoulders and knees covered)',
+  'Valid passport (minimum 6 months validity)',
+  'Sri Lanka ETA (apply online before departure)',
+  'Cash in Sri Lankan Rupees (LKR)'],
+
+  relatedSlugs: ['maldives', 'bali', 'thailand']
+},
+
+{
+  slug: 'maldives',
+  destination: 'Maldives',
+  packageName: 'Azure Atoll Luxury Retreat',
+  tagline: 'Heaven on Water, Paradise on Earth',
+  duration: '5 Days / 4 Nights',
+  durationNights: '4 Nights',
+  price: '₹75,000',
+  heroImage: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
+  heroVideo: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
+  type: 'international',
+  whatsappNumber: WHATSAPP,
+  overview:
+  'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 5-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',
+  destinationsCovered: ['Malé', 'North Malé Atoll', 'South Malé Atoll'],
+  highlights: [
+  'Overwater bungalow experience with direct lagoon access',
+  'House reef snorkelling — sea turtles, manta rays, reef sharks',
+  'Sunset dolphin cruise in the Indian Ocean',
+  'Sandbank picnic on a deserted white sand island',
+  'Underwater restaurant dining experience',
+  'Bioluminescent beach walk at night',
+  'Scuba diving at world-class dive sites'],
+
+  inclusions: [
+  'Accommodation for 4 nights in a 4-star island resort (beach villa or water bungalow)',
+  'Daily breakfast and dinner (MAP)',
+  'Malé airport speedboat/seaplane transfer to resort',
+  'Sunset dolphin cruise (1.5 hours)',
+  'Sandbank excursion with snorkelling',
+  'House reef snorkelling equipment',
+  'Welcome drink and fruit basket on arrival',
+  'All applicable taxes and service charges'],
+
+  exclusions: [
+  'International airfare (India to Malé return)',
+  'Maldives Tourist Visa (free on arrival for Indian passport holders)',
+  'Scuba diving (on direct payment, USD 80–120/dive)',
+  'Lunch at resort restaurants',
+  'Personal expenses, spa treatments, and tips',
+  'Travel insurance',
+  'Water sports (jet ski, parasailing, windsurfing)'],
+
+  hotelCategory: '4-Star Island Resort',
+  transportation: 'Speedboat / Seaplane Transfer',
+  mealPlan: 'MAP (Breakfast + Dinner)',
+  itinerary: [
+  {
+    day: 1,
+    title: 'Arrival in Malé — Welcome to Paradise',
+    description:
+    'Arrive at Velana International Airport, Malé — the world\'s most geographically dispersed country. Be greeted by your resort representative and board a speedboat or seaplane for the transfer to your island resort. The seaplane transfer itself is one of the most spectacular experiences in travel — flying low over the atolls, you see the extraordinary geometry of coral reefs, turquoise lagoons, and tiny white sand islands from above. Arrive at your resort and check in to your beach villa or overwater bungalow. Spend the afternoon at leisure — snorkelling on the house reef, swimming in the lagoon, or simply lying in a hammock over the water. Welcome dinner at the resort\'s main restaurant.',
+    meals: 'Dinner',
+    accommodation: '4-Star Island Resort, Maldives'
+  },
+  {
+    day: 2,
+    title: 'House Reef Snorkelling & Sandbank Picnic',
+    description:
+    'After breakfast, don your snorkelling gear and explore the resort\'s house reef — a living coral garden teeming with marine life. The Maldives is home to over 1,000 species of fish, 200 species of coral, and 5 species of sea turtle. Snorkel alongside green and hawksbill turtles, blacktip reef sharks, moray eels, and schools of colourful reef fish. In the afternoon, board a dhoni (traditional Maldivian boat) for a sandbank excursion — a deserted white sand island barely above sea level, surrounded by nothing but turquoise water and sky. Enjoy a private picnic on the sandbank with fresh tropical fruits, sandwiches, and cold drinks. Swim and snorkel around the sandbank before returning to the resort for sunset.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '4-Star Island Resort, Maldives'
+  },
+  {
+    day: 3,
+    title: 'Scuba Diving & Underwater Wonders',
+    description:
+    'After breakfast, spend the morning on a scuba diving excursion (optional, on direct payment) to one of the Maldives\' world-class dive sites. The Maldives offers some of the best diving in the world — drift dives through channels with manta rays, night dives with bioluminescent plankton, and wall dives alongside whale sharks. Non-divers can enjoy a glass-bottom boat tour over the coral gardens, or a guided snorkelling trip to a nearby reef. In the afternoon, relax at the resort\'s infinity pool or indulge in a traditional Maldivian massage at the spa. As evening falls, take a sunset cruise on a traditional dhoni, watching the sun melt into the Indian Ocean in a blaze of orange and gold.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '4-Star Island Resort, Maldives'
+  },
+  {
+    day: 4,
+    title: 'Dolphin Cruise & Bioluminescent Night',
+    description:
+    'After breakfast, spend the morning at leisure — kayaking around the lagoon, paddleboarding, or reading in your overwater bungalow with the Indian Ocean at your feet. In the afternoon, embark on a sunset dolphin cruise — the waters around the Maldives are home to large pods of spinner dolphins that leap and spin alongside the boat in the golden evening light. Return to the resort for dinner. After dinner, walk along the beach in the dark to witness one of nature\'s most magical phenomena — bioluminescent plankton lighting up the shoreline with an ethereal blue glow with every wave and footstep. This is a once-in-a-lifetime experience that few travellers ever witness.',
+    meals: 'Breakfast & Dinner',
+    accommodation: '4-Star Island Resort, Maldives'
+  },
+  {
+    day: 5,
+    title: 'Final Morning in Paradise & Departure',
+    description:
+    'Enjoy a final breakfast at the resort — perhaps on your overwater bungalow deck as the morning sun turns the lagoon from silver to turquoise. Spend the last morning snorkelling, swimming, or simply sitting on the jetty watching the fish below. Check out and board your speedboat or seaplane for the transfer back to Malé International Airport. As you fly over the atolls one last time, you understand why the Maldives is called heaven on earth — and why everyone who visits vows to return.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
+  }],
+
+  optionalActivities: [
+  'Scuba diving (USD 80–120/dive)',
+  'Parasailing (USD 60/person)',
+  'Jet skiing (USD 50/30 min)',
+  'Windsurfing lessons (USD 40/hour)',
+  'Underwater restaurant dinner (USD 150–200/person)',
+  'Fishing trip at sunset (USD 40/person)'],
+
+  bestTimeToVisit:
+  'November to April (dry season) for the best visibility, calm seas, and ideal snorkelling/diving conditions. May–October (wet season) brings more rain but fewer crowds and lower prices. The Maldives is a year-round destination.',
+  thingsToCarry: [
+  'Light, breathable clothing and swimwear',
+  'Reef-safe sunscreen (regular sunscreen damages coral)',
+  'UV-protection rash guard for snorkelling',
+  'Waterproof sandals',
+  'Underwater camera or GoPro',
+  'Valid passport (minimum 6 months validity)',
+  'Cash in USD (widely accepted) or credit card',
+  'Seasickness medication if prone to motion sickness'],
+
+  relatedSlugs: ['dubai', 'sri-lanka', 'bali']
+}];
+
+
+export function getPackageBySlug(slug: string): PackageData | undefined {
+  return packages.find((p) => p.slug === slug);
+}
+
+export function getRelatedPackages(slugs: string[]): PackageData[] {
+  return slugs.map((s) => packages.find((p) => p.slug === s)).filter(Boolean) as PackageData[];
+}

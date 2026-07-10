@@ -6,6 +6,7 @@ import Link from 'next/link';
 const intlDestinations = [
 {
   name: 'Dubai',
+  slug: 'dubai',
   tagline: 'City of Gold',
   video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
   poster: "https://images.unsplash.com/photo-1617455156045-47312ebf06a1?w=800&q=80",
@@ -16,6 +17,7 @@ const intlDestinations = [
 },
 {
   name: 'Thailand',
+  slug: 'thailand',
   tagline: 'Land of Smiles',
   video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1648982205053-b446f6ded2d2?w=800&q=80",
@@ -26,6 +28,7 @@ const intlDestinations = [
 },
 {
   name: 'Bali',
+  slug: 'bali',
   tagline: 'Island of the Gods',
   video: "https://images.unsplash.com/photo-1711238386729-4f98671b9dbc",
   poster: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
@@ -36,6 +39,7 @@ const intlDestinations = [
 },
 {
   name: 'Vietnam',
+  slug: 'vietnam',
   tagline: 'Timeless Beauty',
   video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1579980228997-a6c603a18e4f?w=800&q=80",
@@ -46,6 +50,7 @@ const intlDestinations = [
 },
 {
   name: 'Singapore',
+  slug: 'singapore',
   tagline: 'Garden City',
   video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
   poster: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
@@ -56,6 +61,7 @@ const intlDestinations = [
 },
 {
   name: 'Singapore–Malaysia',
+  slug: 'singapore-malaysia',
   tagline: 'Twin Destinations',
   video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1703254438528-d4a715fa546c?w=800&q=80",
@@ -66,6 +72,7 @@ const intlDestinations = [
 },
 {
   name: 'Sri Lanka',
+  slug: 'sri-lanka',
   tagline: 'Pearl of the Indian Ocean',
   video: "https://images.unsplash.com/photo-1706460559180-2de3cfee882b",
   poster: "https://images.unsplash.com/photo-1711238386729-4f98671b9dbc",
@@ -76,6 +83,7 @@ const intlDestinations = [
 },
 {
   name: 'Maldives',
+  slug: 'maldives',
   tagline: 'Heaven on Water',
   video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1599826602562-e083aa659710?w=800&q=80",
@@ -145,7 +153,7 @@ function IntlCard({ dest, index, visible }: {dest: typeof intlDestinations[0];in
             )}
           </div>
           <Link
-            href="/tour-packages"
+            href={`/packages/${dest.slug}`}
             className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0"
             style={{ transition: 'opacity 0.35s cubic-bezier(0.23,1,0.32,1), transform 0.35s cubic-bezier(0.23,1,0.32,1), background-color 0.2s ease, color 0.2s ease', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}>
             
