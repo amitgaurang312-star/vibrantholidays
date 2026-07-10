@@ -6,118 +6,90 @@ import Link from 'next/link';
 interface Review {
   id: string;
   name: string;
-  location: string;
   avatar: string;
   rating: number;
   date: string;
-  destination: string;
   review: string;
-  tag: string;
+  photos?: string[];
 }
 
 const reviews: Review[] = [
   {
     id: 'r1',
-    name: 'Priya Sharma',
-    location: 'Pune, Maharashtra',
-    avatar: 'PS',
+    name: 'VRUSHALI SHITOLE',
+    avatar: 'VS',
     rating: 5,
-    date: 'March 2025',
-    destination: 'Kashmir',
-    review: 'Absolutely magical experience! The houseboat on Dal Lake was beyond our expectations. Vibrant Holidays took care of every single detail — from airport pickup to the last day. Our family trip to Kashmir was truly a dream come true.',
-    tag: 'Family Tour',
+    date: '2 days ago',
+    review: 'Excellent arrangements safe journey with Vibrant Holidays',
   },
   {
     id: 'r2',
-    name: 'Rahul & Sneha Mehta',
-    location: 'Mumbai, Maharashtra',
-    avatar: 'RM',
+    name: 'Sangita Navghare',
+    avatar: 'SN',
     rating: 5,
-    date: 'February 2025',
-    destination: 'Maldives',
-    review: 'Our honeymoon in Maldives was flawless. The water villa, the sunset cruise, the candlelit dinner on the beach — everything was perfectly arranged. Vibrant Holidays made our honeymoon truly unforgettable. Highly recommended!',
-    tag: 'Honeymoon',
+    date: '2 days ago',
+    review: 'Very good trip arrangement done by kedar for our Thailand, Bangkok, phuket, trip. We enjoyed the trip thoroughly, all coordination and booking done perfect. Thankyou',
+    photos: [
+      'https://lh3.googleusercontent.com/p/AF1QipN_Thailand_1=w400-h300-k-no',
+    ],
   },
   {
     id: 'r3',
-    name: 'Amit Joshi',
-    location: 'Nashik, Maharashtra',
-    avatar: 'AJ',
+    name: 'Kirti Kadam',
+    avatar: 'KK',
     rating: 5,
-    date: 'January 2025',
-    destination: 'Dubai',
-    review: 'First international trip with family and it was perfect! The team guided us through everything — visa, flights, hotels. The desert safari was the highlight. Will definitely book again for Thailand!',
-    tag: 'Family Tour',
+    date: '2 days ago',
+    review: 'I have traveled with Vibrant Holidays multiple times with my friends and family, both domestic and international. Every trip has been well planned, with comfortable hotels, clean vehicles, and courteous drivers. Mr. Kedar and his team were always available and responsive throughout the journey.',
   },
   {
     id: 'r4',
-    name: 'Kavita Desai',
-    location: 'Nagpur, Maharashtra',
-    avatar: 'KD',
+    name: 'Rajkumar Dhas',
+    avatar: 'RD',
     rating: 5,
-    date: 'December 2024',
-    destination: 'Bali',
-    review: 'Bali with Vibrant Holidays was an experience of a lifetime. The itinerary was perfectly balanced — adventure, culture, and relaxation. The team was always reachable and resolved every query instantly.',
-    tag: 'Adventure',
+    date: '2 days ago',
+    review: 'Virant holidays has given very excellent service through out our journey. The Hotels booked for tour were 4 star categories with reasonable tariff. The vehicle provided (Tempo Traveler) was very good condition and driver was very cooperative and helpful throughout the journey.',
   },
   {
     id: 'r5',
-    name: 'Suresh & Meena Patil',
-    location: 'Kolhapur, Maharashtra',
-    avatar: 'SP',
+    name: 'Babita Rai',
+    avatar: 'BR',
     rating: 5,
-    date: 'November 2024',
-    destination: 'Kerala',
-    review: 'The Kerala backwaters trip was serene and beautiful. The houseboat was luxurious and the food was amazing. Vibrant Holidays arranged everything seamlessly. We felt completely relaxed throughout the trip.',
-    tag: 'Honeymoon',
+    date: '3 days ago',
+    review: 'Wonderful experience with Vibrant Holidays, End to End planning of the whole trip done wonderfully by Mr. Kadam. A memorable experience in South India Tour. Would definitely recommend using their service',
   },
   {
     id: 'r6',
-    name: 'Nikhil Kulkarni',
-    location: 'Aurangabad, Maharashtra',
-    avatar: 'NK',
+    name: 'Saylee Navghare',
+    avatar: 'SN',
     rating: 5,
-    date: 'October 2024',
-    destination: 'Thailand',
-    review: 'Thailand group tour was fantastic! Met amazing people, visited incredible places. The team at Vibrant Holidays was professional and friendly. Phi Phi Island was breathtaking. Already planning my next trip with them!',
-    tag: 'Group Tour',
+    date: '3 days ago',
+    review: 'Fantastic planning and execution of trip done by Mr. Kedar Kadam. Vibrant Holidays has planned perfect itinerary for our family and friends. On time response and reasonable prices.',
   },
   {
     id: 'r7',
-    name: 'Pooja Wagh',
-    location: 'Pune, Maharashtra',
-    avatar: 'PW',
+    name: 'Snehal Wankhade',
+    avatar: 'SW',
     rating: 5,
-    date: 'September 2024',
-    destination: 'Singapore',
-    review: 'Singapore trip was well-organised and value for money. Gardens by the Bay, Universal Studios, Marina Bay Sands — all covered perfectly. The visa process was handled smoothly by the team. 5 stars!',
-    tag: 'Family Tour',
+    date: '1 week ago',
+    review: 'Good planning and support from vibrant holidays team, thank you for arranging such a beautiful trip.',
   },
   {
     id: 'r8',
-    name: 'Deepak Sawant',
-    location: 'Satara, Maharashtra',
-    avatar: 'DS',
+    name: 'Sahebrao Kadam',
+    avatar: 'SK',
     rating: 5,
-    date: 'August 2024',
-    destination: 'Himachal Pradesh',
-    review: 'The Himachal adventure trek was thrilling! Rohtang Pass, Triund trek, river rafting — all in one trip. Vibrant Holidays planned it perfectly. The camping under the stars was the best part. Highly recommended for adventure lovers!',
-    tag: 'Adventure',
+    date: '2 days ago',
+    review: 'Vibrant Holidays Pune, started by a brilliant young man...\n1) We did our first trip with Vibrant Holidays to Dubai, Abu Dhabi. I was a little nervous. But the team of Vibrant Holidays proved our nervousness wrong and made our trip enjoyable and wonderful. The hotel, the car, everything was so well planned. That\'s when we decided to do our next trip with Vibrant Holidays.\n2) We decided to do our second trip to Kashmir. As usual, the team of Vibrant Holidays made our trip memorable by planning and arranging it wonderfully. While enjoying the trip, we met many tourists. Talking to them, listening to the tour package they got, we realized that Vibrant Holidays has offered us a very reasonable package.\nI want to tell people...do a tour with Vibrant Holidays once, you will feel the difference...',
   },
   {
     id: 'r9',
-    name: 'Anita & Ravi Bhosale',
-    location: 'Solapur, Maharashtra',
-    avatar: 'AB',
+    name: 'Ashwini Wakhare',
+    avatar: 'AW',
     rating: 5,
-    date: 'July 2024',
-    destination: 'Goa',
-    review: 'Quick Goa weekend trip was perfectly planned. Great hotel, beach activities, and the Dudhsagar Falls visit was spectacular. The team was responsive and helpful throughout. Will definitely book again!',
-    tag: 'Weekend Trip',
+    date: '2 days ago',
+    review: 'Khup ch bhannat zali trip…Good experience good organisation vibrant holiday…all over Dhamaal trip',
   },
 ];
-
-const tags = ['All', 'Family Tour', 'Honeymoon', 'Adventure', 'Group Tour', 'Weekend Trip'];
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -131,8 +103,18 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+function GoogleIcon() {
+  return (
+    <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
 export default function ReviewsGrid() {
-  const [activeTag, setActiveTag] = useState('All');
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -144,8 +126,6 @@ export default function ReviewsGrid() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const filtered = activeTag === 'All' ? reviews : reviews.filter((r) => r.tag === activeTag);
 
   return (
     <section ref={sectionRef} className="relative py-16 lg:py-24 overflow-hidden" style={{ background: 'linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 100%)' }}>
@@ -172,13 +152,16 @@ export default function ReviewsGrid() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm">Based on 100+ reviews</p>
+                <p className="text-muted-foreground text-sm">Based on 9 Google reviews</p>
               </div>
             </div>
-            <p className="text-foreground font-semibold text-lg">Rated Excellent by Our Travellers</p>
+            <div className="flex items-center gap-2 mt-1">
+              <GoogleIcon />
+              <p className="text-foreground font-semibold text-lg">Rated Excellent on Google</p>
+            </div>
           </div>
           <div className="flex gap-8 text-center">
-            {[['100%', 'Satisfaction'], ['100+', 'Happy Travellers'], ['50+', 'Destinations']].map(([val, label]) => (
+            {[['4.9★', 'Google Rating'], ['9', 'Verified Reviews'], ['100%', 'Satisfaction']].map(([val, label]) => (
               <div key={label}>
                 <p className="font-display text-2xl font-bold text-primary">{val}</p>
                 <p className="text-muted-foreground text-xs mt-0.5">{label}</p>
@@ -187,27 +170,9 @@ export default function ReviewsGrid() {
           </div>
         </div>
 
-        {/* Filter Tags */}
-        <div className={`flex flex-wrap gap-2 mb-10 reveal-up ${visible ? 'active' : ''}`}>
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeTag === tag
-                  ? 'text-white shadow-teal'
-                  : 'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'
-              }`}
-              style={activeTag === tag ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-
         {/* Reviews Grid — masonry-style */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
-          {filtered.map((r, i) => (
+          {reviews.map((r, i) => (
             <div
               key={r.id}
               className={`reveal-scale ${visible ? 'active' : ''} break-inside-avoid bg-white border border-border/60 rounded-2xl p-6 card-hover`}
@@ -221,29 +186,22 @@ export default function ReviewsGrid() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-sm">{r.name}</p>
-                    <p className="text-muted-foreground text-xs">{r.location}</p>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      <GoogleIcon />
+                      <p className="text-muted-foreground text-xs">Google Review</p>
+                    </div>
                   </div>
                 </div>
-                <span className="text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0" style={{ background: 'rgba(11,138,143,0.10)', color: '#0B8A8F' }}>
-                  {r.destination}
-                </span>
+                <span className="text-xs text-muted-foreground flex-shrink-0">{r.date}</span>
               </div>
 
-              {/* Stars + Date */}
-              <div className="flex items-center justify-between mb-3">
+              {/* Stars */}
+              <div className="mb-3">
                 <StarRating rating={r.rating} />
-                <span className="text-xs text-muted-foreground">{r.date}</span>
               </div>
 
               {/* Review Text */}
-              <p className="text-muted-foreground text-sm leading-relaxed">{r.review}</p>
-
-              {/* Tag */}
-              <div className="mt-4 pt-3 border-t border-border/60">
-                <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(216,154,36,0.10)', color: '#D89A24' }}>
-                  {r.tag}
-                </span>
-              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">{r.review}</p>
             </div>
           ))}
         </div>
@@ -258,7 +216,7 @@ export default function ReviewsGrid() {
             Ready to Create Your Own Story?
           </h3>
           <p className="text-white/80 mb-6 max-w-lg mx-auto relative z-10">
-            Join 100+ happy travellers who trusted Vibrant Holidays for their dream vacation.
+            Join our happy travellers who trusted Vibrant Holidays for their dream vacation.
           </p>
           <Link
             href="/tour-packages"
