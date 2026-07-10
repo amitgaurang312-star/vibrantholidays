@@ -1,0 +1,165 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'class',
+  theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    extend: {
+      colors: {
+        background: { DEFAULT: 'var(--background)' },
+        foreground: { DEFAULT: 'var(--foreground)' },
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        border: { DEFAULT: 'var(--border)' },
+        input: { DEFAULT: 'var(--input)' },
+        ring: { DEFAULT: 'var(--ring)' },
+        ocean: {
+          50: '#E8F7F8',
+          100: '#C5EBEC',
+          200: '#8DD5D7',
+          300: '#4BBFC2',
+          400: '#0ABBC2',
+          500: '#0B8A8F',
+          600: '#096E73',
+          700: '#075558',
+          800: '#053D40',
+          900: '#0D1B2A',
+        },
+        gold: {
+          50: '#FEF9EC',
+          100: '#FDF0C8',
+          200: '#FAE08F',
+          300: '#F0BC4A',
+          400: '#D89A24',
+          500: '#C8860E',
+          600: '#A86C08',
+          700: '#7A4D05',
+        },
+      },
+      borderRadius: {
+        DEFAULT: 'var(--radius)',
+        sm: 'calc(var(--radius) * 0.5)',
+        md: 'var(--radius)',
+        lg: 'calc(var(--radius) * 1.5)',
+        xl: 'calc(var(--radius) * 2)',
+        '2xl': 'calc(var(--radius) * 2.5)',
+        '3xl': 'calc(var(--radius) * 3)',
+        '4xl': 'calc(var(--radius) * 4)',
+      },
+      fontFamily: {
+        sans: ['var(--font-dm-sans)', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'serif'],
+      },
+      animation: {
+        'float-pulse': 'float-pulse 3.5s ease-in-out infinite',
+        'airplane-fly': 'airplane-path 12s linear infinite',
+        'scroll-bounce': 'scroll-bounce 2s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fade-in': 'fade-in 0.8s ease forwards',
+        'pulse-ring': 'pulse-ring 2.2s ease-out infinite',
+        'shimmer': 'shimmer 2.5s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 4s ease infinite',
+        'orb-float': 'orb-float 8s ease-in-out infinite',
+        'slide-in-right': 'slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+      },
+      keyframes: {
+        'float-pulse': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'airplane-path': {
+          '0%': { transform: 'translateX(-120px) translateY(0px)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { transform: 'translateX(calc(100vw + 120px)) translateY(-60px)', opacity: '0' },
+        },
+        'scroll-bounce': {
+          '0%, 100%': { transform: 'translateY(0)', opacity: '1' },
+          '50%': { transform: 'translateY(10px)', opacity: '0.4' },
+        },
+        'fade-in-up': {
+          from: { opacity: '0', transform: 'translateY(32px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(1)', opacity: '0.8' },
+          '100%': { transform: 'scale(2.8)', opacity: '0' },
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'gradient-shift': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'orb-float': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(30px, -20px) scale(1.05)' },
+          '66%': { transform: 'translate(-20px, 15px) scale(0.95)' },
+        },
+        'slide-in-right': {
+          from: { opacity: '0', transform: 'translateX(24px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      boxShadow: {
+        'teal': '0 8px 32px rgba(11, 138, 143, 0.28)',
+        'teal-lg': '0 24px 64px rgba(11, 138, 143, 0.32)',
+        'teal-xl': '0 40px 80px rgba(11, 138, 143, 0.25)',
+        'gold': '0 8px 32px rgba(216, 154, 36, 0.35)',
+        'gold-lg': '0 20px 48px rgba(216, 154, 36, 0.30)',
+        'card': '0 4px 24px rgba(13, 27, 42, 0.07)',
+        'card-hover': '0 28px 56px rgba(11, 138, 143, 0.20)',
+        'glass': '0 8px 32px rgba(11, 138, 143, 0.10), inset 0 1px 0 rgba(255,255,255,0.9)',
+        'premium': '0 20px 60px rgba(13, 27, 42, 0.15), 0 4px 16px rgba(11, 138, 143, 0.10)',
+        'inner-glow': 'inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(11,138,143,0.08)',
+      },
+      backgroundImage: {
+        'teal-gradient': 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 50%, #067A7F 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)',
+        'ocean-gradient': 'linear-gradient(160deg, #0D1B2A 0%, #0B3D4A 35%, #0B8A8F 70%, #0ABBC2 100%)',
+        'sky-gradient': 'linear-gradient(180deg, #E8F4F8 0%, #F7F9FC 100%)',
+        'premium-gradient': 'linear-gradient(135deg, #0D1B2A 0%, #0B3D4A 40%, #0B8A8F 80%, #0ABBC2 100%)',
+      },
+      transitionTimingFunction: {
+        'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'smooth': 'cubic-bezier(0.23, 1, 0.32, 1)',
+      },
+      backdropBlur: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '40px',
+      },
+    },
+  },
+  plugins: [require('@tailwindcss/typography')],
+};
