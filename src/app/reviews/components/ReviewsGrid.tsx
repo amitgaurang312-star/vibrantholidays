@@ -39,7 +39,7 @@ const reviews: Review[] = [
     avatar: 'KK',
     rating: 5,
     date: '2 days ago',
-    review: 'I have traveled with Vibrant Holidays multiple times with my friends and family, both domestic and international. Every trip has been well planned, with comfortable hotels, clean vehicles, and courteous drivers. Mr. Kedar and his team were always available and responsive throughout the journey.',
+    review: 'I have traveled with Vibrant Holidays multiple times with my friends and family, both domestic and international. Every trip has been well planned, with comfortable hotels, clean vehicles, and courteous drivers. Mr. Kedar and his team were always available throughout the journey, ensuring everything went smoothly. Their professionalism, prompt support, and attention to detail made each trip stress-free and memorable. I highly recommend Vibrant Holidays to anyone looking for a reliable travel partner. Looking forward to many more wonderful trips with them!',
   },
   {
     id: 'r4',
