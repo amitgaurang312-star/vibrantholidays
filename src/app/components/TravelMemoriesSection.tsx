@@ -84,6 +84,46 @@ const memories = [
     author: '— Confucius',
     position: 'bottom-left',
   },
+  {
+    id: 11,
+    src: '/assets/images/PHOTO-2026-05-30-21-50-39-1783756667695.jpg',
+    alt: 'Vibrant Holidays travellers enjoying a scenic evening destination',
+    quote: 'Once a year, go someplace you have never been before.',
+    author: '— Dalai Lama',
+    position: 'top-right',
+  },
+  {
+    id: 12,
+    src: '/assets/images/PHOTO-2026-05-30-21-50-38-1783756667678.jpg',
+    alt: 'Memorable travel snapshot from a Vibrant Holidays group tour',
+    quote: 'Travel is the only thing you buy that makes you richer.',
+    author: '— Anonymous',
+    position: 'bottom-right',
+  },
+  {
+    id: 13,
+    src: '/assets/images/PHOTO-2026-04-11-20-03-39-1783756667913.jpg',
+    alt: 'Stunning landscape captured during a Vibrant Holidays expedition',
+    quote: 'The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.',
+    author: '— Marcel Proust',
+    position: 'top-left',
+  },
+  {
+    id: 14,
+    src: '/assets/images/PHOTO-2026-06-01-23-22-01-1783756840581.jpg',
+    alt: 'Vibrant Holidays travellers sharing a joyful moment at a beautiful destination',
+    quote: 'Adventure is worthwhile in itself.',
+    author: '— Amelia Earhart',
+    position: 'bottom-left',
+  },
+  {
+    id: 15,
+    src: '/assets/images/PHOTO-2026-05-30-21-52-28__1_-1783756840542.jpg',
+    alt: 'Scenic travel memory from a Vibrant Holidays trip with breathtaking views',
+    quote: 'Collect moments, not things.',
+    author: '— Anonymous',
+    position: 'top-right',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
