@@ -42,18 +42,18 @@ export default function Header() {
         style={
           scrolled
             ? {
-                background: 'rgba(255,255,255,0.95)',
-                backdropFilter: 'blur(28px) saturate(200%)',
-                WebkitBackdropFilter: 'blur(28px) saturate(200%)',
-                borderBottom: '1px solid rgba(11,138,143,0.12)',
-                boxShadow: '0 2px 20px rgba(13,27,42,0.08)',
-              }
-            : {
-                background: 'rgba(13,27,42,0.92)',
+                background: 'linear-gradient(135deg, #0b8a8f 0%, #0d4f8c 60%, #1a1a6e 100%)',
                 backdropFilter: 'blur(8px)',
                 WebkitBackdropFilter: 'blur(8px)',
-                borderBottom: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 2px 16px rgba(13,27,42,0.25)',
+                borderBottom: '1px solid rgba(255,255,255,0.15)',
+                boxShadow: '0 4px 24px rgba(11,138,143,0.35)',
+              }
+            : {
+                background: 'linear-gradient(135deg, #0b8a8f 0%, #0d4f8c 60%, #1a1a6e 100%)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                borderBottom: '1px solid rgba(255,255,255,0.15)',
+                boxShadow: '0 4px 24px rgba(11,138,143,0.35)',
               }
         }
       >
