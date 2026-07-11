@@ -236,6 +236,14 @@ const memories = [
     author: '— Tim Cahill',
     position: 'top-left',
   },
+  {
+    id: 30,
+    src: '/assets/images/IMG_20240208_182859-1783757430739.jpg',
+    alt: 'Beautiful travel moment captured during a Vibrant Holidays trip on February 8',
+    quote: 'The world is a book, and those who do not travel read only one page.',
+    author: '— Saint Augustine',
+    position: 'bottom-right',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
