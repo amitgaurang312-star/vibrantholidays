@@ -87,7 +87,7 @@ const intlDestinations = [
   tagline: 'Heaven on Water',
   video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1599826602562-e083aa659710?w=800&q=80",
-  duration: '4–6 Days',
+  duration: '3–4 Days',
   price: '₹75,000',
   highlights: ['Water Villas', 'Snorkeling', 'Sunset Cruise'],
   span: 'lg:col-span-3'

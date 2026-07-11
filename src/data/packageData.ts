@@ -1451,27 +1451,26 @@ export const packages: PackageData[] = [
   destination: 'Maldives',
   packageName: 'Azure Atoll Luxury Retreat',
   tagline: 'Heaven on Water, Paradise on Earth',
-  duration: '5 Days / 4 Nights',
-  durationNights: '4 Nights',
+  duration: '4 Days / 3 Nights',
+  durationNights: '3 Nights',
   price: '₹75,000',
   heroImage: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
   heroVideo: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
   type: 'international',
   whatsappNumber: WHATSAPP,
   overview:
-  'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 5-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',
+  'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 4-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',
   destinationsCovered: ['Malé', 'North Malé Atoll', 'South Malé Atoll'],
   highlights: [
   'Overwater bungalow experience with direct lagoon access',
   'House reef snorkelling — sea turtles, manta rays, reef sharks',
   'Sunset dolphin cruise in the Indian Ocean',
   'Sandbank picnic on a deserted white sand island',
-  'Underwater restaurant dining experience',
   'Bioluminescent beach walk at night',
   'Scuba diving at world-class dive sites'],
 
   inclusions: [
-  'Accommodation for 4 nights in a 4-star island resort (beach villa or water bungalow)',
+  'Accommodation for 3 nights in a 4-star island resort (beach villa or water bungalow)',
   'Daily breakfast and dinner (MAP)',
   'Malé airport speedboat/seaplane transfer to resort',
   'Sunset dolphin cruise (1.5 hours)',
@@ -1511,22 +1510,14 @@ export const packages: PackageData[] = [
   },
   {
     day: 3,
-    title: 'Scuba Diving & Underwater Wonders',
+    title: 'Dolphin Cruise, Scuba Diving & Bioluminescent Night',
     description:
-    'After breakfast, spend the morning on a scuba diving excursion (optional, on direct payment) to one of the Maldives\' world-class dive sites. The Maldives offers some of the best diving in the world — drift dives through channels with manta rays, night dives with bioluminescent plankton, and wall dives alongside whale sharks. Non-divers can enjoy a glass-bottom boat tour over the coral gardens, or a guided snorkelling trip to a nearby reef. In the afternoon, relax at the resort\'s infinity pool or indulge in a traditional Maldivian massage at the spa. As evening falls, take a sunset cruise on a traditional dhoni, watching the sun melt into the Indian Ocean in a blaze of orange and gold.',
+    'After breakfast, spend the morning on an optional scuba diving excursion to one of the Maldives\' world-class dive sites — drift dives with manta rays, wall dives alongside whale sharks, and vibrant coral gardens. Non-divers can enjoy a glass-bottom boat tour or a guided snorkelling trip to a nearby reef. In the afternoon, relax at the resort\'s infinity pool or indulge in a traditional Maldivian massage at the spa. As evening falls, embark on a sunset dolphin cruise — the waters around the Maldives are home to large pods of spinner dolphins that leap and spin alongside the boat in the golden evening light. After dinner, walk along the beach in the dark to witness one of nature\'s most magical phenomena — bioluminescent plankton lighting up the shoreline with an ethereal blue glow with every wave and footstep.',
     meals: 'Breakfast & Dinner',
     accommodation: '4-Star Island Resort, Maldives'
   },
   {
     day: 4,
-    title: 'Dolphin Cruise & Bioluminescent Night',
-    description:
-    'After breakfast, spend the morning at leisure — kayaking around the lagoon, paddleboarding, or reading in your overwater bungalow with the Indian Ocean at your feet. In the afternoon, embark on a sunset dolphin cruise — the waters around the Maldives are home to large pods of spinner dolphins that leap and spin alongside the boat in the golden evening light. Return to the resort for dinner. After dinner, walk along the beach in the dark to witness one of nature\'s most magical phenomena — bioluminescent plankton lighting up the shoreline with an ethereal blue glow with every wave and footstep. This is a once-in-a-lifetime experience that few travellers ever witness.',
-    meals: 'Breakfast & Dinner',
-    accommodation: '4-Star Island Resort, Maldives'
-  },
-  {
-    day: 5,
     title: 'Final Morning in Paradise & Departure',
     description:
     'Enjoy a final breakfast at the resort — perhaps on your overwater bungalow deck as the morning sun turns the lagoon from silver to turquoise. Spend the last morning snorkelling, swimming, or simply sitting on the jetty watching the fish below. Check out and board your speedboat or seaplane for the transfer back to Malé International Airport. As you fly over the atolls one last time, you understand why the Maldives is called heaven on earth — and why everyone who visits vows to return.',
