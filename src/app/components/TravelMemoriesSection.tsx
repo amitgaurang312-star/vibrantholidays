@@ -140,11 +140,6 @@ const memories = [
     alt: 'Beautiful travel moment from a Vibrant Holidays trip on February 9',
   },
   {
-    id: 28,
-    src: '/assets/images/PHOTO-2026-05-30-21-52-28__1_-1783757371318.jpg',
-    alt: 'Stunning scenery captured during a Vibrant Holidays adventure on May 30',
-  },
-  {
     id: 29,
     src: '/assets/images/IMG_20240208_150833-1783757372416.jpg',
     alt: 'Memorable travel experience from a Vibrant Holidays tour on February 8',
