@@ -164,6 +164,46 @@ const memories = [
     author: '— Lovelle Drachman',
     position: 'bottom-left',
   },
+  {
+    id: 21,
+    src: '/assets/images/PHOTO-2026-06-30-17-03-44-1783756973197.jpg',
+    alt: 'Vibrant Holidays travellers enjoying a beautiful destination captured on June 30',
+    quote: 'Travel makes one modest. You see what a tiny place you occupy in the world.',
+    author: '— Gustave Flaubert',
+    position: 'top-right',
+  },
+  {
+    id: 22,
+    src: '/assets/images/PHOTO-2026-06-30-17-03-45-1783756973358.jpg',
+    alt: 'Scenic travel moment from a Vibrant Holidays trip on June 30',
+    quote: 'Life is short and the world is wide.',
+    author: '— Simon Raven',
+    position: 'bottom-left',
+  },
+  {
+    id: 23,
+    src: '/assets/images/PHOTO-2026-07-02-12-05-00__4_-1783756972439.jpg',
+    alt: 'Vibrant Holidays group exploring a stunning location on July 2',
+    quote: 'To travel is to live.',
+    author: '— Hans Christian Andersen',
+    position: 'top-left',
+  },
+  {
+    id: 24,
+    src: '/assets/images/PHOTO-2026-07-02-12-05-00__2_-1783756972360.jpg',
+    alt: 'Memorable travel experience captured by Vibrant Holidays on July 2',
+    quote: 'Not all those who wander are lost.',
+    author: '— J.R.R. Tolkien',
+    position: 'bottom-right',
+  },
+  {
+    id: 25,
+    src: '/assets/images/PHOTO-2026-07-02-12-05-00__1_-1783756972515.jpg',
+    alt: 'Vibrant Holidays travellers at a breathtaking spot on July 2',
+    quote: 'Adventure is worthwhile in itself.',
+    author: '— Amelia Earhart',
+    position: 'top-right',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
