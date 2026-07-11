@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 
 interface DepartureDate {
@@ -10,97 +9,97 @@ interface DepartureDate {
 }
 
 const departureDates: DepartureDate[] = [
-  { date: '25 Jul 2025', month: 'July 2025' },
-  { date: '01 Aug 2025', month: 'August 2025' },
-  { date: '05 Aug 2025', month: 'August 2025' },
-  { date: '08 Aug 2025', month: 'August 2025' },
-  { date: '12 Aug 2025', month: 'August 2025' },
-  { date: '15 Aug 2025', month: 'August 2025' },
-  { date: '19 Aug 2025', month: 'August 2025' },
-  { date: '22 Aug 2025', month: 'August 2025' },
-  { date: '29 Aug 2025', month: 'August 2025' },
-  { date: '02 Sep 2025', month: 'September 2025' },
-  { date: '05 Sep 2025', month: 'September 2025' },
-  { date: '09 Sep 2025', month: 'September 2025' },
-  { date: '12 Sep 2025', month: 'September 2025' },
-  { date: '16 Sep 2025', month: 'September 2025' },
-  { date: '19 Sep 2025', month: 'September 2025' },
-  { date: '23 Sep 2025', month: 'September 2025' },
-  { date: '26 Sep 2025', month: 'September 2025' },
-  { date: '30 Sep 2025', month: 'September 2025' },
-  { date: '03 Oct 2025', month: 'October 2025' },
-  { date: '10 Oct 2025', month: 'October 2025' },
-  { date: '14 Oct 2025', month: 'October 2025' },
-];
+{ date: '25 Jul 2025', month: 'July 2025' },
+{ date: '01 Aug 2025', month: 'August 2025' },
+{ date: '05 Aug 2025', month: 'August 2025' },
+{ date: '08 Aug 2025', month: 'August 2025' },
+{ date: '12 Aug 2025', month: 'August 2025' },
+{ date: '15 Aug 2025', month: 'August 2025' },
+{ date: '19 Aug 2025', month: 'August 2025' },
+{ date: '22 Aug 2025', month: 'August 2025' },
+{ date: '29 Aug 2025', month: 'August 2025' },
+{ date: '02 Sep 2025', month: 'September 2025' },
+{ date: '05 Sep 2025', month: 'September 2025' },
+{ date: '09 Sep 2025', month: 'September 2025' },
+{ date: '12 Sep 2025', month: 'September 2025' },
+{ date: '16 Sep 2025', month: 'September 2025' },
+{ date: '19 Sep 2025', month: 'September 2025' },
+{ date: '23 Sep 2025', month: 'September 2025' },
+{ date: '26 Sep 2025', month: 'September 2025' },
+{ date: '30 Sep 2025', month: 'September 2025' },
+{ date: '03 Oct 2025', month: 'October 2025' },
+{ date: '10 Oct 2025', month: 'October 2025' },
+{ date: '14 Oct 2025', month: 'October 2025' }];
+
 
 const itinerary = [
-  {
-    day: 'Day 1',
-    title: 'Touchdown Phuket – Let the Holiday Begin!',
-    points: [
-      'Arrive at Phuket Airport; meet the team for a smooth transfer to hotel.',
-      'Check in, relax, and soak in the tropical vibes.',
-      'Overnight stay at Best Western Patong, Phuket.',
-    ],
-  },
-  {
-    day: 'Day 2',
-    title: 'Phi Phi Island Adventure',
-    points: [
-      'Breakfast at hotel.',
-      'Full-day Phi Phi Island Tour with Lunch (SIC).',
-      'Return to hotel; overnight stay at Phuket.',
-    ],
-  },
-  {
-    day: 'Day 3',
-    title: 'Phuket to Krabi – New Views Await',
-    points: [
-      'Post breakfast, check out and transfer to Krabi.',
-      'Phuket City Tour en route.',
-      'Check in at Apple A Day, Krabi and relax.',
-      'Overnight stay at Krabi.',
-    ],
-  },
-  {
-    day: 'Day 4',
-    title: 'Krabi 4 Island Hopping',
-    points: [
-      'Breakfast at hotel.',
-      'Full-day Krabi 4 Island Tour with Lunch (SIC).',
-      'Return to hotel; overnight stay at Krabi.',
-    ],
-  },
-  {
-    day: 'Day 5',
-    title: 'Farewell Thailand',
-    points: [
-      'Breakfast at hotel.',
-      'Check out and transfer to Phuket Airport for return flight.',
-      'Depart with wonderful memories!',
-    ],
-  },
-];
+{
+  day: 'Day 1',
+  title: 'Touchdown Phuket – Let the Holiday Begin!',
+  points: [
+  'Arrive at Phuket Airport; meet the team for a smooth transfer to hotel.',
+  'Check in, relax, and soak in the tropical vibes.',
+  'Overnight stay at Best Western Patong, Phuket.']
+
+},
+{
+  day: 'Day 2',
+  title: 'Phi Phi Island Adventure',
+  points: [
+  'Breakfast at hotel.',
+  'Full-day Phi Phi Island Tour with Lunch (SIC).',
+  'Return to hotel; overnight stay at Phuket.']
+
+},
+{
+  day: 'Day 3',
+  title: 'Phuket to Krabi – New Views Await',
+  points: [
+  'Post breakfast, check out and transfer to Krabi.',
+  'Phuket City Tour en route.',
+  'Check in at Apple A Day, Krabi and relax.',
+  'Overnight stay at Krabi.']
+
+},
+{
+  day: 'Day 4',
+  title: 'Krabi 4 Island Hopping',
+  points: [
+  'Breakfast at hotel.',
+  'Full-day Krabi 4 Island Tour with Lunch (SIC).',
+  'Return to hotel; overnight stay at Krabi.']
+
+},
+{
+  day: 'Day 5',
+  title: 'Farewell Thailand',
+  points: [
+  'Breakfast at hotel.',
+  'Check out and transfer to Phuket Airport for return flight.',
+  'Depart with wonderful memories!']
+
+}];
+
 
 const inclusions = [
-  'Non-stop Direct Akasa Air Flights (Ex-Mumbai) – Roundtrip',
-  '2 Nights Phuket – Best Western Patong (4 Star, Superior Room)',
-  '2 Nights Krabi – Apple A Day (4 Star, Deluxe Room)',
-  'Phi Phi Island Tour with Lunch (SIC) – NPF excluded',
-  'Krabi 4 Island Tour with Lunch (SIC) – NPF excluded',
-  'Phuket City Tour (SIC)',
-  'Airport & inter-hotel transfers (SIC)',
-  'Free SIM Card + Free Travel Insurance',
-  'Daily Breakfast',
-  '4 Nights Stay',
-];
+'Non-stop Direct Akasa Air Flights (Ex-Mumbai) – Roundtrip',
+'2 Nights Phuket – Best Western Patong (4 Star, Superior Room)',
+'2 Nights Krabi – Apple A Day (4 Star, Deluxe Room)',
+'Phi Phi Island Tour with Lunch (SIC) – NPF excluded',
+'Krabi 4 Island Tour with Lunch (SIC) – NPF excluded',
+'Phuket City Tour (SIC)',
+'Airport & inter-hotel transfers (SIC)',
+'Free SIM Card + Free Travel Insurance',
+'Daily Breakfast',
+'4 Nights Stay'];
+
 
 const exclusions = [
-  'National Park Fee (NPF) for Phi Phi & Krabi 4 Island tours',
-  'Personal expenses (laundry, tips, shopping, minibar, etc.)',
-  'Meals not mentioned in inclusions',
-  'Any service not explicitly mentioned under inclusions',
-];
+'National Park Fee (NPF) for Phi Phi & Krabi 4 Island tours',
+'Personal expenses (laundry, tips, shopping, minibar, etc.)',
+'Meals not mentioned in inclusions',
+'Any service not explicitly mentioned under inclusions'];
+
 
 const months = [...new Set(departureDates.map((d) => d.month))];
 
@@ -110,7 +109,7 @@ export default function DeparturesList() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {if (entry.isIntersecting) setVisible(true);},
       { threshold: 0.05 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -143,12 +142,12 @@ export default function DeparturesList() {
               {/* Image */}
               <div className="relative h-72 lg:h-auto min-h-72 overflow-hidden">
                 <AppImage
-                  src="https://images.unsplash.com/photo-1583235850379-5be46fe06642"
+                  src="https://images.unsplash.com/photo-1695061077264-1ec103d68b3d"
                   alt="Thailand Phi Phi islands turquoise water with limestone cliffs and tropical beach"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center"
-                />
+                  className="object-cover object-center" />
+                
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(11,138,143,0.3) 0%, transparent 60%)' }} />
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   <span className="text-white text-xs font-bold px-3 py-1.5 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 8px rgba(216,154,36,0.5)' }}>
@@ -213,16 +212,18 @@ export default function DeparturesList() {
                   </div>
                 </div>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5 w-full sm:w-auto"
-                  style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' }}
-                >
-                  Book Your Seat
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <a
+                  href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg w-full sm:w-auto"
+                  style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)' }}>
+                  
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                </Link>
+                  WhatsApp Enquiry
+                </a>
               </div>
             </div>
           </div>
@@ -235,8 +236,8 @@ export default function DeparturesList() {
           </h3>
           <p className="text-center text-muted-foreground text-sm mb-8">Seats available on first-come, first-served basis</p>
 
-          {months.map((month) => (
-            <div key={month} className="mb-10">
+          {months.map((month) =>
+          <div key={month} className="mb-10">
               {/* Month Label */}
               <div className="flex items-center gap-4 mb-5">
                 <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(11,138,143,0.25))' }} />
@@ -248,23 +249,23 @@ export default function DeparturesList() {
 
               {/* Date Chips */}
               <div className="flex flex-wrap gap-3 justify-center">
-                {departureDates
-                  .filter((d) => d.month === month)
-                  .map((dep) => (
-                    <div
-                      key={dep.date}
-                      className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-border/60 hover:border-primary/40 transition-all duration-200 hover:shadow-md"
-                      style={{ boxShadow: '0 2px 12px rgba(13,27,42,0.06)' }}
-                    >
+                {departureDates.
+              filter((d) => d.month === month).
+              map((dep) =>
+              <div
+                key={dep.date}
+                className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-border/60 hover:border-primary/40 transition-all duration-200 hover:shadow-md"
+                style={{ boxShadow: '0 2px 12px rgba(13,27,42,0.06)' }}>
+                
                       <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                       <span className="text-foreground font-semibold text-sm">{dep.date}</span>
                     </div>
-                  ))}
+              )}
               </div>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Itinerary */}
@@ -276,8 +277,8 @@ export default function DeparturesList() {
             {/* Vertical line */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 hidden sm:block" style={{ background: 'linear-gradient(180deg, #0B8A8F, #0ABBC2, transparent)' }} />
             <div className="space-y-6">
-              {itinerary.map((item, i) => (
-                <div key={i} className="flex gap-6">
+              {itinerary.map((item, i) =>
+              <div key={i} className="flex gap-6">
                   {/* Day badge */}
                   <div className="flex-shrink-0 hidden sm:flex flex-col items-center">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xs font-bold z-10" style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)', boxShadow: '0 4px 16px rgba(11,138,143,0.35)' }}>
@@ -293,16 +294,16 @@ export default function DeparturesList() {
                       </div>
                     </div>
                     <ul className="space-y-1.5">
-                      {item.points.map((pt, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      {item.points.map((pt, j) =>
+                    <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                           {pt}
                         </li>
-                      ))}
+                    )}
                     </ul>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -321,8 +322,8 @@ export default function DeparturesList() {
                 <h4 className="font-display text-lg font-semibold text-foreground">What's Included</h4>
               </div>
               <ul className="space-y-3">
-                {inclusions.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                {inclusions.map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(11,138,143,0.10)' }}>
                       <svg className="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -330,7 +331,7 @@ export default function DeparturesList() {
                     </span>
                     {item}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
 
@@ -345,8 +346,8 @@ export default function DeparturesList() {
                 <h4 className="font-display text-lg font-semibold text-foreground">What's Not Included</h4>
               </div>
               <ul className="space-y-3">
-                {exclusions.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                {exclusions.map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(239,68,68,0.08)' }}>
                       <svg className="w-3 h-3 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
@@ -354,7 +355,7 @@ export default function DeparturesList() {
                     </span>
                     {item}
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </div>
@@ -368,20 +369,22 @@ export default function DeparturesList() {
             <p className="text-white/80 text-lg mb-6 max-w-xl mx-auto">
               Seats fill up fast on a first-come, first-served basis. Book your spot today for just ₹65,000/person.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-              style={{ color: '#0B8A8F' }}
-            >
-              Book Your Seat Now
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              style={{ color: '#128C7E' }}>
+              
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-            </Link>
+              WhatsApp Enquiry
+            </a>
           </div>
         </div>
 
       </div>
-    </section>
-  );
+    </section>);
+
 }
