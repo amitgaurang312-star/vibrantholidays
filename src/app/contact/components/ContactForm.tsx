@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const destinations = [
-  'Kashmir', 'Kerala', 'Goa', 'Himachal Pradesh', 'Uttarakhand', 'North East India',
+  'Kashmir', 'Kerala', 'Goa', 'Himachal Pradesh', 'North East India',
   'Dubai', 'Thailand', 'Bali', 'Vietnam', 'Singapore', 'Singapore–Malaysia',
   'Sri Lanka', 'Maldives', 'Europe', 'Mauritius', 'Nepal', 'Bhutan', 'Other',
 ];

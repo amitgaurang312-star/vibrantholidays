@@ -49,17 +49,6 @@ const destinations = [
   span: 'lg:col-span-1'
 },
 {
-  name: 'Uttarakhand',
-  slug: 'uttarakhand',
-  tagline: 'Land of Gods',
-  video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-  poster: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-  duration: '5–7 Days',
-  price: '₹14,000',
-  highlights: ['Rishikesh', 'Haridwar', 'Kedarnath'],
-  span: 'lg:col-span-1'
-},
-{
   name: 'North East India',
   slug: 'north-east-india',
   tagline: 'Seven Sisters Await',
