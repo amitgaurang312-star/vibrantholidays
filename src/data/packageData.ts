@@ -156,7 +156,7 @@ export const packages: PackageData[] = [
   'Camera with extra batteries (cold drains batteries fast)',
   'Light rain poncho or compact umbrella'],
 
-  relatedSlugs: ['himachal-pradesh', 'uttarakhand', 'north-east-india']
+  relatedSlugs: ['himachal-pradesh', 'north-east-india']
 },
 
 {
@@ -488,125 +488,7 @@ export const packages: PackageData[] = [
   'Cash (limited ATMs beyond Manali)',
   'Warm gloves, woollen cap, and thermal innerwear'],
 
-  relatedSlugs: ['kashmir', 'uttarakhand', 'north-east-india']
-},
-
-{
-  slug: 'uttarakhand',
-  destination: 'Uttarakhand',
-  packageName: 'Sacred Peaks Spiritual Journey',
-  tagline: 'Where the Ganges Meets the Divine',
-  duration: '6 Days / 5 Nights',
-  durationNights: '5 Nights',
-  price: '₹14,000',
-  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1f7adc0bd-1783683715564.png",
-  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1f7adc0bd-1783683715564.png",
-  type: 'domestic',
-  whatsappNumber: WHATSAPP,
-  overview:
-  'Uttarakhand — the Land of Gods — is where the sacred and the spectacular converge. The Sacred Peaks Spiritual Journey is a 6-day immersion into the spiritual heartland of India, taking you from the yoga capital of the world (Rishikesh) to the ancient pilgrimage city of Haridwar, and up into the Garhwal Himalayas towards the divine Kedarnath shrine. This package is designed for travellers who seek both spiritual renewal and natural grandeur — the thundering Ganga Aarti, the adrenaline of white-water rafting, and the soul-stirring sight of snow-capped peaks at dawn.',
-  destinationsCovered: ['Haridwar', 'Rishikesh', 'Devprayag', 'Kedarnath', 'Badrinath'],
-  highlights: [
-  'Ganga Aarti at Har Ki Pauri, Haridwar — a transcendent spiritual experience',
-  'White-water rafting on the Ganges, Rishikesh (Grade III–IV rapids)',
-  'Bungee jumping at Mohan Chatti — India\'s highest fixed platform',
-  'Kedarnath Temple darshan (one of the 12 Jyotirlingas)',
-  'Badrinath Temple visit and Mana Village (last Indian village before Tibet)',
-  'Devprayag — sacred confluence of Alaknanda and Bhagirathi rivers',
-  'Beatles Ashram (Chaurasi Kutia) exploration in Rishikesh'],
-
-  inclusions: [
-  'Accommodation for 5 nights (1N Haridwar + 2N Rishikesh + 1N Kedarnath base + 1N Badrinath)',
-  'Daily breakfast and dinner',
-  'All transfers by private vehicle',
-  'Haridwar railway station pick-up and drop',
-  'Kedarnath helicopter booking assistance (on direct payment)',
-  'Local guide for Kedarnath and Badrinath',
-  'All applicable taxes'],
-
-  exclusions: [
-  'Train/flight fare to and from Haridwar/Dehradun',
-  'Kedarnath helicopter charges (₹3,500–₹5,000 one way)',
-  'White-water rafting charges (₹600–₹1,500)',
-  'Bungee jumping and other adventure activities',
-  'Lunch at restaurants',
-  'Personal expenses and tips',
-  'Travel insurance'],
-
-  hotelCategory: '3-Star Hotels & Guesthouses',
-  transportation: 'Private AC Vehicle (plains) + Non-AC (hills)',
-  mealPlan: 'MAP (Breakfast + Dinner)',
-  itinerary: [
-  {
-    day: 1,
-    title: 'Arrival in Haridwar — Gateway to the Gods',
-    description:
-    'Arrive at Haridwar Railway Station and transfer to your hotel. Haridwar, one of the seven holiest cities in Hinduism, sits at the point where the Ganges descends from the Himalayas onto the plains. After freshening up, visit Har Ki Pauri — the most sacred ghat in Haridwar, where the Ganges is believed to flow at its purest. As dusk falls, witness the magnificent Ganga Aarti — a mesmerising ritual of fire, flowers, and devotion performed by priests on the ghat steps. The sight of thousands of oil lamps floating downstream on the sacred river is profoundly moving. Explore the Mansa Devi Temple (accessible by cable car) for panoramic views of the city. Dinner and overnight in Haridwar.',
-    meals: 'Dinner',
-    accommodation: '3-Star Hotel, Haridwar'
-  },
-  {
-    day: 2,
-    title: 'Haridwar to Rishikesh — Yoga Capital of the World',
-    description:
-    'After breakfast, drive 24 km to Rishikesh — the global headquarters of yoga and meditation, set at the foothills of the Himalayas where the Ganges flows swift and clear. Check in and explore the iconic Laxman Jhula and Ram Jhula — iron suspension bridges over the Ganges that connect the two banks and offer stunning river views. Visit the famous Triveni Ghat for the evening Ganga Aarti. Explore the ashrams and yoga centres that line the riverbanks — the Beatles Ashram (Chaurasi Kutia), where the Fab Four composed much of the White Album in 1968, is a fascinating ruin now open to visitors. Dinner at a riverside café.',
-    meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Rishikesh'
-  },
-  {
-    day: 3,
-    title: 'Rishikesh Adventure Day — Rafting & Thrills',
-    description:
-    'After an early breakfast, gear up for the most thrilling day of your Uttarakhand journey. Head to Shivpuri (16 km upstream) for a white-water rafting expedition on the Ganges — navigating Grade III and IV rapids with names like "Three Blind Mice," "Golf Course," and the legendary "The Wall." The 16 km rafting stretch takes approximately 2–3 hours and ends at Rishikesh. For the truly adventurous, Mohan Chatti offers India\'s highest fixed-platform bungee jump (83 metres) and a giant swing. In the afternoon, visit the Neelkanth Mahadev Temple (32 km from Rishikesh) — a revered Shiva shrine set amidst dense forests at 1,330 m. Return to Rishikesh for a yoga session at sunset.',
-    meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Rishikesh'
-  },
-  {
-    day: 4,
-    title: 'Rishikesh to Kedarnath Base Camp',
-    description:
-    'After breakfast, drive approximately 220 km to Gaurikund — the base camp for the Kedarnath trek. En route, stop at Devprayag, the sacred confluence where the Alaknanda and Bhagirathi rivers merge to form the Ganges — a profoundly spiritual sight. Continue through Rudraprayag and Agastyamuni to Gaurikund (1,982 m). Check in to your guesthouse and prepare for the next day\'s trek. The evening is ideal for acclimatisation — take a short walk around Gaurikund, visit the Gauri Devi Temple, and soak in the natural hot springs. Early dinner and rest for the demanding trek ahead.',
-    meals: 'Breakfast & Dinner',
-    accommodation: 'Guesthouse, Gaurikund'
-  },
-  {
-    day: 5,
-    title: 'Kedarnath Temple Darshan — Divine Encounter',
-    description:
-    'Rise at 4 AM for the 16 km trek to Kedarnath Temple (3,583 m) — one of the 12 sacred Jyotirlingas and part of the Char Dham pilgrimage circuit. The trek ascends through rhododendron forests, alpine meadows, and rocky terrain, with the snow-capped Kedarnath Peak (6,940 m) as a constant companion. Alternatively, opt for a helicopter from Phata or Sirsi (additional cost). Arrive at the temple for morning darshan — the ancient stone shrine, believed to be over 1,200 years old, stands against a backdrop of towering glaciers. The spiritual energy here is palpable and overwhelming. After darshan, trek back to Gaurikund (or take helicopter return) and drive to Badrinath for overnight.',
-    meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Badrinath'
-  },
-  {
-    day: 6,
-    title: 'Badrinath & Mana Village — Departure',
-    description:
-    'Rise early for darshan at the Badrinath Temple (3,133 m) — one of the four Char Dham shrines, dedicated to Lord Vishnu. The temple\'s colourful facade against the backdrop of the Neelkanth Peak is one of the most photographed sights in the Himalayas. After darshan, drive 3 km to Mana Village — the last inhabited village before the Indo-Tibetan border. Visit the Vyas Gufa (cave where sage Vyas dictated the Mahabharata), Ganesh Gufa, and the Saraswati River — which disappears underground here. Return to Haridwar or Rishikesh for your onward journey, carrying the blessings of the Himalayas.',
-    meals: 'Breakfast',
-    accommodation: 'Departure'
-  }],
-
-  optionalActivities: [
-  'Bungee jumping at Mohan Chatti, Rishikesh (₹3,500/person)',
-  'Yoga and meditation retreat (1–3 days)',
-  'Valley of Flowers trek (July–September)',
-  'Auli skiing (January–March)',
-  'Camping on Ganges riverbank',
-  'Helicopter to Kedarnath (₹3,500–₹5,000 one way)'],
-
-  bestTimeToVisit:
-  'May to June and September to October for Char Dham yatra (temples are closed in winter). December–February for snow activities at Auli. Avoid July–August (heavy monsoon, landslide risk on mountain roads).',
-  thingsToCarry: [
-  'Warm layers for high-altitude areas (Kedarnath, Badrinath)',
-  'Sturdy trekking shoes with ankle support',
-  'Rain poncho (essential for monsoon months)',
-  'Altitude sickness medication — consult doctor',
-  'Personal medications and first-aid kit',
-  'Cash (no ATMs beyond Rudraprayag)',
-  'Torch/headlamp for early morning trek',
-  'Energy bars and dry fruits for Kedarnath trek'],
-
-  relatedSlugs: ['kashmir', 'himachal-pradesh', 'north-east-india']
+  relatedSlugs: ['kashmir', 'north-east-india']
 },
 
 {
@@ -733,7 +615,7 @@ export const packages: PackageData[] = [
   'Cash (limited ATMs in remote areas)',
   'Camera with extra memory cards'],
 
-  relatedSlugs: ['kashmir', 'himachal-pradesh', 'uttarakhand']
+  relatedSlugs: ['kashmir', 'himachal-pradesh', 'north-east-india']
 },
 
 // ─── INTERNATIONAL ──────────────────────────────────────────────────────────
