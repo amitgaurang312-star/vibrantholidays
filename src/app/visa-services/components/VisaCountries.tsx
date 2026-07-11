@@ -9,7 +9,6 @@ interface VisaCountry {
   flag: string;
   type: string;
   processingTime: string;
-  fee: string;
   validity: string;
   documents: string[];
   badge?: string;
@@ -22,7 +21,6 @@ const countries: VisaCountry[] = [
     flag: '🇦🇪',
     type: 'Tourist Visa',
     processingTime: '3–5 Working Days',
-    fee: '₹4,500',
     validity: '30 / 60 / 90 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Bank statement (3 months)', 'Flight itinerary', 'Hotel booking'],
     badge: 'Most Popular',
@@ -33,7 +31,6 @@ const countries: VisaCountry[] = [
     flag: '🇹🇭',
     type: 'Tourist Visa / Visa on Arrival',
     processingTime: '2–3 Working Days',
-    fee: '₹2,800',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Return flight ticket', 'Hotel booking', 'Travel insurance'],
   },
@@ -43,7 +40,6 @@ const countries: VisaCountry[] = [
     flag: '🇮🇩',
     type: 'Visa on Arrival',
     processingTime: 'On Arrival',
-    fee: '₹2,200',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Sufficient funds proof', 'Hotel booking'],
     badge: 'Easy Process',
@@ -54,7 +50,6 @@ const countries: VisaCountry[] = [
     flag: '🇸🇬',
     type: 'Tourist Visa',
     processingTime: '5–7 Working Days',
-    fee: '₹5,500',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Bank statement (6 months)', 'ITR / Salary slips', 'Hotel booking', 'Flight itinerary'],
   },
@@ -64,7 +59,6 @@ const countries: VisaCountry[] = [
     flag: '🇲🇾',
     type: 'Visa Free / eNTRI',
     processingTime: '1–2 Working Days',
-    fee: '₹1,500',
     validity: '15 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds'],
     badge: 'Visa Free',
@@ -75,7 +69,6 @@ const countries: VisaCountry[] = [
     flag: '🇻🇳',
     type: 'e-Visa',
     processingTime: '3 Working Days',
-    fee: '₹3,200',
     validity: '30 / 90 Days',
     documents: ['Passport (6 months validity)', 'Digital passport photo', 'Travel itinerary', 'Hotel booking'],
   },
@@ -85,7 +78,6 @@ const countries: VisaCountry[] = [
     flag: '🇱🇰',
     type: 'ETA (Electronic Travel Authorization)',
     processingTime: '24–48 Hours',
-    fee: '₹2,000',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds'],
     badge: 'Quick Approval',
@@ -96,7 +88,6 @@ const countries: VisaCountry[] = [
     flag: '🇲🇻',
     type: 'Visa on Arrival',
     processingTime: 'On Arrival',
-    fee: 'Free',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds (USD 100/day)'],
     badge: 'Free Visa',
@@ -139,7 +130,7 @@ export default function VisaCountries() {
             Visa for <span className="text-gradient-gold">Every Destination</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Click on any country to see required documents, processing time, and fees.
+            Click on any country to see required documents and processing time.
           </p>
         </div>
 
@@ -174,10 +165,6 @@ export default function VisaCountries() {
                   <div className="hidden sm:block text-right">
                     <p className="text-xs text-muted-foreground">Processing</p>
                     <p className="text-sm font-semibold text-primary">{c.processingTime}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-muted-foreground">Fee</p>
-                    <p className="text-sm font-bold text-foreground">{c.fee}</p>
                   </div>
                   <svg
                     className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${expanded === c.id ? 'rotate-180' : ''}`}
