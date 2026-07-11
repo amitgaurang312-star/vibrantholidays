@@ -6,12 +6,12 @@ import AppImage from '@/components/ui/AppImage';
 import AppLogo from '@/components/ui/AppLogo';
 
 const whyChoose = [
-  'Bespoke holiday planning designed around you',
-  'Curated experiences beyond the ordinary',
-  'Transparent pricing with exceptional value',
-  'Trusted travel partners across India and around the world',
-  'Dedicated travel experts offering personalized assistance at every step',
-];
+'Bespoke holiday planning designed around you',
+'Curated experiences beyond the ordinary',
+'Transparent pricing with exceptional value',
+'Trusted travel partners across India and around the world',
+'Dedicated travel experts offering personalized assistance at every step'];
+
 
 export default function AboutStory() {
   const [visible, setVisible] = useState(false);
@@ -19,7 +19,7 @@ export default function AboutStory() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {if (entry.isIntersecting) setVisible(true);},
       { threshold: 0.05 }
     );
     if (sectionRef?.current) observer?.observe(sectionRef?.current);
@@ -54,12 +54,12 @@ export default function AboutStory() {
           <div className="relative">
             <div className="relative h-96 rounded-3xl overflow-hidden" style={{ boxShadow: '0 20px 60px rgba(13,27,42,0.15)' }}>
               <AppImage
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_127abc45a-1778918128286.png"
-                alt="Travel planning with maps and passport on a table with warm golden light"
+                src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7a64e00-1783746714784.png"
+                alt="Indian travellers enjoying their holiday destination with joy and excitement"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
-              />
+                className="object-cover object-center" />
+              
             </div>
             {/* Floating card */}
             <div className="absolute -bottom-6 -left-6 bg-white border border-border/60 rounded-2xl p-5 max-w-xs" style={{ boxShadow: '0 8px 32px rgba(13,27,42,0.12)' }}>
@@ -71,13 +71,13 @@ export default function AboutStory() {
                 </div>
               </div>
               <div className="flex gap-1 mb-1">
-                {[1, 2, 3, 4, 5]?.map((s) => (
-                  <svg key={s} className="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                {[1, 2, 3, 4, 5]?.map((s) =>
+                <svg key={s} className="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
-                ))}
+                )}
               </div>
-              <p className="text-muted-foreground text-xs">Rated 4.9/5 by 100+ travellers</p>
+              <p className="text-muted-foreground text-xs">Rated 4.9/5 by 9 travellers</p>
             </div>
           </div>
         </div>
@@ -89,8 +89,8 @@ export default function AboutStory() {
               Why Travel with <span className="text-gradient-gold">Vibrant Holidays?</span>
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              {whyChoose?.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
+              {whyChoose?.map((item, i) =>
+              <li key={i} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(11,138,143,0.15)' }}>
                     <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -98,7 +98,7 @@ export default function AboutStory() {
                   </div>
                   <span className="text-muted-foreground leading-relaxed">{item}</span>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
         </div>
@@ -143,8 +143,8 @@ export default function AboutStory() {
         {/* Contact CTA */}
         <div
           className={`rounded-3xl p-10 text-center reveal-up ${visible ? 'active' : ''} relative overflow-hidden`}
-          style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 60%, #067A7F 100%)', boxShadow: '0 20px 60px rgba(11,138,143,0.35)' }}
-        >
+          style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 60%, #067A7F 100%)', boxShadow: '0 20px 60px rgba(11,138,143,0.35)' }}>
+          
           <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full opacity-15" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)' }} />
           <div className="absolute -left-8 -bottom-8 w-48 h-48 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.6) 0%, transparent 70%)' }} />
           <h3 className="font-display text-3xl font-semibold text-white mb-3 relative z-10">
@@ -157,15 +157,15 @@ export default function AboutStory() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #C8860E, #D89A24, #F0BC4A)' }}
-            >
+              style={{ background: 'linear-gradient(135deg, #C8860E, #D89A24, #F0BC4A)' }}>
+              
               Get in Touch
             </Link>
             <a
               href="tel:+918668355974"
               className="inline-flex items-center justify-center gap-2 text-white border border-white/30 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white/20"
-              style={{ background: 'rgba(255,255,255,0.12)' }}
-            >
+              style={{ background: 'rgba(255,255,255,0.12)' }}>
+              
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -175,6 +175,6 @@ export default function AboutStory() {
         </div>
 
       </div>
-    </section>
-  );
+    </section>);
+
 }
