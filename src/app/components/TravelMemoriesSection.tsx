@@ -298,7 +298,7 @@ export default function TravelMemoriesSection() {
     <section
       ref={sectionRef}
       className="relative py-20 lg:py-28 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #0b2a3a 50%, #0d1b2a 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #0B3D4A 0%, #0B8A8F 30%, #0ABBC2 60%, #C8860E 85%, #D89A24 100%)' }}
     >
       {/* Starfield dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -321,11 +321,22 @@ export default function TravelMemoriesSection() {
 
       {/* Ambient glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(11,138,143,0.12) 0%, transparent 70%)',
-          filter: 'blur(60px)',
+          background: 'radial-gradient(ellipse, rgba(216,154,36,0.22) 0%, rgba(10,187,194,0.18) 45%, transparent 70%)',
+          filter: 'blur(70px)',
         }}
+      />
+
+      {/* Top decorative wave */}
+      <div
+        className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
+        style={{ background: 'linear-gradient(90deg, #0ABBC2, #D89A24, #0ABBC2)' }}
+      />
+      {/* Bottom decorative wave */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-1 pointer-events-none"
+        style={{ background: 'linear-gradient(90deg, #D89A24, #0ABBC2, #D89A24)' }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
@@ -333,16 +344,16 @@ export default function TravelMemoriesSection() {
         <div className={`text-center mb-14 reveal-up ${visible ? 'active' : ''}`}>
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-5"
-            style={{ background: 'rgba(11,138,143,0.15)', color: '#0ABBC2', border: '1px solid rgba(11,138,143,0.30)' }}
+            style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-pulse" />
             Our Journeys
           </span>
           <h2 className="font-display text-section-xl font-semibold mb-4" style={{ color: '#ffffff' }}>
             Travel{' '}
             <span
               style={{
-                background: 'linear-gradient(135deg, #0ABBC2 0%, #D89A24 100%)',
+                background: 'linear-gradient(135deg, #ffffff 0%, #FDE68A 50%, #F0BC4A 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -351,7 +362,7 @@ export default function TravelMemoriesSection() {
               Memories
             </span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>
             Moments frozen in time — real trips, real smiles, real stories.
           </p>
         </div>
@@ -364,7 +375,7 @@ export default function TravelMemoriesSection() {
               className="relative rounded-3xl overflow-hidden"
               style={{
                 aspectRatio: '16/9',
-                boxShadow: '0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06)',
+                boxShadow: '0 40px 100px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.18), 0 0 60px rgba(216,154,36,0.25)',
               }}
             >
               {/* Image */}
@@ -439,8 +450,8 @@ export default function TravelMemoriesSection() {
                     height: i === activeIndex ? '52px' : '38px',
                     boxShadow:
                       i === activeIndex
-                        ? '0 0 0 2px #0ABBC2, 0 8px 24px rgba(10,187,194,0.35)'
-                        : '0 0 0 1px rgba(255,255,255,0.12)',
+                        ? '0 0 0 2px #D89A24, 0 8px 24px rgba(216,154,36,0.45)'
+                        : '0 0 0 1px rgba(255,255,255,0.20)',
                     opacity: i === activeIndex ? 1 : 0.55,
                     transform: i === activeIndex ? 'scale(1)' : 'scale(0.95)',
                   }}
@@ -456,7 +467,7 @@ export default function TravelMemoriesSection() {
                   {i === activeIndex && (
                     <div
                       className="absolute inset-0"
-                      style={{ background: 'rgba(10,187,194,0.15)' }}
+                      style={{ background: 'rgba(216,154,36,0.20)' }}
                     />
                   )}
                 </button>
@@ -472,7 +483,7 @@ export default function TravelMemoriesSection() {
                   className="h-0.5 rounded-full transition-all duration-500 focus:outline-none"
                   style={{
                     width: i === activeIndex ? '32px' : '12px',
-                    background: i === activeIndex ? '#0ABBC2' : 'rgba(255,255,255,0.20)',
+                    background: i === activeIndex ? '#D89A24' : 'rgba(255,255,255,0.30)',
                   }}
                   aria-label={`Go to memory ${i + 1}`}
                 />
