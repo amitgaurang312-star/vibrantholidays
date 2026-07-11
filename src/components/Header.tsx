@@ -49,11 +49,11 @@ export default function Header() {
                 boxShadow: '0 2px 20px rgba(13,27,42,0.08)',
               }
             : {
-                background: 'linear-gradient(to bottom, rgba(13,27,42,0.65) 0%, rgba(13,27,42,0.0) 100%)',
-                backdropFilter: 'none',
-                WebkitBackdropFilter: 'none',
-                borderBottom: 'none',
-                boxShadow: 'none',
+                background: 'rgba(13,27,42,0.92)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 2px 16px rgba(13,27,42,0.25)',
               }
         }
       >
