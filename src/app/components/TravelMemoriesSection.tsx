@@ -149,6 +149,11 @@ const memories = [
     src: '/assets/images/IMG_20240208_182859-1783757430739.jpg',
     alt: 'Beautiful travel moment captured during a Vibrant Holidays trip on February 8',
   },
+  {
+    id: 31,
+    src: '/assets/images/IMG_20240207_112111-1783766824407.jpg',
+    alt: 'Vibrant Holidays travellers enjoying a scenic beach destination on February 7',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
