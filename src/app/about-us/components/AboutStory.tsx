@@ -54,8 +54,8 @@ export default function AboutStory() {
           <div className="relative">
             <div className="relative h-96 rounded-3xl overflow-hidden" style={{ boxShadow: '0 20px 60px rgba(13,27,42,0.15)' }}>
               <AppImage
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7a64e00-1783746714784.png"
-                alt="Indian travellers enjoying their holiday destination with joy and excitement"
+                src="https://images.unsplash.com/photo-1700588839364-49c67ee975af"
+                alt="A couple in casual traveller clothes enjoying Dubai destinations with the iconic skyline in the background"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center" />
