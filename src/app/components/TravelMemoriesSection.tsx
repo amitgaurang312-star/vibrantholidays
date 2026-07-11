@@ -204,6 +204,38 @@ const memories = [
     author: '— Amelia Earhart',
     position: 'top-right',
   },
+  {
+    id: 26,
+    src: '/assets/images/IMG_20240209_112640-1783757325323.jpg',
+    alt: 'Vibrant Holidays travellers exploring a scenic destination captured on February 9',
+    quote: 'The best journeys answer questions that in the beginning you didn\'t even think to ask.',
+    author: '— Jeff Johnson',
+    position: 'bottom-left',
+  },
+  {
+    id: 27,
+    src: '/assets/images/IMG_20240209_104038-1783757331511.jpg',
+    alt: 'Beautiful travel moment from a Vibrant Holidays trip on February 9',
+    quote: 'Travel is the only thing you buy that makes you richer.',
+    author: '— Anonymous',
+    position: 'top-right',
+  },
+  {
+    id: 28,
+    src: '/assets/images/PHOTO-2026-05-30-21-52-28__1_-1783757371318.jpg',
+    alt: 'Stunning scenery captured during a Vibrant Holidays adventure on May 30',
+    quote: 'Wherever you go becomes a part of you somehow.',
+    author: '— Anita Desai',
+    position: 'bottom-right',
+  },
+  {
+    id: 29,
+    src: '/assets/images/IMG_20240208_150833-1783757372416.jpg',
+    alt: 'Memorable travel experience from a Vibrant Holidays tour on February 8',
+    quote: 'A journey is best measured in friends, rather than miles.',
+    author: '— Tim Cahill',
+    position: 'top-left',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
