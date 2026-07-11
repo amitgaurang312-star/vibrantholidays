@@ -114,7 +114,7 @@ export default function AboutStory() {
             </div>
             <h3 className="font-display text-2xl font-semibold text-foreground mb-3">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed">
-              To become one of India's most trusted travel brands, recognized for creating inspiring journeys, delivering exceptional service, and building lifelong relationships with travelers.
+              To become one of India's most trusted travel brand, recognized for creating inspiring journeys, delivering exceptional service, and building lifelong relationships with travelers.
             </p>
           </div>
           <div className="rounded-3xl p-8 border" style={{ background: 'linear-gradient(135deg, rgba(216,154,36,0.08), rgba(216,154,36,0.04))', borderColor: 'rgba(216,154,36,0.20)' }}>
