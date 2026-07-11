@@ -8,6 +8,7 @@ import WhyChooseSection from '@/app/components/WhyChooseSection';
 import DomesticDestinations from '@/app/components/DomesticDestinations';
 import InternationalDestinations from '@/app/components/InternationalDestinations';
 import TestimonialsSection from '@/app/components/TestimonialsSection';
+import TravelMemoriesSection from '@/app/components/TravelMemoriesSection';
 import ScrollProgress from '@/app/components/ScrollProgress';
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
         <WhyChooseSection />
         <DomesticDestinations />
         <InternationalDestinations />
+        <TravelMemoriesSection />
         <TestimonialsSection />
       </main>
       <Footer />
