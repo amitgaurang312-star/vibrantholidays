@@ -165,110 +165,121 @@ export const packages: PackageData[] = [
 {
   slug: 'kerala',
   destination: 'Kerala',
-  packageName: 'Emerald Backwaters Odyssey',
+  packageName: 'Kerala 5 Nights Escape',
   tagline: "Drift Through God's Own Country",
-  duration: '5 Days / 4 Nights',
-  durationNights: '4 Nights',
-  price: '₹15,000',
-  heroImage: "https://images.unsplash.com/photo-1701523945170-600f13233771",
-  heroVideo: "https://images.unsplash.com/photo-1701523945170-600f13233771",
+  duration: '6 Days / 5 Nights',
+  durationNights: '5 Nights',
+  price: '₹23,999',
+  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_11922651d-1783761538345.png",
+  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_11922651d-1783761538345.png",
   type: 'domestic',
   whatsappNumber: WHATSAPP,
   overview:
-  'Kerala, draped in fifty shades of green, is a sensory journey unlike any other. The Emerald Backwaters Odyssey takes you through the misty tea gardens of Munnar, the tranquil waterways of Alleppey, and the sun-kissed shores of Kovalam — three distinct facets of a destination that has enchanted travellers for centuries. This 5-day package is designed for those who seek beauty in stillness: the gentle lapping of backwater canals, the scent of cardamom in mountain air, and the warmth of Kerala\'s legendary hospitality.',
-  destinationsCovered: ['Cochin', 'Munnar', 'Alleppey (Alappuzha)', 'Kovalam'],
+  'Experience the lush beauty of Kerala — God\'s Own Country — with this carefully curated 6-day journey covering Kochi, Munnar, Thekkady, and Alleppey. From the colonial heritage of Fort Kochi and the misty tea gardens of Munnar to the wildlife-rich Periyar sanctuary in Thekkady and the serene backwaters of Alleppey, this package blends natural grandeur with authentic Kerala hospitality. Travel by private AC vehicle, stay in handpicked 3-star hotels and a deluxe houseboat, and savour daily Kerala meals throughout your stay. Package cost: ₹23,999 per person (excluding flights) for 2 adults.',
+  destinationsCovered: ['Kochi', 'Munnar', 'Thekkady', 'Alleppey (Alappuzha)'],
   highlights: [
-  'Overnight houseboat cruise through Alleppey backwaters',
-  'Sunrise trek to Eravikulam National Park (Nilgiri Tahr habitat)',
-  'Tea estate walk and factory tour in Munnar',
-  'Kathakali dance performance in Cochin',
-  'Chinese fishing nets and Fort Kochi heritage walk',
-  'Ayurvedic spa session at a traditional Kerala wellness centre',
-  'Sunset at Kovalam Lighthouse Beach'],
+  'Fort Kochi heritage walk — Chinese Fishing Nets, St. Francis Church & Paradesi Synagogue',
+  'Scenic drive to Munnar via Valara & Cheeyapara Waterfalls and Tea Gardens',
+  'Full-day Munnar sightseeing — Mattupetty Dam, Echo Point, Eravikulam National Park & Tea Museum',
+  'Periyar Wildlife Sanctuary boat ride — spot elephants, deer & exotic birds',
+  'Spice plantation tour in Thekkady',
+  'Kathakali performance in Thekkady',
+  'Overnight stay on a Deluxe Houseboat in Alleppey backwaters',
+  'Optional Shikara ride and sunset views at Alleppey'],
 
   inclusions: [
-  'Accommodation for 4 nights (1N Cochin + 1N Munnar + 1N Alleppey houseboat + 1N Kovalam)',
-  'Daily breakfast and dinner',
-  'Alleppey houseboat for 1 night with all meals included onboard',
-  'All transfers by private AC vehicle',
-  'Cochin airport/railway station pick-up and drop',
-  'Kathakali performance tickets in Cochin',
-  'Tea factory tour in Munnar',
-  'Experienced local guide for all sightseeing',
-  'All applicable taxes'],
+  'Accommodation in mentioned hotels or similar (subject to availability)',
+  'Broad Bean or similar, Cochin — 1 Night, Deluxe Room (Breakfast + Dinner)',
+  'Pine Tree Munnar or similar, Munnar — 2 Nights, Red Pine Room (Breakfast + Dinner)',
+  'Periyar Meadows or similar, Thekkady — 1 Night, Deluxe Room (Breakfast + Dinner)',
+  'Deluxe Houseboat, Alleppey — 1 Night, Deluxe Room (Breakfast + Lunch + Dinner)',
+  'Daily Buffet or Fixed Menu meals as per meal plan',
+  'AC Vehicle for all transfers throughout the trip',
+  'All Toll, Tax, Parking, Driver Bata, and Fuel Costs'],
 
   exclusions: [
-  'Airfare / train fare to and from Cochin',
-  'Eravikulam National Park entry fee (₹125/person)',
-  'Ayurvedic treatments (on direct payment)',
-  'Lunch at restaurants',
-  'Personal expenses and tips',
-  'Travel insurance',
-  'Water sports at Kovalam (on direct payment)'],
+  'Any meals other than those mentioned in the itinerary',
+  'Flight tickets / Train tickets to and from Kerala',
+  'Any transportation not mentioned in the itinerary',
+  'Entrance fees to all sightseeing spots and boating charges',
+  'Any personal expenses (tips, laundry, telephone, alcoholic beverages, etc.)',
+  'Rooms at Munnar and Thekkady are Non-AC',
+  'Optional activities: Elephant ride, bamboo rafting, jeep safari, nature walk, jungle patrol, trekking, and Ayurveda massages in Thekkady (payable directly)'],
 
-  hotelCategory: '3-Star Hotels & Premium Houseboat',
-  transportation: 'Private AC Toyota Innova / Tempo Traveller',
-  mealPlan: 'MAP (Breakfast + Dinner)',
+  hotelCategory: '3-Star Hotels & Deluxe Houseboat',
+  transportation: 'Private AC Vehicle',
+  mealPlan: 'MAP (Breakfast + Dinner) | Full Board on Houseboat',
   itinerary: [
   {
     day: 1,
-    title: 'Arrival in Cochin — Spice Coast Welcome',
+    title: 'Arrival in Cochin — Heritage Sightseeing',
     description:
-    'Arrive at Cochin International Airport and meet your Vibrant Holidays representative. Transfer to your hotel in Fort Kochi, the historic heart of the city. After freshening up, embark on a leisurely heritage walk through Fort Kochi — marvel at the iconic Chinese Fishing Nets silhouetted against the Arabian Sea, explore the Dutch Palace (Mattancherry Palace) with its stunning Kerala murals, and wander through the Jewish Quarter and Paradesi Synagogue. In the evening, witness a captivating Kathakali performance — Kerala\'s classical dance-drama — where elaborately costumed performers narrate mythological tales through precise facial expressions and hand gestures. Dinner at a rooftop restaurant overlooking the harbour.',
+    'Arrive at Cochin and meet our driver for a warm welcome. Transfer to your hotel for check-in and freshen up. Head out for Kochi local sightseeing — explore the iconic Chinese Fishing Nets silhouetted against the Arabian Sea, visit St. Francis Church (one of the oldest European churches in India), the Gothic-style Santa Cruz Basilica, the historic Mattancherry Palace (Dutch Palace) with its stunning Kerala murals, and the vibrant Jew Town with the Paradesi Synagogue. Stroll through the colonial streets of Fort Kochi and soak in the unique blend of Portuguese, Dutch, and British heritage. Return to the hotel for dinner and overnight stay in Cochin.',
     meals: 'Dinner',
-    accommodation: '3-Star Hotel, Fort Kochi'
+    accommodation: 'Broad Bean or similar, Cochin'
   },
   {
     day: 2,
     title: 'Cochin to Munnar — Into the Misty Mountains',
     description:
-    'After breakfast, drive approximately 130 km to Munnar (1,600 m), the tea capital of South India. The winding road climbs through rubber plantations, spice gardens, and cascading waterfalls — Cheeyappara and Valara waterfalls are perfect photo stops. Upon reaching Munnar, check in and visit the KDHP Tea Museum to understand the fascinating history of tea cultivation in these hills. In the afternoon, walk through a working tea estate, pluck fresh tea leaves, and tour the processing factory to see how the world-famous Munnar tea is made. Evening at leisure — sip a freshly brewed cup of single-estate tea on your hotel balcony as mist rolls in over the hills.',
+    'After breakfast, check out and drive approximately 140 km to Munnar — a picturesque hill station nestled at 6,000 ft in the Western Ghats, taking around 4 hours via the scenic Neriyamangalam Forest route. En route, stop at the stunning Valara Waterfalls and Cheeyapara Waterfalls — perfect spots for photography and a refreshing break. Pass through lush tea gardens that carpet the hillsides in vivid green. Arrive in Munnar, check in to the resort, and spend the evening at leisure enjoying the cool mountain air and misty valley views. Overnight stay in Munnar.',
     meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Munnar'
+    accommodation: 'Pine Tree Munnar or similar, Munnar'
   },
   {
     day: 3,
-    title: 'Munnar Sightseeing — Peaks, Parks & Plantations',
+    title: 'Munnar Full Day Sightseeing — Peaks, Parks & Plantations',
     description:
-    'Rise early for a sunrise drive to Eravikulam National Park, home to the endangered Nilgiri Tahr mountain goat. The park\'s rolling grasslands and shola forests are a UNESCO-recognised biodiversity hotspot. Continue to Mattupetty Dam and Indo-Swiss Livestock Project for scenic views of the reservoir surrounded by tea gardens. Visit Echo Point, where the hills create a natural acoustic phenomenon. In the afternoon, explore Kundala Lake and the Top Station viewpoint (1,700 m) — on clear days, you can see the plains of Tamil Nadu stretching to the horizon. Return to Munnar for dinner and an early night before the next day\'s journey.',
+    'After breakfast, embark on a full-day sightseeing tour of Munnar. Visit the scenic Photo Point for panoramic valley views, the fascinating Jungle Honey Bee Nest, and the beautiful Mattupetty Dam with optional boating on the reservoir. Continue to the Elephant Arrival Spot and the famous Echo Point where the hills create a natural acoustic phenomenon. Return to Munnar city for lunch (on your own). In the afternoon, visit the KDHP Tea Museum to understand the rich history of tea cultivation in these hills. Head to Anaimudi View and Rajamala — South India\'s highest peak at 8,841 ft (2,695 m) — and explore the Eravikulam National Park, home to the endangered Nilgiri Tahr. Visit the colourful Blossom Park and the Pothamedu View (Sunset Point) for breathtaking sunset vistas. Explore cardamom, coffee, and pepper plantations. Return to the hotel for dinner and overnight stay in Munnar.',
     meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Munnar'
+    accommodation: 'Pine Tree Munnar or similar, Munnar'
   },
   {
     day: 4,
-    title: 'Munnar to Alleppey — Houseboat Dreams',
+    title: 'Munnar to Thekkady — Wildlife & Spice Country',
     description:
-    'After breakfast, drive approximately 175 km to Alleppey (Alappuzha), the "Venice of the East." Check in to your traditional Kerala kettuvallam (houseboat) — a beautifully crafted wooden vessel with thatched roof, furnished bedrooms, a sit-out deck, and a fully equipped kitchen. Cast off into the labyrinthine network of backwater canals, lagoons, and lakes that form the Kuttanad region. Glide past paddy fields, coconut groves, and village life that has remained unchanged for centuries. Watch local fishermen cast their nets, children playing on canal banks, and women washing clothes at the water\'s edge. Enjoy a traditional Kerala Sadhya (feast) for lunch and fresh fish curry for dinner — all prepared onboard by your personal chef.',
-    meals: 'Breakfast, Lunch & Dinner (onboard)',
-    accommodation: 'Premium Houseboat, Alleppey Backwaters'
+    'After breakfast, check out and drive to Thekkady — the gateway to the Periyar Wildlife Sanctuary. Upon arrival, visit the Periyar Wildlife Sanctuary, one of India\'s finest wildlife reserves, where you can spot wild elephants, wild boar, deer, and if lucky, tigers on a scenic boat ride across the Periyar Lake. Explore a spice plantation tour and discover the rich variety of spices — cardamom, pepper, cinnamon, and cloves — that have made Kerala famous for centuries. In the evening, enjoy a traditional Kathakali performance — Kerala\'s classical martial arts and dance-drama. Optional activities available at extra cost: elephant ride, bamboo rafting, jeep safari, natural walk, jungle patrol, trekking, and Ayurveda massages. Check in to the hotel for dinner and overnight stay in Thekkady.',
+    meals: 'Breakfast & Dinner',
+    accommodation: 'Periyar Meadows or similar, Thekkady'
   },
   {
     day: 5,
-    title: 'Alleppey to Kovalam — Coastal Finale',
+    title: 'Thekkady to Alleppey — Houseboat Backwater Experience',
     description:
-    'Wake up to the sound of birdsong and the gentle rocking of your houseboat. Enjoy a final breakfast onboard before disembarking. Drive approximately 155 km to Kovalam, Kerala\'s most celebrated beach destination. Check in to your beachside hotel and spend the afternoon at leisure on the crescent-shaped Lighthouse Beach — swim in the warm Arabian Sea, sunbathe on golden sands, or simply watch the colourful fishing boats return with their catch. In the evening, climb to the iconic Kovalam Lighthouse for a panoramic sunset view. Enjoy a seafood dinner at a beachfront restaurant — fresh lobster, tiger prawns, and Kerala-style fish moilee are highly recommended. Overnight at Kovalam.',
-    meals: 'Breakfast & Dinner',
-    accommodation: '3-Star Hotel, Kovalam'
+    'After breakfast, check out and drive to Alappuzha (Alleppey) — the "Venice of the East." Check in to your beautifully crafted Deluxe Houseboat — a traditional Kerala kettuvallam with furnished bedrooms, a sit-out deck, and a fully equipped kitchen. Cast off into the labyrinthine network of backwater canals, lagoons, and lakes, gliding past paddy fields, coconut groves, and timeless village life. Enjoy all three meals onboard prepared by your personal chef. Optional: take a peaceful Shikara ride on the backwaters and enjoy stunning sunset views over the water. Spend the evening soaking in the tranquillity of the backwaters. Overnight stay on the Deluxe Houseboat in Alleppey.',
+    meals: 'Breakfast, Lunch & Dinner (onboard)',
+    accommodation: 'Deluxe Houseboat, Alleppey'
+  },
+  {
+    day: 6,
+    title: 'Departure — Farewell from God\'s Own Country',
+    description:
+    'Wake up to the gentle sounds of the backwaters and enjoy a final breakfast onboard the houseboat. After check-out, our driver will transfer you to Cochin Airport or Railway Station for your onward journey. As you depart, carry with you the fragrance of spice gardens, the echo of Kathakali drums, and the serene memory of Kerala\'s backwaters that will call you back again.',
+    meals: 'Breakfast',
+    accommodation: 'Departure'
   }],
 
   optionalActivities: [
-  'Ayurvedic Panchakarma treatment (2–3 hours, ₹2,500–₹5,000)',
-  'Surfing lessons at Kovalam Beach',
-  'Periyar Wildlife Sanctuary day trip from Munnar',
-  'Cooking class — traditional Kerala cuisine',
-  'Sunset catamaran cruise from Kovalam',
-  'Bamboo rafting on Periyar Lake'],
+  'Elephant ride in Thekkady (payable directly)',
+  'Bamboo rafting on Periyar Lake (payable directly)',
+  'Jeep safari in Periyar Wildlife Sanctuary (payable directly)',
+  'Nature walk and jungle patrol in Thekkady (payable directly)',
+  'Trekking in Thekkady forests (payable directly)',
+  'Ayurveda massage in Thekkady (payable directly)',
+  'Shikara ride on Alleppey backwaters (payable directly)',
+  'Boating at Mattupetty Dam, Munnar (payable directly)'],
 
   bestTimeToVisit:
-  'September to March for pleasant weather and clear skies. October–November is ideal for backwaters. Avoid June–August (heavy monsoon), though Munnar is magical in the rains for those who enjoy misty landscapes.',
+  'September to March for pleasant weather and clear skies. October–November is ideal for backwaters. Munnar is magical during the monsoon (June–August) for those who enjoy misty landscapes, though travel may be affected by heavy rains.',
   thingsToCarry: [
-  'Light cotton clothing (Kerala is humid)',
+  'Light cotton clothing (Kerala is warm and humid)',
   'Waterproof sandals or flip-flops for houseboat',
+  'Light jacket or shawl for Munnar evenings (can get cool)',
   'Sunscreen SPF 50+ and insect repellent',
-  'Modest clothing for temple visits',
+  'Modest clothing for church and temple visits',
   'Personal medications and motion sickness tablets (for winding mountain roads)',
   'Camera with waterproof cover',
-  'Cash for local markets and tips'],
+  'Cash for entrance fees, optional activities, and local markets'],
 
   relatedSlugs: ['goa', 'kashmir', 'north-east-india']
 },
