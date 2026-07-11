@@ -44,6 +44,46 @@ const memories = [
     author: '— Hans Christian Andersen',
     position: 'bottom-left',
   },
+  {
+    id: 6,
+    src: '/assets/images/IMG_20240207_101401-1783756640738.jpg',
+    alt: 'Vibrant Holidays travellers enjoying a beautiful daytime destination',
+    quote: 'Jobs fill your pocket, but adventures fill your soul.',
+    author: '— Jaime Lyn',
+    position: 'bottom-left',
+  },
+  {
+    id: 7,
+    src: '/assets/images/IMG_20240207_013249-1783756640998.jpg',
+    alt: 'Night-time travel memory from a Vibrant Holidays journey',
+    quote: 'Travel makes one modest. You see what a tiny place you occupy in the world.',
+    author: '— Gustave Flaubert',
+    position: 'top-right',
+  },
+  {
+    id: 8,
+    src: '/assets/images/PHOTO-2026-04-11-19-59-41-1783756638340.jpg',
+    alt: 'Travellers capturing a golden-hour moment during a Vibrant Holidays tour',
+    quote: 'The journey of a thousand miles begins with a single step.',
+    author: '— Lao Tzu',
+    position: 'bottom-right',
+  },
+  {
+    id: 9,
+    src: '/assets/images/PHOTO-2026-04-11-19-58-45-1783756638580.jpg',
+    alt: 'Scenic landscape captured on a Vibrant Holidays trip',
+    quote: 'We travel not to escape life, but for life not to escape us.',
+    author: '— Anonymous',
+    position: 'top-left',
+  },
+  {
+    id: 10,
+    src: '/assets/images/PHOTO-2026-04-11-19-56-41-1783756638394.jpg',
+    alt: 'Beautiful travel moment from a Vibrant Holidays adventure',
+    quote: 'Wherever you go, go with all your heart.',
+    author: '— Confucius',
+    position: 'bottom-left',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
