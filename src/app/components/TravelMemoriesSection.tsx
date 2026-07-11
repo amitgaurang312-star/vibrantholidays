@@ -46,6 +46,17 @@ const memories = [
   },
 ];
 
+// Pre-computed deterministic star data to avoid SSR/client hydration mismatch
+const STARS = Array.from({ length: 30 }, (_, i) => ({
+  width: (((i * 17 + 7) % 20) / 10 + 1).toFixed(2),
+  height: (((i * 13 + 3) % 20) / 10 + 1).toFixed(2),
+  top: `${(i * 37) % 100}%`,
+  left: `${(i * 53 + 11) % 100}%`,
+  opacity: 0.15 + (i % 5) * 0.05,
+  animationDuration: `${2 + (i % 3)}s`,
+  animationDelay: `${((i * 3) % 30) / 10}s`,
+}));
+
 export default function TravelMemoriesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -91,18 +102,18 @@ export default function TravelMemoriesSection() {
     >
       {/* Starfield dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+        {STARS.map((star, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-white"
             style={{
-              width: `${Math.random() * 2 + 1}px`,
-              height: `${Math.random() * 2 + 1}px`,
-              top: `${(i * 37) % 100}%`,
-              left: `${(i * 53 + 11) % 100}%`,
-              opacity: 0.15 + (i % 5) * 0.05,
-              animation: `pulse ${2 + (i % 3)}s ease-in-out infinite`,
-              animationDelay: `${(i * 0.3) % 3}s`,
+              width: `${star.width}px`,
+              height: `${star.height}px`,
+              top: star.top,
+              left: star.left,
+              opacity: star.opacity,
+              animation: `pulse ${star.animationDuration} ease-in-out infinite`,
+              animationDelay: star.animationDelay,
             }}
           />
         ))}
