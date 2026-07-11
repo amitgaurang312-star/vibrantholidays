@@ -38,23 +38,13 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'py-2.5 shadow-glass'
-            : 'py-4'
-        }`}
-        style={
-          scrolled
-            ? {
-                background: 'rgba(255,255,255,0.90)',
-                backdropFilter: 'blur(28px) saturate(200%)',
-                WebkitBackdropFilter: 'blur(28px) saturate(200%)',
-                borderBottom: '1px solid rgba(11,138,143,0.12)',
-              }
-            : {
-                background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.38) 65%, transparent 100%)',
-              }
-        }
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-2.5 shadow-glass"
+        style={{
+          background: 'rgba(255,255,255,0.95)',
+          backdropFilter: 'blur(28px) saturate(200%)',
+          WebkitBackdropFilter: 'blur(28px) saturate(200%)',
+          borderBottom: '1px solid rgba(11,138,143,0.12)',
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
@@ -68,11 +58,7 @@ export default function Header() {
               <Link
                 key={link?.href}
                 href={link?.href}
-                className={`nav-link-underline text-sm font-medium tracking-wide transition-colors duration-200 ${
-                  scrolled
-                    ? 'text-foreground hover:text-primary'
-                    : 'text-white/90 hover:text-white'
-                }`}
+                className="nav-link-underline text-sm font-medium tracking-wide transition-colors duration-200 text-foreground hover:text-primary"
               >
                 {link?.label}
               </Link>
@@ -94,15 +80,13 @@ export default function Header() {
 
             {/* Hamburger */}
             <button
-              className={`lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 ${
-                scrolled ? 'hover:bg-muted' : 'hover:bg-white/10'
-              }`}
+              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 hover:bg-muted"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''} ${scrolled ? 'bg-foreground' : 'bg-white'}`} />
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? 'opacity-0 scale-x-0' : ''} ${scrolled ? 'bg-foreground' : 'bg-white'}`} />
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''} ${scrolled ? 'bg-foreground' : 'bg-white'}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-foreground ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-foreground ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-foreground ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
           </div>
         </div>
