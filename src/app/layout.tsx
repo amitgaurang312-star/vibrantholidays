@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: 'Vibrant Holidays — Customized Travel Packages India & International',
   description: 'Vibrant Holidays offers customized domestic and international holiday packages from Pune. Kashmir, Kerala, Dubai, Bali, Maldives and 50+ destinations. 100+ happy travellers.',
   icons: {
-    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    icon: [{ url: '/assets/images/vibrant_holidays_logo_print_final-1783762060178.png', type: 'image/png' }],
   },
 };
 
