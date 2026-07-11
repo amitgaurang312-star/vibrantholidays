@@ -124,6 +124,46 @@ const memories = [
     author: '— Anonymous',
     position: 'top-right',
   },
+  {
+    id: 16,
+    src: '/assets/images/PHOTO-2026-05-30-21-50-37__2_-1783756857742.jpg',
+    alt: 'Vibrant Holidays travellers enjoying a picturesque travel destination',
+    quote: 'Travel is the healthiest addiction.',
+    author: '— Anonymous',
+    position: 'bottom-left',
+  },
+  {
+    id: 17,
+    src: '/assets/images/PHOTO-2026-05-30-21-50-37__1_-1783756857762.jpg',
+    alt: 'Beautiful travel moment captured during a Vibrant Holidays group tour',
+    quote: 'The world is yours to explore.',
+    author: '— Anonymous',
+    position: 'top-right',
+  },
+  {
+    id: 18,
+    src: '/assets/images/PHOTO-2026-05-25-13-35-04-1783756857989.jpg',
+    alt: 'Stunning scenery from a Vibrant Holidays travel experience',
+    quote: 'Every journey begins with a single step.',
+    author: '— Anonymous',
+    position: 'bottom-right',
+  },
+  {
+    id: 19,
+    src: '/assets/images/PHOTO-2026-05-30-21-50-37-1783756857818.jpg',
+    alt: 'Vibrant Holidays travellers creating unforgettable memories at a scenic spot',
+    quote: 'Go where you feel most alive.',
+    author: '— Anonymous',
+    position: 'top-left',
+  },
+  {
+    id: 20,
+    src: '/assets/images/PHOTO-2026-05-30-21-52-28-1783756857834.jpg',
+    alt: 'Joyful travel memory from a Vibrant Holidays adventure tour',
+    quote: 'Blessed are the curious, for they shall have adventures.',
+    author: '— Lovelle Drachman',
+    position: 'bottom-left',
+  },
 ];
 
 // Pre-computed deterministic star data to avoid SSR/client hydration mismatch
