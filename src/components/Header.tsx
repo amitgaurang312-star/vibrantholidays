@@ -97,7 +97,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between relative" style={{ zIndex: 1 }}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <AppLogo size={160} className="transition-transform duration-400 group-hover:scale-105" />
+            <AppLogo size={192} className="transition-transform duration-400 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
@@ -159,7 +159,7 @@ export default function Header() {
           >
             {/* Mobile Header — single logo + close button */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-border">
-              <AppLogo size={140} />
+              <AppLogo size={168} />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center hover:bg-primary/10 transition-colors duration-200"
