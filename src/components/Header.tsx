@@ -42,22 +42,59 @@ export default function Header() {
         style={
           scrolled
             ? {
-                background: 'linear-gradient(135deg, #0b8a8f 0%, #0d4f8c 60%, #1a1a6e 100%)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                borderBottom: '1px solid rgba(255,255,255,0.15)',
-                boxShadow: '0 4px 24px rgba(11,138,143,0.35)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.98) 40%, rgba(224,240,255,0.95) 100%)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderBottom: '1px solid rgba(180,210,255,0.35)',
+                boxShadow: '0 4px 32px rgba(180,210,255,0.45), 0 1px 0 rgba(255,255,255,0.9)',
               }
             : {
-                background: 'linear-gradient(135deg, #0b8a8f 0%, #0d4f8c 60%, #1a1a6e 100%)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(235,248,255,0.97) 35%, rgba(210,235,255,0.92) 70%, rgba(190,225,255,0.85) 100%)',
                 backdropFilter: 'blur(8px)',
                 WebkitBackdropFilter: 'blur(8px)',
-                borderBottom: '1px solid rgba(255,255,255,0.15)',
-                boxShadow: '0 4px 24px rgba(11,138,143,0.35)',
+                borderBottom: '1px solid rgba(180,210,255,0.25)',
+                boxShadow: '0 2px 24px rgba(180,210,255,0.3)',
               }
         }
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        {/* Soft cloud puff accents */}
+        <div
+          className="absolute inset-0 pointer-events-none overflow-hidden"
+          style={{ zIndex: 0 }}
+        >
+          <div style={{
+            position: 'absolute', top: '-18px', left: '8%',
+            width: '120px', height: '60px',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
+            borderRadius: '50%', filter: 'blur(8px)', opacity: 0.7,
+          }} />
+          <div style={{
+            position: 'absolute', top: '-10px', left: '18%',
+            width: '80px', height: '45px',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.9) 60%, transparent 100%)',
+            borderRadius: '50%', filter: 'blur(6px)', opacity: 0.6,
+          }} />
+          <div style={{
+            position: 'absolute', top: '-22px', right: '12%',
+            width: '140px', height: '70px',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
+            borderRadius: '50%', filter: 'blur(10px)', opacity: 0.65,
+          }} />
+          <div style={{
+            position: 'absolute', top: '-8px', right: '25%',
+            width: '90px', height: '50px',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(220,240,255,0.9) 60%, transparent 100%)',
+            borderRadius: '50%', filter: 'blur(7px)', opacity: 0.55,
+          }} />
+          <div style={{
+            position: 'absolute', top: '-15px', left: '45%',
+            width: '100px', height: '55px',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.88) 60%, transparent 100%)',
+            borderRadius: '50%', filter: 'blur(8px)', opacity: 0.5,
+          }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between relative" style={{ zIndex: 1 }}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
             <AppLogo size={160} className="transition-transform duration-400 group-hover:scale-105" />
@@ -69,7 +106,7 @@ export default function Header() {
               <Link
                 key={link?.href}
                 href={link?.href}
-                className={`nav-link-underline text-sm font-medium tracking-wide transition-colors duration-200 ${scrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-amber-300'}`}
+                className="nav-link-underline text-sm font-semibold tracking-wide transition-colors duration-200 text-slate-700 hover:text-blue-600"
               >
                 {link?.label}
               </Link>
@@ -91,13 +128,13 @@ export default function Header() {
 
             {/* Hamburger */}
             <button
-              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 hover:bg-white/10"
+              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 hover:bg-blue-50"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${scrolled ? 'bg-foreground' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${scrolled ? 'bg-foreground' : 'bg-white'} ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
-              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${scrolled ? 'bg-foreground' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-slate-700 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-slate-700 ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
+              <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-slate-700 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
           </div>
         </div>
