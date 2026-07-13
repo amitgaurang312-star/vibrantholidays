@@ -9,7 +9,7 @@ const destinations = [
   slug: 'kashmir',
   tagline: 'Paradise on Earth',
   video: "https://images.unsplash.com/photo-1723013824490-badf12d647be",
-  poster: "/assets/images/gulmarg-1783920664526.webp",
+  poster: "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=1920&q=100&fit=crop",
   duration: '5–7 Days',
   price: '₹18,000',
   highlights: ['Dal Lake', 'Gulmarg', 'Pahalgam'],
