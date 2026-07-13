@@ -394,8 +394,8 @@ export const packages: PackageData[] = [
   duration: '6 Days / 5 Nights',
   durationNights: '5 Nights',
   price: '₹16,000',
-  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_11d668f2d-1768440186997.png",
-  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_11d668f2d-1768440186997.png",
+  heroImage: "/assets/images/top-tourist-attractions-mob-banner-1783921461174.webp",
+  heroVideo: "/assets/images/landscape-nature-forest-wilderness-walking-mountain-419714-pxhere.com-2-1783921461192.jpg",
   type: 'domestic',
   whatsappNumber: WHATSAPP,
   overview:
