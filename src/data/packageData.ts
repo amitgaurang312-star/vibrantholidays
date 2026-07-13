@@ -45,13 +45,13 @@ export const packages: PackageData[] = [
   tagline: 'Where Heaven Meets Earth',
   duration: '6 Days / 5 Nights',
   durationNights: '5 Nights',
-  price: '₹75,000',
+  price: '₹25,000',
   heroImage: "https://images.unsplash.com/photo-1555286996-0053a534f0ff",
   heroVideo: "https://images.unsplash.com/photo-1555286996-0053a534f0ff",
   type: 'domestic',
   whatsappNumber: WHATSAPP,
   overview:
-  'Experience the breathtaking beauty of Kashmir — the crown jewel of India — with this carefully curated 6-day journey covering Srinagar, Sonmarg, Gulmarg, and Pahalgam. From the shimmering expanse of Dal Lake and the golden meadows of Sonmarg to the snow-dusted slopes of Gulmarg and the lush valleys of Pahalgam, this package blends natural grandeur with authentic Kashmiri hospitality. Travel by private vehicle with a dedicated driver-cum-location guide, stay in handpicked hotels and a traditional houseboat, and savour daily Kashmiri meals throughout your stay. Package cost: ₹75,000 (excluding flights) for 4 adults.',
+  'Experience the breathtaking beauty of Kashmir — the crown jewel of India — with this carefully curated 6-day journey covering Srinagar, Sonmarg, Gulmarg, and Pahalgam. From the shimmering expanse of Dal Lake and the golden meadows of Sonmarg to the snow-dusted slopes of Gulmarg and the lush valleys of Pahalgam, this package blends natural grandeur with authentic Kashmiri hospitality. Travel by private vehicle with a dedicated driver-cum-location guide, stay in handpicked hotels and a traditional houseboat, and savour daily Kashmiri meals throughout your stay. Package cost: ₹25,000 (excluding flights) per person.',
   destinationsCovered: ['Srinagar', 'Sonmarg', 'Gulmarg', 'Pahalgam'],
   highlights: [
   'Srinagar local sightseeing on arrival day',
