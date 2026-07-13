@@ -991,8 +991,8 @@ export const packages: PackageData[] = [
   duration: '7 Days / 6 Nights',
   durationNights: '6 Nights',
   price: '₹52,000',
-  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_14813fd4a-1783683714553.png",
-  heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_14813fd4a-1783683714553.png",
+  heroImage: "/assets/images/900x600_vietnam_hoi_an_phuc_kien_pink_building-1783922368562.jpg",
+  heroVideo: "/assets/images/900x600_vietnam_hoi_an_phuc_kien_pink_building-1783922368562.jpg",
   type: 'international',
   whatsappNumber: WHATSAPP,
   overview:
