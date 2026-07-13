@@ -94,7 +94,7 @@ function DestinationCard({ dest, index, visible }: {dest: typeof destinations[0]
       </div>
 
       {/* Base gradient scrim */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
 
       {/* Hover overlay — teal tint */}
       <div className="destination-card-overlay absolute inset-0" />
@@ -119,8 +119,8 @@ function DestinationCard({ dest, index, visible }: {dest: typeof destinations[0]
 
         {/* Bottom info */}
         <div>
-          <p className="text-white/65 text-xs font-semibold uppercase tracking-widest mb-1.5">{dest.tagline}</p>
-          <h3 className="font-display text-card-lg text-white font-semibold mb-3 drop-shadow-sm">{dest.name}</h3>
+          <p className="text-white text-xs font-semibold uppercase tracking-widest mb-1.5" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{dest.tagline}</p>
+          <h3 className="font-display text-card-lg text-white font-semibold mb-3" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{dest.name}</h3>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {dest.highlights?.map((h) =>
             <span key={h} className="text-white text-xs px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}>
