@@ -1348,7 +1348,7 @@ export const packages: PackageData[] = [
   duration: '6 Days / 5 Nights',
   durationNights: '5 Nights',
   price: '₹38,000',
-  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1af77342c-1783683714296.png",
+  heroImage: "/assets/images/360_F_364951258_xLzCW41kr5AV7OXdVv49ufv6u0XL3nqq-1783923172216.png",
   type: 'international',
   whatsappNumber: WHATSAPP,
   overview:
