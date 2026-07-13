@@ -33,7 +33,7 @@ export interface PackageData {
   whatsappNumber: string;
 }
 
-const WHATSAPP = '919876543210';
+const WHATSAPP = '918668355974';
 
 export const packages: PackageData[] = [
 // ─── DOMESTIC ───────────────────────────────────────────────────────────────

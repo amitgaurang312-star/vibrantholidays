@@ -213,7 +213,7 @@ export default function DeparturesList() {
                 </div>
 
                 <a
-                  href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
+                  href="https://wa.me/918668355974?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg w-full sm:w-auto"
@@ -370,7 +370,7 @@ export default function DeparturesList() {
               Seats fill up fast on a first-come, first-served basis. Book your spot today for just ₹65,000/person.
             </p>
             <a
-              href="https://wa.me/919876543210?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
+              href="https://wa.me/918668355974?text=Hi%2C%20I%20am%20interested%20in%20the%20Thailand%20Fixed%20Departure%20package.%20Please%20share%20more%20details."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
