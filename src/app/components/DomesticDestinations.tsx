@@ -8,8 +8,8 @@ const destinations = [
   name: 'Kashmir',
   slug: 'kashmir',
   tagline: 'Paradise on Earth',
-  video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-  poster: "https://images.unsplash.com/photo-1615423923021-04132cf158b1?w=800&q=80",
+  video: "https://images.unsplash.com/photo-1723013824490-badf12d647be",
+  poster: "/assets/images/gulmarg-1783920664526.webp",
   duration: '5–7 Days',
   price: '₹18,000',
   highlights: ['Dal Lake', 'Gulmarg', 'Pahalgam'],
@@ -60,7 +60,7 @@ const destinations = [
   span: 'lg:col-span-3'
 }];
 
-function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0]; index: number; visible: boolean }) {
+function DestinationCard({ dest, index, visible }: {dest: typeof destinations[0];index: number;visible: boolean;}) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -75,9 +75,9 @@ function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0
       style={{
         transitionDelay: `${index * 80}ms`,
         minHeight: dest.name === 'North East India' ? 240 : 320,
-        boxShadow: '0 8px 32px rgba(13,27,42,0.12)',
-      }}
-    >
+        boxShadow: '0 8px 32px rgba(13,27,42,0.12)'
+      }}>
+      
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
         <video
@@ -89,8 +89,8 @@ function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0
           loop
           playsInline
           className="destination-card-img object-cover object-center w-full h-full"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        
       </div>
 
       {/* Base gradient scrim */}
@@ -122,17 +122,17 @@ function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0
           <p className="text-white/65 text-xs font-semibold uppercase tracking-widest mb-1.5">{dest.tagline}</p>
           <h3 className="font-display text-card-lg text-white font-semibold mb-3 drop-shadow-sm">{dest.name}</h3>
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {dest.highlights?.map((h) => (
-              <span key={h} className="text-white text-xs px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            {dest.highlights?.map((h) =>
+            <span key={h} className="text-white text-xs px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}>
                 {h}
               </span>
-            ))}
+            )}
           </div>
           <Link
             href={`/packages/${dest.slug}`}
             className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-accent hover:text-white opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0"
-            style={{ transition: 'opacity 0.35s cubic-bezier(0.23,1,0.32,1), transform 0.35s cubic-bezier(0.23,1,0.32,1), background-color 0.2s ease, color 0.2s ease', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}
-          >
+            style={{ transition: 'opacity 0.35s cubic-bezier(0.23,1,0.32,1), transform 0.35s cubic-bezier(0.23,1,0.32,1), background-color 0.2s ease, color 0.2s ease', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}>
+            
             Explore Package
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
@@ -140,8 +140,8 @@ function DestinationCard({ dest, index, visible }: { dest: typeof destinations[0
           </Link>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
 
 export default function DomesticDestinations() {
@@ -150,7 +150,7 @@ export default function DomesticDestinations() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {if (entry.isIntersecting) setVisible(true);},
       { threshold: 0.05 }
     );
     if (sectionRef?.current) observer?.observe(sectionRef?.current);
@@ -176,8 +176,8 @@ export default function DomesticDestinations() {
           </div>
           <Link
             href="/tour-packages"
-            className="flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all duration-300 flex-shrink-0 group"
-          >
+            className="flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all duration-300 flex-shrink-0 group">
+            
             View All Packages
             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -187,11 +187,11 @@ export default function DomesticDestinations() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {destinations?.map((dest, i) => (
-            <DestinationCard key={dest.name} dest={dest} index={i} visible={visible} />
-          ))}
+          {destinations?.map((dest, i) =>
+          <DestinationCard key={dest.name} dest={dest} index={i} visible={visible} />
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

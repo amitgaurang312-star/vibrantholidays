@@ -46,8 +46,8 @@ export const packages: PackageData[] = [
   duration: '6 Days / 5 Nights',
   durationNights: '5 Nights',
   price: '₹25,000',
-  heroImage: "https://images.unsplash.com/photo-1555286996-0053a534f0ff",
-  heroVideo: "https://images.unsplash.com/photo-1555286996-0053a534f0ff",
+  heroImage: "/assets/images/Kashmir-1-1783920695347.jpg",
+  heroVideo: "/assets/images/Kashmir-1-1783920695347.jpg",
   type: 'domestic',
   whatsappNumber: WHATSAPP,
   overview:
