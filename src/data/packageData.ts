@@ -1221,7 +1221,7 @@ export const packages: PackageData[] = [
   duration: '7 Days / 6 Nights',
   durationNights: '6 Nights',
   price: '₹65,000',
-  heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1a6a04c9f-1773131007599.png",
+  heroImage: "/assets/images/4-days-in-malaysia-1725351164-785X440-1783922727576.jpg",
   heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1a6a04c9f-1773131007599.png",
   type: 'international',
   whatsappNumber: WHATSAPP,
