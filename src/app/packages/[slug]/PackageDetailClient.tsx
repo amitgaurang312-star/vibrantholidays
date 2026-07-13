@@ -309,7 +309,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                     Book This Package
                   </a>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+918668355974"
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm border-2 border-teal-600 text-teal-700 hover:bg-teal-50 transition-all"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
