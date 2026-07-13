@@ -642,8 +642,8 @@ export const packages: PackageData[] = [
   duration: '5 Days / 4 Nights',
   durationNights: '4 Nights',
   price: '₹55,000',
-  heroImage: "https://images.unsplash.com/photo-1728487430251-b4a951af00ee",
-  heroVideo: "https://images.unsplash.com/photo-1728487430251-b4a951af00ee",
+  heroImage: "/assets/images/attractions-1-1783921731905.jpg",
+  heroVideo: "/assets/images/30.124.1-DTCM-Madinat-Jumeirah-Image-by-Dubai-Tourism-1783921705111.webp",
   type: 'international',
   whatsappNumber: WHATSAPP,
   overview:
