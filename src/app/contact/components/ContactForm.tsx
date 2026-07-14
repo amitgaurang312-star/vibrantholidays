@@ -24,6 +24,8 @@ export default function ContactForm() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -40,9 +42,27 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formName: 'Contact Enquiry', ...form }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error ?? 'Something went wrong. Please try again.');
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputBase = `w-full px-4 py-3.5 rounded-xl border bg-card text-foreground text-sm font-medium transition-all duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground`;
@@ -154,7 +174,7 @@ export default function ContactForm() {
                     Thank you! Our team will contact you within 2 hours on your phone or email.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', destination: '', travelType: '', travelDate: '', pax: '', message: '' }); }}
                     className="mt-6 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5"
                     style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' }}
                   >
@@ -300,15 +320,38 @@ export default function ContactForm() {
                     />
                   </div>
 
+                  {/* Error message */}
+                  {error && (
+                    <div className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                      <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-red-600 text-sm">{error}</p>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full text-white py-4 rounded-2xl font-semibold text-base transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="w-full text-white py-4 rounded-2xl font-semibold text-base transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)', boxShadow: '0 4px 20px rgba(11,138,143,0.35)' }}
                   >
-                    Send Enquiry
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
+                    {loading ? (
+                      <>
+                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Enquiry
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </>
+                    )}
                   </button>
 
                   <p className="text-center text-muted-foreground text-xs">

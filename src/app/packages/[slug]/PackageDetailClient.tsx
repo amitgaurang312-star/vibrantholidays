@@ -13,10 +13,40 @@ export default function PackageDetailClient({ pkg, related }: Props) {
   const [openDay, setOpenDay] = useState<number | null>(1);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', date: '', guests: '2', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setFormError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formName: 'Package Enquiry',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          travelDate: formData.date,
+          guests: formData.guests,
+          packageName: pkg.packageName,
+          destination: pkg.destination,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setFormError(data.error ?? 'Something went wrong. Please try again.');
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setFormError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const whatsappMsg = encodeURIComponent(
@@ -197,7 +227,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                           {day.day}
                         </span>
                         <div>
-                          <div className="text-xs text-teal-600 font-semibold uppercase tracking-wide">Day {day.day}</div>
+                          <div className="text-xs text-teal-600 font-semibold uppercase tracking-wide mb-1">Day {day.day}</div>
                           <div className="font-semibold text-gray-800">{day.title}</div>
                         </div>
                       </div>
@@ -425,12 +455,31 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm resize-none"
                   />
                 </div>
+                {formError && (
+                  <div className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                    <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-red-600 text-sm">{formError}</p>
+                  </div>
+                )}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  disabled={loading}
+                  className="w-full py-4 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 100%)', boxShadow: '0 8px 24px rgba(11,138,143,0.35)' }}
                 >
-                  Send Enquiry — We'll Respond in 2 Hours
+                  {loading ? (
+                    <>
+                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Enquiry — We'll Respond in 2 Hours"
+                  )}
                 </button>
               </form>
             )}
