@@ -180,11 +180,11 @@ export async function POST(req: NextRequest) {
 
     // Send email via Resend
     const { error } = await resend.emails.send({
-      from: 'Vibrant Holidays <onboarding@resend.dev>',
+      from: 'Vibrant Holidays <info@vibrantholidayspune.com>',
       to: ['info@vibrantholidayspune.com'],
+      replyTo: replyTo,
       subject,
       html: buildEmailHtml(resolvedFormName, stringFields),
-      ...(replyTo ? { replyTo } : {}),
     });
 
     if (error) {
