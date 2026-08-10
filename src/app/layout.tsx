@@ -6,16 +6,18 @@ import LeadPopup from '@/components/LeadPopup';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   variable: '--font-fraunces',
   display: 'swap',
+  preload: true,
 });
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '700'],
   variable: '--font-dm-sans',
   display: 'swap',
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -36,6 +38,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
       <head>
+        {/* Preconnect to critical third-party origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://img.rocket.new" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -61,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://w
         {/* End Google Tag Manager (noscript) */}
         <LeadPopup />
         {children}
-</body>
+      </body>
     </html>
   );
 }
