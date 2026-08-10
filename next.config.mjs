@@ -64,7 +64,7 @@ const nextConfig = {
   async headers() {
     const csp = [
       `default-src 'self'`,
-      `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://ssl.google-analytics.com https://analytics.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://connect.facebook.net https://static.rocket.new`,
+      `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://ssl.google-analytics.com https://analytics.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.gstatic.com https://www.google.com https://connect.facebook.net https://static.rocket.new`,
       `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`,
       `font-src 'self' https://fonts.gstatic.com data:`,
       `img-src 'self' data: blob: https: http:`,
