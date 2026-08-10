@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface FormState {
   name: string;
@@ -17,6 +18,7 @@ interface FormErrors {
 }
 
 export default function LeadPopup() {
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [closing, setClosing] = useState(false);
   const [form, setForm] = useState<FormState>({ name: '', phone: '', email: '', requirement: '' });
@@ -125,6 +127,8 @@ export default function LeadPopup() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Submission failed');
       setSubmitted(true);
+      closePopup();
+      router.push('/thank-you');
     } catch (err: unknown) {
       setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
       // Resume auto-close timer if submission failed

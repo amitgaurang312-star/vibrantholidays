@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { PackageData } from '@/data/packageData';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function PackageDetailClient({ pkg, related }: Props) {
+  const router = useRouter();
   const [openDay, setOpenDay] = useState<number | null>(1);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', date: '', guests: '2', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -40,7 +42,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
       if (!res.ok) {
         setFormError(data.error ?? 'Something went wrong. Please try again.');
       } else {
-        setSubmitted(true);
+        router.push('/thank-you');
       }
     } catch {
       setFormError('Network error. Please check your connection and try again.');

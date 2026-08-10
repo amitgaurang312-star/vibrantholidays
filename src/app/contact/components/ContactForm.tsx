@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 const destinations = [
   'Kashmir', 'Kerala', 'Goa', 'Himachal Pradesh', 'North East India',
@@ -13,6 +14,7 @@ const travelTypes = [
 ];
 
 export default function ContactForm() {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -56,7 +58,7 @@ export default function ContactForm() {
       if (!res.ok) {
         setError(data.error ?? 'Something went wrong. Please try again.');
       } else {
-        setSubmitted(true);
+        router.push('/thank-you');
       }
     } catch {
       setError('Network error. Please check your connection and try again.');
