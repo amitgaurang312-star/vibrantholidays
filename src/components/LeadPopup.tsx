@@ -25,6 +25,8 @@ export default function LeadPopup() {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
+  const autoCloseTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const closePopup = useCallback(() => {
     setClosing(true);
     setTimeout(() => {
@@ -32,6 +34,15 @@ export default function LeadPopup() {
       setClosing(false);
     }, 400);
   }, []);
+
+  const resetAutoCloseTimer = useCallback(() => {
+    if (autoCloseTimerRef.current) {
+      clearTimeout(autoCloseTimerRef.current);
+    }
+    autoCloseTimerRef.current = setTimeout(() => {
+      if (!submitted) closePopup();
+    }, 7000);
+  }, [submitted, closePopup]);
 
   useEffect(() => {
     // Show popup after a short delay on page load
@@ -41,12 +52,20 @@ export default function LeadPopup() {
 
   useEffect(() => {
     if (!visible) return;
-    // Auto-close after 7 seconds (only if not submitted)
-    const autoClose = setTimeout(() => {
-      if (!submitted) closePopup();
-    }, 7000);
-    return () => clearTimeout(autoClose);
-  }, [visible, submitted, closePopup]);
+    // Start the auto-close timer when popup becomes visible
+    resetAutoCloseTimer();
+    return () => {
+      if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
+    };
+  }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // When submitted, clear the auto-close timer so it doesn't close during success message
+  useEffect(() => {
+    if (submitted) {
+      if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
+      setTimeout(() => closePopup(), 3000);
+    }
+  }, [submitted, closePopup]);
 
   // Prevent body scroll when popup is open
   useEffect(() => {
@@ -80,6 +99,8 @@ export default function LeadPopup() {
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
+    // Reset auto-close timer on every keystroke
+    resetAutoCloseTimer();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -87,6 +108,8 @@ export default function LeadPopup() {
     if (!validate()) return;
     setSubmitting(true);
     setSubmitError('');
+    // Clear auto-close timer during submission
+    if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -102,9 +125,10 @@ export default function LeadPopup() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Submission failed');
       setSubmitted(true);
-      setTimeout(() => closePopup(), 3000);
     } catch (err: unknown) {
       setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      // Resume auto-close timer if submission failed
+      resetAutoCloseTimer();
     } finally {
       setSubmitting(false);
     }
@@ -151,6 +175,9 @@ export default function LeadPopup() {
           overflowY: 'auto',
         }}
         onClick={(e) => e.stopPropagation()}
+        onMouseMove={resetAutoCloseTimer}
+        onFocus={resetAutoCloseTimer}
+        onKeyDown={resetAutoCloseTimer}
       >
         {/* Header gradient banner */}
         <div
