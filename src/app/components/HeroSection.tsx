@@ -91,7 +91,8 @@ export default function HeroSection() {
             alt={slide.alt}
             fill
             priority={i === 0}
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            quality={i === 0 ? 80 : 65}
             className="object-cover object-center"
             style={{ transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)', transition: 'transform 5500ms ease-out' }}
           />
@@ -102,8 +103,8 @@ export default function HeroSection() {
         </div>
       ))}
 
-      {/* Floating ambient particles */}
-      <div className="absolute inset-0 pointer-events-none z-5">
+      {/* Floating ambient particles — hidden on mobile to save GPU */}
+      <div className="absolute inset-0 pointer-events-none z-5 hidden sm:block">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, rgba(10,187,194,0.6) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 8s ease-in-out infinite' }} />
         <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full opacity-8" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.5) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 10s ease-in-out infinite reverse' }} />
       </div>

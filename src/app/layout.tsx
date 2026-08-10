@@ -6,7 +6,7 @@ import LeadPopup from '@/components/LeadPopup';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '700'],
   variable: '--font-fraunces',
   display: 'swap',
   preload: true,
@@ -23,6 +23,9 @@ const dmSans = DM_Sans({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  minimumScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#0B8A8F',
 };
 
 export const metadata: Metadata = {
@@ -41,12 +44,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Preconnect to critical third-party origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://img.rocket.new" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://img.rocket.new" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
-        {/* Google Tag Manager */}
+        {/* Preload hero LCP image for mobile */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://images.unsplash.com/photo-1459735676691-2c21eea54445?w=828&q=75&fm=webp"
+          fetchPriority="high"
+        />
+
+        {/* Google Tag Manager — deferred to not block mobile parse */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

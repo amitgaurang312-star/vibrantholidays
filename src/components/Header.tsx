@@ -57,9 +57,9 @@ export default function Header() {
               }
         }
       >
-        {/* Soft cloud puff accents */}
+        {/* Soft cloud puff accents — desktop only to avoid mobile GPU overhead */}
         <div
-          className="absolute inset-0 pointer-events-none overflow-hidden"
+          className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
           style={{ zIndex: 0 }}
         >
           <div style={{
