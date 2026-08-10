@@ -97,31 +97,31 @@ export default function WhyChooseSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-14 sm:py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 100%)' }}>
+    <section ref={sectionRef} className="relative py-20 lg:py-28 overflow-hidden" style={{ background: 'linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 100%)' }}>
       {/* Background decoration */}
       <div className="absolute inset-0 bg-dots opacity-60 pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 orb orb-teal opacity-20 pointer-events-none" style={{ animation: 'orb-float 10s ease-in-out infinite' }} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className={`text-center mb-10 sm:mb-16 reveal-up ${visible ? 'active' : ''}`}>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-5" style={{ background: 'rgba(11,138,143,0.10)', color: '#0B8A8F', border: '1px solid rgba(11,138,143,0.15)' }}>
+        <div className={`text-center mb-16 reveal-up ${visible ? 'active' : ''}`}>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-5" style={{ background: 'rgba(11,138,143,0.10)', color: '#0B8A8F', border: '1px solid rgba(11,138,143,0.15)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Why Vibrant Holidays
           </span>
-          <h2 className="font-display text-3xl sm:text-section-xl text-foreground font-semibold mb-4 sm:mb-5">
+          <h2 className="font-display text-section-xl text-foreground font-semibold mb-5">
             Travel Smarter, <span className="text-gradient-teal">Live Better</span>
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             We go beyond booking — we craft experiences that become lifelong memories.
           </p>
         </div>
 
         {/* Feature Cards — Bento-style with varied visual treatment */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features?.map((feat, i) => (
             <div
               key={feat?.title}
-              className={`reveal-scale ${visible ? 'active' : ''} group relative bg-white rounded-2xl p-5 sm:p-7 border border-border/60 card-hover cursor-default overflow-hidden`}
+              className={`reveal-scale ${visible ? 'active' : ''} group relative bg-white rounded-2xl p-7 border border-border/60 card-hover cursor-default overflow-hidden`}
               style={{
                 transitionDelay: `${i * 80}ms`,
                 boxShadow: '0 2px 16px rgba(13,27,42,0.05)',
@@ -138,12 +138,12 @@ export default function WhyChooseSection() {
 
               <div className="relative z-10">
                 <div
-                  className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 transition-all duration-400 group-hover:scale-110 group-hover:rotate-3"
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-400 group-hover:scale-110 group-hover:rotate-3"
                   style={{ background: feat?.iconBg, color: feat?.iconColor }}
                 >
                   {feat?.icon}
                 </div>
-                <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-2.5 group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2.5 group-hover:text-primary transition-colors duration-300">
                   {feat?.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{feat?.desc}</p>

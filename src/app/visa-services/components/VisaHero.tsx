@@ -17,18 +17,18 @@ export default function VisaHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       <div className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full opacity-12 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.5) 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-10 sm:pb-14 pt-24 sm:pt-36 w-full">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-white text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-5" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 12px rgba(216,154,36,0.45)' }}>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-14 pt-36 w-full">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-white text-xs font-semibold uppercase tracking-widest mb-5" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 12px rgba(216,154,36,0.45)' }}>
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           Hassle-Free
         </span>
-        <h1 className="font-display text-3xl sm:text-hero-xl text-white font-semibold leading-tight mb-3 sm:mb-4 max-w-2xl">
+        <h1 className="font-display text-hero-xl text-white font-semibold leading-tight mb-4 max-w-2xl">
           Visa <span className="text-gradient-gold">Services</span>
         </h1>
-        <p className="text-white/75 text-base sm:text-lg max-w-xl leading-relaxed">
+        <p className="text-white/75 text-lg max-w-xl leading-relaxed">
           Expert visa assistance for 20+ countries. We handle the paperwork — you focus on packing.
         </p>
-        <div className="flex items-center gap-2 mt-4 sm:mt-6 text-white/40 text-sm">
+        <div className="flex items-center gap-2 mt-6 text-white/40 text-sm">
           <span>Home</span>
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
           <span className="text-white/70">Visa Services</span>

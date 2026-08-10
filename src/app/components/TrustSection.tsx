@@ -109,16 +109,16 @@ export default function TrustSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-14 sm:py-16 lg:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)' }}>
+    <section ref={sectionRef} className="relative py-16 lg:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)' }}>
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Headline */}
-        <div className={`text-center mb-8 sm:mb-12 reveal-up ${visible ? 'active' : ''}`}>
+        <div className={`text-center mb-12 reveal-up ${visible ? 'active' : ''}`}>
           <div className="flex items-center justify-center gap-1.5 mb-3">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-4 sm:w-5 h-4 sm:h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+              <svg key={i} className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             ))}
@@ -127,11 +127,11 @@ export default function TrustSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-12">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`reveal-scale ${visible ? 'active' : ''} group relative bg-white rounded-2xl p-4 sm:p-6 border border-border/60 card-hover text-center overflow-hidden`}
+              className={`reveal-scale ${visible ? 'active' : ''} group relative bg-white rounded-2xl p-6 border border-border/60 card-hover text-center overflow-hidden`}
               style={{
                 transitionDelay: `${i * 100}ms`,
                 boxShadow: '0 2px 16px rgba(13,27,42,0.05)',
@@ -142,32 +142,32 @@ export default function TrustSection() {
 
               <div className="relative z-10">
                 <div
-                  className="w-10 sm:w-12 h-10 sm:h-12 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 mx-auto transition-all duration-400 group-hover:scale-110 group-hover:rotate-3"
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 mx-auto transition-all duration-400 group-hover:scale-110 group-hover:rotate-3"
                   style={{ background: `${stat.color}15`, color: stat.color }}
                 >
                   {stat.icon}
                 </div>
                 <div
-                  className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-1.5 transition-all duration-300"
+                  className="font-display text-3xl lg:text-4xl font-bold mb-1.5 transition-all duration-300"
                   style={{ color: stat.color }}
                 >
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <p className="text-muted-foreground text-xs sm:text-sm leading-snug">{stat.label}</p>
+                <p className="text-muted-foreground text-sm leading-snug">{stat.label}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Badges row */}
-        <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 reveal-up ${visible ? 'active' : ''}`} style={{ transitionDelay: '400ms' }}>
+        <div className={`flex flex-wrap justify-center gap-3 reveal-up ${visible ? 'active' : ''}`} style={{ transitionDelay: '400ms' }}>
           {['Personalized Itineraries', 'Best Price Guarantee', 'Visa Assistance', 'Flight Booking'].map((badge) => (
             <span
               key={badge}
-              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm text-muted-foreground font-medium transition-all duration-300 hover:border-primary hover:text-primary hover:-translate-y-0.5 cursor-default"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm text-muted-foreground font-medium transition-all duration-300 hover:border-primary hover:text-primary hover:-translate-y-0.5 cursor-default"
               style={{ background: 'white', border: '1px solid rgba(11,138,143,0.15)', boxShadow: '0 2px 8px rgba(13,27,42,0.04)' }}
             >
-              <svg className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
               </svg>
               {badge}
