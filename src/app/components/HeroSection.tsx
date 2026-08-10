@@ -109,18 +109,18 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 pt-32 px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-12 sm:pb-16 pt-24 sm:pt-32 px-4 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
 
         {/* Headline */}
-        <h1 className={`font-display text-hero-xl text-white font-semibold leading-tight mb-5 max-w-4xl opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
+        <h1 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-hero-xl text-white font-semibold leading-tight mb-4 sm:mb-5 max-w-4xl opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
           Explore the World with{' '}
           <span className="text-gradient-gold">Vibrant Holidays</span>
         </h1>
 
         {/* Rotating subheading */}
-        <div className={`mb-9 h-8 overflow-hidden opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
-          <p className="text-white/75 text-lg font-medium flex items-center gap-3">
-            <span className="w-6 h-px bg-gradient-to-r from-accent to-transparent" />
+        <div className={`mb-6 sm:mb-9 h-8 overflow-hidden opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+          <p className="text-white/75 text-base sm:text-lg font-medium flex items-center gap-3">
+            <span className="w-6 h-px bg-gradient-to-r from-accent to-transparent flex-shrink-0" />
             <span
               key={subIdx}
               className="animate-fade-in-up"
@@ -132,11 +132,11 @@ export default function HeroSection() {
         </div>
 
         {/* CTAs */}
-        <div className={`flex flex-col sm:flex-row gap-4 mb-6 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
+        <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mb-5 sm:mb-6 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
           <Link
             href="/tour-packages"
-            className="flex items-center justify-center gap-2.5 text-white px-9 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}
+            className="flex items-center justify-center gap-2.5 text-white px-7 sm:px-9 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105 touch-manipulation"
+            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)', minHeight: 52 }}
           >
             Book Your Trip
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,8 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/#destinations"
-            className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5"
+            className="flex items-center justify-center gap-2.5 glass-panel text-white px-7 sm:px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5 touch-manipulation"
+            style={{ minHeight: 52 }}
           >
             Explore Destinations
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,9 +156,9 @@ export default function HeroSection() {
         </div>
 
         {/* Location pill */}
-        <div className={`mb-14 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-          <span className="glass-panel text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+        <div className={`mb-10 sm:mb-14 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+          <span className="glass-panel text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 sm:gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
             <span className="text-white/70 text-xs uppercase tracking-widest">{heroSlides[currentSlide].country}</span>
             <span className="w-px h-3 bg-white/20" />
             {heroSlides[currentSlide].tagline}
@@ -165,13 +166,14 @@ export default function HeroSection() {
         </div>
 
         {/* Slide indicators */}
-        <div className={`flex items-center gap-3 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
+        <div className={`flex items-center gap-2 sm:gap-3 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
           {heroSlides.map((slide, i) => (
             <button
               key={slide.label}
               onClick={() => setCurrentSlide(i)}
               aria-label={`Go to slide ${slide.label}`}
-              className="transition-all duration-400 group"
+              className="transition-all duration-400 group touch-manipulation py-2"
+              style={{ minWidth: 24, minHeight: 24 }}
             >
               <span
                 className="block h-1 rounded-full transition-all duration-500"
@@ -185,13 +187,13 @@ export default function HeroSection() {
               />
             </button>
           ))}
-          <span className="ml-3 text-white/50 text-xs font-medium uppercase tracking-widest">
+          <span className="ml-2 sm:ml-3 text-white/50 text-xs font-medium uppercase tracking-widest">
             {heroSlides[currentSlide].label}
           </span>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — hidden on mobile */}
       <div className="absolute bottom-8 right-10 z-10 hidden sm:flex flex-col items-center gap-2">
         <span className="text-white/35 text-xs uppercase tracking-widest font-medium" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
         <div className="scroll-indicator">
@@ -201,7 +203,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Slide counter */}
+      {/* Slide counter — hidden on mobile */}
       <div className="absolute bottom-8 left-10 z-10 hidden sm:flex items-center gap-2">
         <span className="text-white/35 text-xs font-medium tabular-nums">
           {String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}

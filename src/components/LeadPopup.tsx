@@ -142,7 +142,7 @@ export default function LeadPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center px-4"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:px-4"
       style={{
         background: 'rgba(13, 27, 42, 0.65)',
         backdropFilter: 'blur(6px)',
@@ -168,31 +168,42 @@ export default function LeadPopup() {
           from { opacity: 1; transform: translateY(0) scale(1); }
           to { opacity: 0; transform: translateY(24px) scale(0.97); }
         }
+        @keyframes popupSlideInMobile {
+          from { opacity: 0; transform: translateY(100%); }
+          to { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
 
       <div
-        className="relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl"
+        className="relative w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl"
         style={{
           background: '#ffffff',
           animation: closing ? 'popupSlideOut 0.4s ease forwards' : 'popupSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-          maxHeight: '95vh',
+          maxHeight: '92vh',
           overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          paddingBottom: 'env(safe-area-inset-bottom)',
         }}
         onClick={(e) => e.stopPropagation()}
         onMouseMove={resetAutoCloseTimer}
         onFocus={resetAutoCloseTimer}
         onKeyDown={resetAutoCloseTimer}
       >
+        {/* Drag handle for mobile */}
+        <div className="flex justify-center pt-3 pb-1 sm:hidden">
+          <div className="w-10 h-1 rounded-full bg-gray-300" />
+        </div>
+
         {/* Header gradient banner */}
         <div
-          className="relative px-6 pt-6 pb-5 text-white"
+          className="relative px-5 sm:px-6 pt-4 sm:pt-6 pb-4 sm:pb-5 text-white"
           style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 55%, #067A7F 100%)' }}
         >
           {/* Close button */}
           <button
             onClick={closePopup}
             aria-label="Close popup"
-            className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/20 active:scale-95"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/20 active:scale-95 touch-manipulation"
             style={{ color: 'rgba(255,255,255,0.9)' }}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
@@ -214,7 +225,7 @@ export default function LeadPopup() {
               <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.75)' }}>
                 Vibrant Holidays
               </p>
-              <h2 className="text-lg font-bold leading-tight">Plan Your Dream Trip</h2>
+              <h2 className="text-base sm:text-lg font-bold leading-tight">Plan Your Dream Trip</h2>
             </div>
           </div>
           <p className="text-sm" style={{ color: 'rgba(255,255,255,0.82)' }}>
@@ -223,7 +234,7 @@ export default function LeadPopup() {
         </div>
 
         {/* Form body */}
-        <div className="px-6 py-5">
+        <div className="px-5 sm:px-6 py-4 sm:py-5">
           {submitted ? (
             <div className="flex flex-col items-center justify-center py-6 text-center gap-3">
               <div
@@ -240,7 +251,7 @@ export default function LeadPopup() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 sm:gap-4">
               {/* Name */}
               <div className="flex flex-col gap-1">
                 <label htmlFor="popup-name" className="text-xs font-semibold text-slate-600 uppercase tracking-wide">

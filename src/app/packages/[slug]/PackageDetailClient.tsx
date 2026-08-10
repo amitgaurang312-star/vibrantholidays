@@ -58,7 +58,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
   return (
     <div className="min-h-screen bg-white">
       {/* ── HERO BANNER ─────────────────────────────────────────────────────── */}
-      <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[70vh] min-h-[360px] sm:min-h-[480px] overflow-hidden">
         {pkg.heroVideo ? (
           <video
             src={pkg.heroVideo}
@@ -75,8 +75,8 @@ export default function PackageDetailClient({ pkg, related }: Props) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
         {/* Breadcrumb */}
-        <div className="absolute top-24 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center gap-2 text-white/70 text-sm">
+        <div className="absolute top-16 sm:top-24 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <nav className="flex items-center gap-1.5 sm:gap-2 text-white/70 text-xs sm:text-sm flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/tour-packages" className="hover:text-white transition-colors">Tour Packages</Link>
@@ -85,29 +85,29 @@ export default function PackageDetailClient({ pkg, related }: Props) {
           </nav>
         </div>
 
-        <div className="absolute inset-0 flex flex-col justify-end z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-12">
+        <div className="absolute inset-0 flex flex-col justify-end z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-8 sm:pb-12">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 w-fit"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-3 sm:mb-4 w-fit"
             style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', color: '#fff' }}
           >
             {pkg.type === 'domestic' ? '🇮🇳 Domestic' : '✈️ International'} · {pkg.duration}
           </span>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 leading-tight drop-shadow-lg">
             {pkg.packageName}
           </h1>
-          <p className="text-white/80 text-lg sm:text-xl mb-6">{pkg.tagline}</p>
-          <div className="flex flex-wrap gap-3">
-            <span className="glass-panel text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <p className="text-white/80 text-sm sm:text-lg md:text-xl mb-4 sm:mb-6">{pkg.tagline}</p>
+          <div className="flex flex-wrap gap-2 sm:gap-3">
+            <span className="glass-panel text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-3.5 sm:w-4 h-3.5 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               {pkg.duration}
             </span>
-            <span className="text-white text-sm font-bold px-4 py-2 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)' }}>
+            <span className="text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)' }}>
               From {pkg.price} / person
             </span>
-            <span className="glass-panel text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="glass-panel text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2">
+              <svg className="w-3.5 sm:w-4 h-3.5 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               {pkg.hotelCategory}
@@ -117,27 +117,27 @@ export default function PackageDetailClient({ pkg, related }: Props) {
       </section>
 
       {/* ── MAIN CONTENT ────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
 
           {/* LEFT COLUMN — Main Content */}
-          <div className="lg:col-span-2 space-y-12">
+          <div className="lg:col-span-2 space-y-10 sm:space-y-12">
 
             {/* Overview */}
             <section>
               <SectionHeading icon="🗺️" title="Package Overview" />
-              <p className="text-gray-600 leading-relaxed text-base">{pkg.overview}</p>
-              <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{pkg.overview}</p>
+              <div className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { label: 'Duration', value: pkg.duration, icon: '⏱️' },
                   { label: 'Meal Plan', value: pkg.mealPlan, icon: '🍽️' },
                   { label: 'Hotel', value: pkg.hotelCategory, icon: '🏨' },
                   { label: 'Transport', value: pkg.transportation.split('+')[0].trim(), icon: '🚗' },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-4 border border-teal-100">
-                    <div className="text-2xl mb-1">{stat.icon}</div>
+                  <div key={stat.label} className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-3 sm:p-4 border border-teal-100">
+                    <div className="text-xl sm:text-2xl mb-1">{stat.icon}</div>
                     <div className="text-xs text-gray-500 font-medium uppercase tracking-wide">{stat.label}</div>
-                    <div className="text-sm font-semibold text-gray-800 mt-0.5">{stat.value}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-800 mt-0.5">{stat.value}</div>
                   </div>
                 ))}
               </div>
@@ -307,23 +307,23 @@ export default function PackageDetailClient({ pkg, related }: Props) {
 
           {/* RIGHT COLUMN — Sticky Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
+            <div className="sticky top-20 space-y-5 sm:space-y-6">
 
               {/* Price Card */}
               <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                <div className="p-6" style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 100%)' }}>
+                <div className="p-5 sm:p-6" style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 100%)' }}>
                   <div className="text-white/80 text-sm font-medium mb-1">Starting from</div>
-                  <div className="text-white text-4xl font-bold">{pkg.price}</div>
+                  <div className="text-white text-3xl sm:text-4xl font-bold">{pkg.price}</div>
                   <div className="text-white/70 text-sm">per person</div>
                   <div className="mt-3 text-white/80 text-sm">{pkg.duration} · {pkg.mealPlan}</div>
                 </div>
-                <div className="p-5 bg-white space-y-3">
+                <div className="p-4 sm:p-5 bg-white space-y-2.5 sm:space-y-3">
                   <a
                     href={`https://wa.me/${pkg.whatsappNumber}?text=${whatsappMsg}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90"
-                    style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)' }}
+                    className="flex items-center justify-center gap-2 w-full py-3 sm:py-3 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 touch-manipulation"
+                    style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)', minHeight: 48 }}
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -332,8 +332,8 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                   </a>
                   <a
                     href="#enquiry-form"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90"
-                    style={{ background: 'linear-gradient(135deg, #0B8A8F, #067A7F)' }}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 touch-manipulation"
+                    style={{ background: 'linear-gradient(135deg, #0B8A8F, #067A7F)', minHeight: 48 }}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -342,7 +342,8 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                   </a>
                   <a
                     href="tel:+918668355974"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm border-2 border-teal-600 text-teal-700 hover:bg-teal-50 transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm border-2 border-teal-600 text-teal-700 hover:bg-teal-50 transition-all touch-manipulation"
+                    style={{ minHeight: 48 }}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -353,7 +354,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
               </div>
 
               {/* Quick Info */}
-              <div className="bg-gray-50 rounded-2xl p-5 space-y-3">
+              <div className="bg-gray-50 rounded-2xl p-4 sm:p-5 space-y-3">
                 <h4 className="font-semibold text-gray-800 text-sm uppercase tracking-wide">Package Details</h4>
                 {[
                   { label: 'Duration', value: pkg.duration },
@@ -361,9 +362,9 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                   { label: 'Transport', value: pkg.transportation },
                   { label: 'Meal Plan', value: pkg.mealPlan },
                 ].map((item) => (
-                  <div key={item.label} className="flex justify-between text-sm">
-                    <span className="text-gray-500">{item.label}</span>
-                    <span className="text-gray-800 font-medium text-right max-w-[55%]">{item.value}</span>
+                  <div key={item.label} className="flex justify-between text-sm gap-2">
+                    <span className="text-gray-500 flex-shrink-0">{item.label}</span>
+                    <span className="text-gray-800 font-medium text-right">{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -372,21 +373,21 @@ export default function PackageDetailClient({ pkg, related }: Props) {
         </div>
 
         {/* ── ENQUIRY FORM ──────────────────────────────────────────────────── */}
-        <section id="enquiry-form" className="mt-16 scroll-mt-24">
+        <section id="enquiry-form" className="mt-12 sm:mt-16 scroll-mt-24">
           <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 sm:mb-8">
               <SectionHeading icon="📩" title="Enquire About This Package" centered />
               <p className="text-gray-500 text-sm">Fill in your details and our travel expert will get back to you within 2 hours.</p>
             </div>
             {submitted ? (
-              <div className="text-center py-12 bg-green-50 rounded-3xl border border-green-200">
+              <div className="text-center py-10 sm:py-12 bg-green-50 rounded-3xl border border-green-200">
                 <div className="text-5xl mb-4">🎉</div>
                 <h3 className="text-xl font-semibold text-green-800 mb-2">Enquiry Received!</h3>
-                <p className="text-green-600">Our travel expert will contact you within 2 hours. Thank you for choosing Vibrant Holidays!</p>
+                <p className="text-green-600 text-sm px-4">Our travel expert will contact you within 2 hours. Thank you for choosing Vibrant Holidays!</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-lg border border-gray-100 p-5 sm:p-8 space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
                     <input
@@ -395,6 +396,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your full name"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   <div>
@@ -405,6 +407,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   <div>
@@ -415,6 +418,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your@email.com"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   <div>
@@ -424,6 +428,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                   <div>
@@ -432,6 +437,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+                      style={{ fontSize: '16px' }}
                     >
                       {['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+'].map((n) => (
                         <option key={n} value={n}>{n} {n === '1' ? 'Guest' : 'Guests'}</option>
@@ -444,6 +450,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       type="text" readOnly
                       value={pkg.packageName}
                       className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 text-sm text-gray-600"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
                 </div>
@@ -455,6 +462,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Any special requirements, dietary needs, or questions..."
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm resize-none"
+                    style={{ fontSize: '16px' }}
                   />
                 </div>
                 {formError && (
@@ -468,8 +476,8 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                  style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 100%)', boxShadow: '0 8px 24px rgba(11,138,143,0.35)' }}
+                  className="w-full py-4 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 touch-manipulation"
+                  style={{ background: 'linear-gradient(135deg, #0B8A8F 0%, #0ABBC2 100%)', boxShadow: '0 8px 24px rgba(11,138,143,0.35)', minHeight: 52 }}
                 >
                   {loading ? (
                     <>
@@ -490,27 +498,27 @@ export default function PackageDetailClient({ pkg, related }: Props) {
 
         {/* ── RELATED PACKAGES ──────────────────────────────────────────────── */}
         {related.length > 0 && (
-          <section className="mt-20">
-            <div className="text-center mb-10">
+          <section className="mt-14 sm:mt-20">
+            <div className="text-center mb-8 sm:mb-10">
               <SectionHeading icon="🌍" title="You May Also Like" centered />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {related.map((rel) => (
                 <Link
                   key={rel.slug}
                   href={`/packages/${rel.slug}`}
-                  className="group block rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group block rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 touch-manipulation"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-44 sm:h-48 overflow-hidden">
                     <img
                       src={rel.heroImage}
                       alt={rel.destination}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
                       <div className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-1">{rel.destination}</div>
-                      <div className="text-white font-semibold text-base leading-tight">{rel.packageName}</div>
+                      <div className="text-white font-semibold text-sm sm:text-base leading-tight">{rel.packageName}</div>
                     </div>
                     <div className="absolute top-3 right-3">
                       <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)' }}>
@@ -518,7 +526,7 @@ export default function PackageDetailClient({ pkg, related }: Props) {
                       </span>
                     </div>
                   </div>
-                  <div className="p-4 bg-white">
+                  <div className="p-3 sm:p-4 bg-white">
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <span>{rel.duration}</span>
                       <span className="text-teal-600 font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">

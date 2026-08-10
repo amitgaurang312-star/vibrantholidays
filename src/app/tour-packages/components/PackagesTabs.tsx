@@ -180,18 +180,21 @@ export default function PackagesTabs() {
       <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Category Tabs */}
-        <div className={`mb-10 overflow-x-auto pb-2 reveal-up ${visible ? 'active' : ''}`}>
-          <div className="flex gap-2 min-w-max">
+        <div className={`mb-8 sm:mb-10 overflow-x-auto pb-2 reveal-up ${visible ? 'active' : ''}`}>
+          <div className="flex gap-2 min-w-max px-0.5">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                className={`px-3 sm:px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap touch-manipulation ${
                   activeCategory === cat
                     ? 'text-white shadow-teal'
                     : 'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'
                 }`}
-                style={activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}
+                style={{
+                  ...(activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}),
+                  minHeight: 40,
+                }}
               >
                 {cat}
               </button>
@@ -200,13 +203,13 @@ export default function PackagesTabs() {
         </div>
 
         {/* Results count */}
-        <p className={`text-muted-foreground text-sm mb-8 reveal-up ${visible ? 'active' : ''}`}>
+        <p className={`text-muted-foreground text-sm mb-6 sm:mb-8 reveal-up ${visible ? 'active' : ''}`}>
           Showing <span className="text-primary font-semibold">{filtered.length}</span> packages
           {activeCategory !== 'All' && <> in <span className="text-foreground font-medium">{activeCategory}</span></>}
         </p>
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filtered.map((pkg, i) => (
             <div
               key={pkg.id}
@@ -214,7 +217,7 @@ export default function PackagesTabs() {
               style={{ transitionDelay: `${i * 60}ms`, boxShadow: '0 4px 24px rgba(13,27,42,0.06)' }}
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-44 sm:h-48 overflow-hidden">
                 <AppImage
                   src={pkg.image}
                   alt={pkg.alt}

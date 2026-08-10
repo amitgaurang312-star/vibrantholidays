@@ -409,6 +409,33 @@
       linear-gradient(90deg, rgba(11, 138, 143, 0.06) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+
+  /* ── Mobile Touch Improvements ── */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ── Prevent iOS input zoom (font-size must be >= 16px) ── */
+  @media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  /* ── Safe area support for floating buttons ── */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
 }
 
 @keyframes float-pulse {

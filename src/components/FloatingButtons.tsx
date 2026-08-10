@@ -6,12 +6,15 @@ export default function FloatingButtons() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div className="fixed right-5 bottom-8 z-50 flex flex-col gap-3">
+    <div
+      className="fixed right-4 sm:right-5 z-50 flex flex-col gap-3"
+      style={{ bottom: 'max(1.5rem, env(safe-area-inset-bottom, 1.5rem))' }}
+    >
       {/* WhatsApp */}
       <div className="relative flex items-center">
         {hovered === 'whatsapp' && (
           <span
-            className="absolute right-16 text-white text-xs px-3.5 py-2 rounded-full whitespace-nowrap animate-fade-in font-medium"
+            className="absolute right-16 text-white text-xs px-3.5 py-2 rounded-full whitespace-nowrap animate-fade-in font-medium hidden sm:block"
             style={{ background: 'rgba(13,27,42,0.90)', backdropFilter: 'blur(12px)', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}
           >
             Chat on WhatsApp
@@ -24,10 +27,10 @@ export default function FloatingButtons() {
           onMouseEnter={() => setHovered('whatsapp')}
           onMouseLeave={() => setHovered(null)}
           aria-label="WhatsApp"
-          className="relative flex items-center justify-center rounded-full floating-btn transition-all duration-300 hover:scale-110 hover:-translate-y-0.5"
+          className="relative flex items-center justify-center rounded-full floating-btn transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 touch-manipulation"
           style={{
-            width: 54,
-            height: 54,
+            width: 52,
+            height: 52,
             background: 'linear-gradient(135deg, #25D366, #128C7E)',
             boxShadow: '0 8px 24px rgba(37,211,102,0.45), 0 2px 8px rgba(0,0,0,0.15)',
           }}
@@ -44,7 +47,7 @@ export default function FloatingButtons() {
       <div className="relative flex items-center">
         {hovered === 'call' && (
           <span
-            className="absolute right-16 text-white text-xs px-3.5 py-2 rounded-full whitespace-nowrap animate-fade-in font-medium"
+            className="absolute right-16 text-white text-xs px-3.5 py-2 rounded-full whitespace-nowrap animate-fade-in font-medium hidden sm:block"
             style={{ background: 'rgba(13,27,42,0.90)', backdropFilter: 'blur(12px)', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}
           >
             Call Us Now
@@ -55,10 +58,10 @@ export default function FloatingButtons() {
           onMouseEnter={() => setHovered('call')}
           onMouseLeave={() => setHovered(null)}
           aria-label="Call us"
-          className="flex items-center justify-center rounded-full floating-btn transition-all duration-300 hover:scale-110 hover:-translate-y-0.5"
+          className="flex items-center justify-center rounded-full floating-btn transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 touch-manipulation"
           style={{
-            width: 54,
-            height: 54,
+            width: 52,
+            height: 52,
             background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)',
             boxShadow: '0 8px 24px rgba(11,138,143,0.45), 0 2px 8px rgba(0,0,0,0.15)',
             animationDelay: '0.5s',
