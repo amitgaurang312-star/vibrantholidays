@@ -189,7 +189,7 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error('[/api/contact] Resend error:', error);
-      return NextResponse.json({ error: 'Failed to send email. Please try again or contact us on WhatsApp.' }, { status: 500 });
+      return NextResponse.json({ error: 'Failed to send email. Please try again or call us at +91 86683 55974.' }, { status: 500 });
     }
 
     return NextResponse.json({ success: true, message: 'Enquiry sent successfully!' }, { status: 200 });

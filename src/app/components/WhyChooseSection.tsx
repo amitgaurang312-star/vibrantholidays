@@ -75,7 +75,7 @@ const features = [
       </svg>
     ),
     title: 'Dedicated Trip Support',
-    desc: '24×7 WhatsApp support throughout your journey. We\'re with you every step.',
+    desc: '24×7 phone support throughout your journey. We\'re with you every step.',
     gradient: 'from-rose-500/10 to-pink-400/6',
     iconBg: 'rgba(244,63,94,0.12)',
     iconColor: '#E11D48',
