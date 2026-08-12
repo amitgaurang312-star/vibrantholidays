@@ -36,7 +36,7 @@ function buildEmailHtml(formName: string, fields: Record<string, string>): strin
   });
 
   // Categorize fields
-  const travellerFields = ['name', 'fullName', 'email', 'emailAddress', 'phone', 'phoneNumber', 'mobile', 'mobileNumber', 'whatsapp', 'whatsappNumber'];
+  const travellerFields = ['name', 'fullName', 'email', 'emailAddress', 'phone', 'phoneNumber', 'mobile', 'mobileNumber'];
   const tripFields = ['destination', 'departureCity', 'travelDate', 'returnDate', 'nights', 'numberOfNights', 'adults', 'children', 'infants', 'pax', 'guests', 'budget', 'hotelCategory', 'packageName', 'travelType', 'tripType', 'date'];
   const messageFields = ['message', 'additionalRequirements', 'specialRequests', 'notes', 'comments'];
 

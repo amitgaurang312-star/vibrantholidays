@@ -30,10 +30,7 @@ export interface PackageData {
   thingsToCarry: string[];
   relatedSlugs: string[];
   type: 'domestic' | 'international';
-  whatsappNumber: string;
 }
-
-const WHATSAPP = '918668355974';
 
 export const packages: PackageData[] = [
 // ─── DOMESTIC ───────────────────────────────────────────────────────────────
@@ -49,7 +46,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/Kashmir-1-1783921070804.jpg",
   heroVideo: "/assets/images/Kashmir-1-1783921070804.jpg",
   type: 'domestic',
-  whatsappNumber: WHATSAPP,
   overview:
   'Experience the breathtaking beauty of Kashmir — the crown jewel of India — with this carefully curated 6-day journey covering Srinagar, Sonmarg, Gulmarg, and Pahalgam. From the shimmering expanse of Dal Lake and the golden meadows of Sonmarg to the snow-dusted slopes of Gulmarg and the lush valleys of Pahalgam, this package blends natural grandeur with authentic Kashmiri hospitality. Travel by private vehicle with a dedicated driver-cum-location guide, stay in handpicked hotels and a traditional houseboat, and savour daily Kashmiri meals throughout your stay. Package cost: ₹25,000 (excluding flights) per person.',
   destinationsCovered: ['Srinagar', 'Sonmarg', 'Gulmarg', 'Pahalgam'],
@@ -173,7 +169,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/637933301001779994PPmjMG-1783921259193.jpg",
   heroVideo: "/assets/images/637933301001779994PPmjMG-1783921259193.jpg",
   type: 'domestic',
-  whatsappNumber: WHATSAPP,
   overview:
   'Experience the lush beauty of Kerala — God\'s Own Country — with this carefully curated 6-day journey covering Kochi, Munnar, Thekkady, and Alleppey. From the colonial heritage of Fort Kochi and the misty tea gardens of Munnar to the wildlife-rich Periyar sanctuary in Thekkady and the serene backwaters of Alleppey, this package blends natural grandeur with authentic Kerala hospitality. Travel by private AC vehicle, stay in handpicked 3-star hotels and a deluxe houseboat, and savour daily Kerala meals throughout your stay. Package cost: ₹23,999 per person (excluding flights) for 2 adults.',
   destinationsCovered: ['Kochi', 'Munnar', 'Thekkady', 'Alleppey (Alappuzha)'],
@@ -295,7 +290,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/goa-1-1783921400551.jpg",
   heroVideo: "/assets/images/goa-1-1783921400551.jpg",
   type: 'domestic',
-  whatsappNumber: WHATSAPP,
   overview:
   'Goa is India\'s most beloved coastal playground — a sun-drenched paradise where Portuguese colonial heritage meets vibrant beach culture, where spice-laden cuisine mingles with fresh seafood, and where every sunset feels like a celebration. The Golden Shores Coastal Escape is a perfectly paced 4-day journey through both North and South Goa, covering the most iconic beaches, historic churches, spice plantations, and waterfront markets. Whether you\'re seeking adventure, relaxation, or cultural exploration, this package delivers an authentic Goan experience.',
   destinationsCovered: ['North Goa', 'South Goa', 'Old Goa', 'Panjim'],
@@ -397,7 +391,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/top-tourist-attractions-mob-banner-1783921461174.webp",
   heroVideo: "/assets/images/landscape-nature-forest-wilderness-walking-mountain-419714-pxhere.com-2-1783921461192.jpg",
   type: 'domestic',
-  whatsappNumber: WHATSAPP,
   overview:
   'Himachal Pradesh is a land of dramatic contrasts — where colonial hill stations give way to snow-capped Himalayan passes, where apple orchards border ancient Buddhist monasteries, and where every valley holds a new adventure. The Alpine Peaks & Valley Dreams package takes you through the best of Shimla, Manali, and the Kullu Valley over 6 immersive days. From the colonial charm of Shimla\'s Mall Road to the adrenaline rush of Rohtang Pass, this journey is a perfect blend of culture, nature, and mountain magic.',
   destinationsCovered: ['Shimla', 'Kufri', 'Manali', 'Solang Valley', 'Rohtang Pass', 'Kullu'],
@@ -516,7 +509,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/637763055824686983YZ3CT8-1783921618740.jpg",
   heroVideo: "https://images.unsplash.com/photo-1580503563600-c84b97aa1877",
   type: 'domestic',
-  whatsappNumber: WHATSAPP,
   overview:
   'The North East of India is the country\'s best-kept secret — a region of extraordinary biodiversity, ancient tribal cultures, living root bridges, and landscapes that seem to belong to another world. The Seven Sisters Wilderness Trail takes you through three of the most captivating states: Meghalaya (the "Abode of Clouds"), Assam (land of tea and one-horned rhinos), and Sikkim (the Himalayan kingdom). This 7-day journey is for the curious traveller who seeks authenticity over luxury, and wonder over comfort.',
   destinationsCovered: ['Guwahati', 'Kaziranga', 'Shillong', 'Cherrapunji', 'Gangtok', 'Pelling'],
@@ -645,7 +637,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/attractions-1-1783921731905.jpg",
   heroVideo: "/assets/images/30.124.1-DTCM-Madinat-Jumeirah-Image-by-Dubai-Tourism-1783921705111.webp",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Dubai is a city that rewrites the rules of possibility — where the world\'s tallest building pierces the clouds, where ski slopes exist inside a shopping mall, and where ancient souks sit in the shadow of futuristic skyscrapers. The Arabian Grandeur Experience is a 5-day journey through the many faces of this extraordinary emirate: the golden dunes of the desert, the glittering skyline of Downtown Dubai, the historic lanes of Al Fahidi, and the pristine shores of Jumeirah Beach. This package delivers the complete Dubai experience — from the sublime to the spectacular.',
   destinationsCovered: ['Downtown Dubai', 'Deira', 'Jumeirah', 'Dubai Desert', 'Dubai Marina'],
@@ -757,7 +748,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/a117dab1-3750-4235-88b8-d61d854f1a22-1783922016191.jpg",
   heroVideo: "/assets/images/a117dab1-3750-4235-88b8-d61d854f1a22-1783922016191.jpg",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Thailand is a country that captures the heart effortlessly — with its gilded temples, turquoise islands, fragrant street food, and the warmest smiles in Southeast Asia. The Siam Splendour Discovery is a 6-day journey through the best of Thailand: the cultural grandeur of Bangkok, the island paradise of Phuket, and the emerald waters of Phi Phi Island. This package balances cultural immersion with beach relaxation, giving you a complete Thai experience that will leave you longing to return.',
   destinationsCovered: ['Bangkok', 'Pattaya', 'Phuket', 'Phi Phi Island', 'Krabi'],
@@ -875,7 +865,6 @@ export const packages: PackageData[] = [
   price: '₹48,000',
   heroImage: "/assets/images/wp2601482-1783922188620.jpg",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Bali is more than a destination — it is a state of mind. The Island of the Gods Immersion is a 6-day journey through the many dimensions of this extraordinary Indonesian island: the spiritual heart of Ubud with its rice terraces and healing temples, the surf culture and beach clubs of Seminyak, and the dramatic clifftop temples of Uluwatu. This package is designed for travellers who seek beauty in every form — natural, spiritual, culinary, and artistic.',
   destinationsCovered: ['Ubud', 'Kintamani', 'Seminyak', 'Uluwatu', 'Nusa Dua'],
@@ -994,7 +983,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/900x600_vietnam_hoi_an_phuc_kien_pink_building-1783922368562.jpg",
   heroVideo: "/assets/images/900x600_vietnam_hoi_an_phuc_kien_pink_building-1783922368562.jpg",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Vietnam is a country of extraordinary contrasts — where ancient imperial cities stand alongside French colonial architecture, where emerald limestone karsts rise from jade-green bays, and where the aroma of pho and fresh herbs fills every street corner. The Indochine Heritage Voyage is a 7-day north-to-south journey through Vietnam\'s most iconic destinations: the chaotic energy of Hanoi, the ethereal beauty of Ha Long Bay, the lantern-lit streets of Hoi An, and the vibrant modernity of Ho Chi Minh City.',
   destinationsCovered: ['Hanoi', 'Ha Long Bay', 'Hue', 'Hoi An', 'Ho Chi Minh City'],
@@ -1122,7 +1110,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/P8300753-1783922618646.webp",
   heroVideo: "/assets/images/P8300753-1783922618646.webp",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Singapore is the world\'s most efficient city-state — a gleaming metropolis where futuristic architecture meets colonial heritage, where hawker centres serve Michelin-starred street food, and where a tropical rainforest exists in the heart of the city. The Lion City Luxury Sojourn is a 4-day immersion into Singapore\'s many worlds: the iconic Marina Bay waterfront, the lush Gardens by the Bay, the multicultural neighbourhoods of Chinatown and Little India, and the resort paradise of Sentosa Island.',
   destinationsCovered: ['Marina Bay', 'Orchard Road', 'Sentosa Island', 'Chinatown', 'Little India'],
@@ -1224,7 +1211,6 @@ export const packages: PackageData[] = [
   heroImage: "/assets/images/4-days-in-malaysia-1725351164-785X440-1783922727576.jpg",
   heroVideo: "https://img.rocket.new/generatedImages/rocket_gen_img_1a6a04c9f-1773131007599.png",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'The Twin Kingdoms Grand Tour combines the best of two extraordinary Southeast Asian nations in one seamless 7-day journey. Begin in Singapore — the gleaming Lion City of futuristic architecture and world-class food — then cross the causeway into Malaysia for the colonial grandeur of Kuala Lumpur, the island paradise of Langkawi, and the UNESCO-listed heritage city of Penang. This package is designed for travellers who want maximum diversity: two countries, multiple cities, and a lifetime of memories.',
   destinationsCovered: ['Singapore', 'Kuala Lumpur', 'Genting Highlands', 'Langkawi', 'Penang'],
@@ -1350,7 +1336,6 @@ export const packages: PackageData[] = [
   price: '₹38,000',
   heroImage: "/assets/images/360_F_364951258_xLzCW41kr5AV7OXdVv49ufv6u0XL3nqq-1783923172216.png",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'Sri Lanka — the teardrop-shaped island at the southern tip of India — is one of Asia\'s most rewarding travel destinations. The Pearl of the Indian Ocean Trail is a 6-day journey through the island\'s extraordinary diversity: the ancient rock fortress of Sigiriya, the sacred city of Kandy, the misty tea highlands of Ella, and the pristine beaches of the south coast. This package packs an extraordinary amount of history, culture, wildlife, and natural beauty into six days, making it one of the most value-packed international packages in our portfolio.',
   destinationsCovered: ['Colombo', 'Sigiriya', 'Kandy', 'Nuwara Eliya', 'Ella', 'Mirissa'],
@@ -1471,7 +1456,6 @@ export const packages: PackageData[] = [
   heroImage: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
   heroVideo: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
   type: 'international',
-  whatsappNumber: WHATSAPP,
   overview:
   'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 4-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',
   destinationsCovered: ['Malé', 'North Malé Atoll', 'South Malé Atoll'],
