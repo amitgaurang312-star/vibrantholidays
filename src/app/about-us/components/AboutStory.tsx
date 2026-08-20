@@ -54,7 +54,7 @@ export default function AboutStory() {
           <div className="relative">
             <div className="relative h-96 rounded-3xl overflow-hidden" style={{ boxShadow: '0 20px 60px rgba(13,27,42,0.15)' }}>
               <AppImage
-                src="https://images.unsplash.com/photo-1700588839364-49c67ee975af"
+                src="https://images.unsplash.com/photo-1719547035259-835f6684a25e"
                 alt="A couple in casual traveller clothes enjoying Dubai destinations with the iconic skyline in the background"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

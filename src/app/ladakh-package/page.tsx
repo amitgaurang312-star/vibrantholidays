@@ -205,7 +205,7 @@ export default function LadakhPackagePage() {
         <section className="relative min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <AppImage
-              src="https://images.unsplash.com/photo-1660483033464-68ab6fb8b10c"
+              src="https://images.unsplash.com/photo-1563533140099-b1d2fe5296e1"
               alt="Pangong Lake Ladakh with snow-capped mountains reflecting in the deep blue water"
               fill
               sizes="100vw"

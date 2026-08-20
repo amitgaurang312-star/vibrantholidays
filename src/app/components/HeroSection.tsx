@@ -13,7 +13,7 @@ const heroSlides = [
   country: 'India'
 },
 {
-  src: "https://img.rocket.new/generatedImages/rocket_gen_img_16a8f9e8f-1772369782420.png",
+  src: "https://images.unsplash.com/photo-1671829348972-d1593bddbb90",
   alt: 'Kerala backwaters at sunset with traditional wooden houseboat gliding through calm golden waters',
   label: 'Kerala',
   tagline: "God\'s Own Country",
@@ -80,28 +80,28 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-foreground" aria-label="Hero">
       {/* Slides */}
-      {heroSlides.map((slide, i) => (
-        <div
-          key={slide.label}
-          className="absolute inset-0 transition-opacity"
-          style={{ opacity: i === currentSlide ? 1 : 0, transitionDuration: '1800ms' }}
-        >
+      {heroSlides.map((slide, i) =>
+      <div
+        key={slide.label}
+        className="absolute inset-0 transition-opacity"
+        style={{ opacity: i === currentSlide ? 1 : 0, transitionDuration: '1800ms' }}>
+
           <AppImage
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-            quality={i === 0 ? 80 : 65}
-            className="object-cover object-center"
-            style={{ transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)', transition: 'transform 5500ms ease-out' }}
-          />
+          src={slide.src}
+          alt={slide.alt}
+          fill
+          priority={i === 0}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+          quality={i === 0 ? 80 : 65}
+          className="object-cover object-center"
+          style={{ transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)', transition: 'transform 5500ms ease-out' }} />
+
           {/* Multi-layer scrims for depth */}
           <div className="absolute inset-0 hero-scrim" />
           <div className="absolute inset-0 hero-scrim-side" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,27,42,0.4) 0%, transparent 30%)' }} />
         </div>
-      ))}
+      )}
 
       {/* Floating ambient particles — hidden on mobile to save GPU */}
       <div className="absolute inset-0 pointer-events-none z-5 hidden sm:block">
@@ -125,8 +125,8 @@ export default function HeroSection() {
             <span
               key={subIdx}
               className="animate-fade-in-up"
-              style={{ display: 'inline-block' }}
-            >
+              style={{ display: 'inline-block' }}>
+
               {subheadingItems[subIdx]}
             </span>
           </p>
@@ -137,8 +137,8 @@ export default function HeroSection() {
           <Link
             href="/tour-packages"
             className="flex items-center justify-center gap-2.5 text-white px-9 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}
-          >
+            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}>
+
             Book Your Trip
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
@@ -146,8 +146,8 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/#destinations"
-            className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5"
-          >
+            className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+
             Explore Destinations
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -167,25 +167,25 @@ export default function HeroSection() {
 
         {/* Slide indicators */}
         <div className={`flex items-center gap-3 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
-          {heroSlides.map((slide, i) => (
-            <button
-              key={slide.label}
-              onClick={() => setCurrentSlide(i)}
-              aria-label={`Go to slide ${slide.label}`}
-              className="transition-all duration-400 group"
-            >
+          {heroSlides.map((slide, i) =>
+          <button
+            key={slide.label}
+            onClick={() => setCurrentSlide(i)}
+            aria-label={`Go to slide ${slide.label}`}
+            className="transition-all duration-400 group">
+
               <span
-                className="block h-1 rounded-full transition-all duration-500"
-                style={{
-                  width: i === currentSlide ? 36 : 8,
-                  background: i === currentSlide
-                    ? 'linear-gradient(90deg, #D89A24, #F0BC4A)'
-                    : 'rgba(255,255,255,0.35)',
-                  boxShadow: i === currentSlide ? '0 0 8px rgba(216,154,36,0.6)' : 'none',
-                }}
-              />
+              className="block h-1 rounded-full transition-all duration-500"
+              style={{
+                width: i === currentSlide ? 36 : 8,
+                background: i === currentSlide ?
+                'linear-gradient(90deg, #D89A24, #F0BC4A)' :
+                'rgba(255,255,255,0.35)',
+                boxShadow: i === currentSlide ? '0 0 8px rgba(216,154,36,0.6)' : 'none'
+              }} />
+
             </button>
-          ))}
+          )}
           <span className="ml-3 text-white/50 text-xs font-medium uppercase tracking-widest">
             {heroSlides[currentSlide].label}
           </span>
@@ -208,6 +208,6 @@ export default function HeroSection() {
           {String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
         </span>
       </div>
-    </section>
-  );
+    </section>);
+
 }

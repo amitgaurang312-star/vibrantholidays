@@ -93,7 +93,7 @@ const packages: Package[] = [
   id: 'dubai-luxury',
   name: 'Dubai Luxury Getaway',
   location: 'Dubai, UAE',
-  image: "https://images.unsplash.com/photo-1630210414374-70a0439e286c",
+  image: "https://images.unsplash.com/photo-1717910016846-eb5ef02598a2",
   alt: 'Dubai Burj Khalifa at night against dark blue sky with bright city lights below',
   duration: '5 Days / 4 Nights',
   price: '₹58,000',
@@ -107,7 +107,7 @@ const packages: Package[] = [
   id: 'himachal-adventure',
   name: 'Himachal Adventure Trek',
   location: 'Himachal Pradesh, India',
-  image: "https://images.unsplash.com/photo-1631601371386-bfebd1cb9622",
+  image: "https://images.unsplash.com/photo-1604933838785-b9a24eff3241",
   alt: 'Himachal Pradesh mountain trekking trail in dark overcast day with snow peaks in background',
   duration: '7 Days / 6 Nights',
   price: '₹19,000',
@@ -182,20 +182,20 @@ export default function PackagesTabs() {
         {/* Category Tabs */}
         <div className={`mb-10 overflow-x-auto pb-2 reveal-up ${visible ? 'active' : ''}`}>
           <div className="flex gap-2 min-w-max">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                  activeCategory === cat
-                    ? 'text-white shadow-teal'
-                    : 'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'
-                }`}
-                style={activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}
-              >
+            {categories.map((cat) =>
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+              activeCategory === cat ?
+              'text-white shadow-teal' :
+              'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'}`
+              }
+              style={activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}>
+
                 {cat}
               </button>
-            ))}
+            )}
           </div>
         </div>
 
@@ -207,26 +207,26 @@ export default function PackagesTabs() {
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((pkg, i) => (
-            <div
-              key={pkg.id}
-              className={`reveal-scale ${visible ? 'active' : ''} group bg-white rounded-3xl overflow-hidden border border-border/60 card-hover`}
-              style={{ transitionDelay: `${i * 60}ms`, boxShadow: '0 4px 24px rgba(13,27,42,0.06)' }}
-            >
+          {filtered.map((pkg, i) =>
+          <div
+            key={pkg.id}
+            className={`reveal-scale ${visible ? 'active' : ''} group bg-white rounded-3xl overflow-hidden border border-border/60 card-hover`}
+            style={{ transitionDelay: `${i * 60}ms`, boxShadow: '0 4px 24px rgba(13,27,42,0.06)' }}>
+
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <AppImage
-                  src={pkg.image}
-                  alt={pkg.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                {pkg.badge && (
-                  <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 8px rgba(216,154,36,0.5)' }}>
+                src={pkg.image}
+                alt={pkg.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+
+                {pkg.badge &&
+              <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 8px rgba(216,154,36,0.5)' }}>
                     {pkg.badge}
                   </span>
-                )}
+              }
                 <span className="absolute top-3 right-3 glass-panel text-white text-xs font-medium px-2.5 py-1 rounded-full">
                   {pkg.duration}
                 </span>
@@ -271,19 +271,19 @@ export default function PackagesTabs() {
                 {/* Price + CTA */}
                 <div className="flex items-center justify-between pt-3 border-t border-border">
                   <a
-                    href="tel:+918668355974"
-                    className="flex items-center gap-2 w-full justify-center text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #0B8A8F, #067A7F)' }}
-                  >
+                  href="tel:+918668355974"
+                  className="flex items-center gap-2 w-full justify-center text-white px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                  style={{ background: 'linear-gradient(135deg, #0B8A8F, #067A7F)' }}>
+
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
                     </svg>
                     Call to Enquire
                   </a>
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>);

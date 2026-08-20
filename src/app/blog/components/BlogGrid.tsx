@@ -22,7 +22,7 @@ const posts: BlogPost[] = [
   id: 'kashmir-guide',
   title: 'The Ultimate Kashmir Travel Guide: Dal Lake to Gulmarg',
   excerpt: 'Everything you need to know about visiting Kashmir — the best time to go, must-visit spots, houseboat experience, and insider tips from our team who visits every season.',
-  image: "https://images.unsplash.com/photo-1721857982139-28dd0ac7d7a7",
+  image: "https://images.unsplash.com/photo-1599068244528-15bfcd9b208f",
   alt: 'Kashmir snow mountains with frozen lake and dark pine forest in overcast light',
   category: 'Destination Guide',
   author: 'Vibrant Holidays Team',
@@ -56,7 +56,7 @@ const posts: BlogPost[] = [
   id: 'dubai-family',
   title: 'Dubai with Kids: The Best Family Activities in the City of Gold',
   excerpt: 'Planning a family trip to Dubai? From the Burj Khalifa to desert safaris and water parks, here\'s your complete guide to keeping the whole family entertained.',
-  image: 'https://images.unsplash.com/photo-1630210414374-70a0439e286c',
+  image: "https://images.unsplash.com/photo-1717910016846-eb5ef02598a2",
   alt: 'Dubai Burj Khalifa at night against dark blue sky with bright city lights below',
   category: 'Family Travel',
   author: 'Vibrant Holidays Team',
@@ -131,40 +131,40 @@ export default function BlogGrid() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 rounded-full border border-border/60 bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 transition-colors duration-200 placeholder:text-muted-foreground"
-              style={{ boxShadow: '0 2px 8px rgba(13,27,42,0.04)' }}
-            />
+              style={{ boxShadow: '0 2px 8px rgba(13,27,42,0.04)' }} />
+
           </div>
           {/* Category Filter */}
           <div className="flex gap-2 flex-wrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                  activeCategory === cat
-                    ? 'text-white shadow-teal'
-                    : 'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'
-                }`}
-                style={activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}
-              >
+            {categories.map((cat) =>
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+              activeCategory === cat ?
+              'text-white shadow-teal' :
+              'bg-white border border-border/60 text-muted-foreground hover:border-primary hover:text-primary'}`
+              }
+              style={activeCategory === cat ? { background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' } : {}}>
+
                 {cat}
               </button>
-            ))}
+            )}
           </div>
         </div>
 
         {/* Featured Post */}
-        {featured && (
-          <div className={`mb-10 reveal-up ${visible ? 'active' : ''}`}>
+        {featured &&
+        <div className={`mb-10 reveal-up ${visible ? 'active' : ''}`}>
             <div className="group bg-white border border-border/60 rounded-3xl overflow-hidden card-hover grid grid-cols-1 lg:grid-cols-2" style={{ boxShadow: '0 4px 32px rgba(13,27,42,0.07)' }}>
               <div className="relative h-64 lg:h-auto overflow-hidden">
                 <AppImage
-                  src={featured.image}
-                  alt={featured.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
+                src={featured.image}
+                alt={featured.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+
                 <span className="absolute top-4 left-4 text-white text-xs font-bold px-3 py-1.5 rounded-full" style={{ background: 'linear-gradient(135deg, #C8860E, #F0BC4A)', boxShadow: '0 2px 8px rgba(216,154,36,0.5)' }}>
                   Featured
                 </span>
@@ -184,9 +184,9 @@ export default function BlogGrid() {
                     <span>{featured.readTime}</span>
                   </div>
                   <Link
-                    href="/contact"
-                    className="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
-                  >
+                  href="/contact"
+                  className="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200">
+
                     Read More
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -196,25 +196,25 @@ export default function BlogGrid() {
               </div>
             </div>
           </div>
-        )}
+        }
 
         {/* Rest of Posts */}
-        {rest.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((post, i) => (
-              <div
-                key={post.id}
-                className={`reveal-scale ${visible ? 'active' : ''} group bg-white border border-border/60 rounded-2xl overflow-hidden card-hover`}
-                style={{ transitionDelay: `${i * 60}ms`, boxShadow: '0 2px 16px rgba(13,27,42,0.05)' }}
-              >
+        {rest.length > 0 &&
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {rest.map((post, i) =>
+          <div
+            key={post.id}
+            className={`reveal-scale ${visible ? 'active' : ''} group bg-white border border-border/60 rounded-2xl overflow-hidden card-hover`}
+            style={{ transitionDelay: `${i * 60}ms`, boxShadow: '0 2px 16px rgba(13,27,42,0.05)' }}>
+
                 <div className="relative h-48 overflow-hidden">
                   <AppImage
-                    src={post.image}
-                    alt={post.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
+                src={post.image}
+                alt={post.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+
                   <span className="absolute top-3 left-3 text-white text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)' }}>
                     {post.category}
                   </span>
@@ -231,9 +231,9 @@ export default function BlogGrid() {
                       <span>{post.readTime}</span>
                     </div>
                     <Link
-                      href="/contact"
-                      className="text-primary text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200"
-                    >
+                  href="/contact"
+                  className="text-primary text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all duration-200">
+
                       Read
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -242,16 +242,16 @@ export default function BlogGrid() {
                   </div>
                 </div>
               </div>
-            ))}
+          )}
           </div>
-        )}
+        }
 
-        {filtered.length === 0 && (
-          <div className="text-center py-20">
+        {filtered.length === 0 &&
+        <div className="text-center py-20">
             <p className="text-muted-foreground text-lg">No articles found. Try a different search or category.</p>
           </div>
-        )}
+        }
       </div>
-    </section>
-  );
+    </section>);
+
 }

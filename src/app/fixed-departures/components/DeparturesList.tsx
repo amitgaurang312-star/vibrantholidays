@@ -142,7 +142,7 @@ export default function DeparturesList() {
               {/* Image */}
               <div className="relative h-72 lg:h-auto min-h-72 overflow-hidden">
                 <AppImage
-                  src="https://images.unsplash.com/photo-1695061077264-1ec103d68b3d"
+                  src="https://images.unsplash.com/photo-1691430312264-553021370070"
                   alt="Thailand Phi Phi islands turquoise water with limestone cliffs and tropical beach"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

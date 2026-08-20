@@ -5,14 +5,14 @@ export default function FixedDeparturesHero() {
   return (
     <section className="relative w-full min-h-[52vh] flex items-end overflow-hidden bg-foreground">
       <AppImage
-        src="https://images.unsplash.com/photo-1580315362313-6ae9bb04f5bc"
+        src="https://images.unsplash.com/photo-1613053487527-98c5614065c7"
         alt="Airplane wing over clouds at golden hour with warm orange sky and horizon glow"
         fill
         priority
         sizes="100vw"
         className="object-cover object-center"
-        style={{ transform: 'scale(1.03)' }}
-      />
+        style={{ transform: 'scale(1.03)' }} />
+
       {/* Multi-layer scrims */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/45 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
@@ -37,6 +37,6 @@ export default function FixedDeparturesHero() {
           <span className="text-white/70">Fixed Departures</span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

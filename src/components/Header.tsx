@@ -20,6 +20,11 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -58,42 +63,44 @@ export default function Header() {
               }
         }
       >
-        {/* Soft cloud puff accents — desktop only to avoid mobile GPU overhead */}
-        <div
-          className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
-          style={{ zIndex: 0 }}
-        >
-          <div style={{
-            position: 'absolute', top: '-18px', left: '8%',
-            width: '120px', height: '60px',
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
-            borderRadius: '50%', filter: 'blur(8px)', opacity: 0.7,
-          }} />
-          <div style={{
-            position: 'absolute', top: '-10px', left: '18%',
-            width: '80px', height: '45px',
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.9) 60%, transparent 100%)',
-            borderRadius: '50%', filter: 'blur(6px)', opacity: 0.6,
-          }} />
-          <div style={{
-            position: 'absolute', top: '-22px', right: '12%',
-            width: '140px', height: '70px',
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
-            borderRadius: '50%', filter: 'blur(10px)', opacity: 0.65,
-          }} />
-          <div style={{
-            position: 'absolute', top: '-8px', right: '25%',
-            width: '90px', height: '50px',
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(220,240,255,0.9) 60%, transparent 100%)',
-            borderRadius: '50%', filter: 'blur(7px)', opacity: 0.55,
-          }} />
-          <div style={{
-            position: 'absolute', top: '-15px', left: '45%',
-            width: '100px', height: '55px',
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.88) 60%, transparent 100%)',
-            borderRadius: '50%', filter: 'blur(8px)', opacity: 0.5,
-          }} />
-        </div>
+        {/* Soft cloud puff accents — rendered only on client to avoid hydration mismatch */}
+        {isClient && (
+          <div
+            className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
+            style={{ zIndex: 0 }}
+          >
+            <div style={{
+              position: 'absolute', top: '-18px', left: '8%',
+              width: '120px', height: '60px',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
+              borderRadius: '50%', filter: 'blur(8px)', opacity: 0.7,
+            }} />
+            <div style={{
+              position: 'absolute', top: '-10px', left: '18%',
+              width: '80px', height: '45px',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.9) 60%, transparent 100%)',
+              borderRadius: '50%', filter: 'blur(6px)', opacity: 0.6,
+            }} />
+            <div style={{
+              position: 'absolute', top: '-22px', right: '12%',
+              width: '140px', height: '70px',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.95) 60%, transparent 100%)',
+              borderRadius: '50%', filter: 'blur(10px)', opacity: 0.65,
+            }} />
+            <div style={{
+              position: 'absolute', top: '-8px', right: '25%',
+              width: '90px', height: '50px',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(220,240,255,0.9) 60%, transparent 100%)',
+              borderRadius: '50%', filter: 'blur(7px)', opacity: 0.55,
+            }} />
+            <div style={{
+              position: 'absolute', top: '-15px', left: '45%',
+              width: '100px', height: '55px',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(255,255,255,0.88) 60%, transparent 100%)',
+              borderRadius: '50%', filter: 'blur(8px)', opacity: 0.5,
+            }} />
+          </div>
+        )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between relative" style={{ zIndex: 1 }}>
           {/* Logo */}

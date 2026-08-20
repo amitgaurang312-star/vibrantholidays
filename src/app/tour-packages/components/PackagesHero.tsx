@@ -5,14 +5,14 @@ export default function PackagesHero() {
   return (
     <section className="relative w-full min-h-[52vh] flex items-end overflow-hidden bg-foreground">
       <AppImage
-        src="https://images.unsplash.com/photo-1692972646212-19f17ffbcfc7"
+        src="https://images.unsplash.com/photo-1453568358963-a6bc36282ce6"
         alt="Scenic travel road winding through misty mountains at dusk with dark clouds and dim golden horizon light"
         fill
         priority
         sizes="100vw"
         className="object-cover object-center"
-        style={{ transform: 'scale(1.03)' }}
-      />
+        style={{ transform: 'scale(1.03)' }} />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/45 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full opacity-12 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(10,187,194,0.5) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -34,6 +34,6 @@ export default function PackagesHero() {
           <span className="text-white/70">Tour Packages</span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
