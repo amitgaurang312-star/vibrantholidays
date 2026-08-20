@@ -1453,8 +1453,8 @@ export const packages: PackageData[] = [
   duration: '4 Days / 3 Nights',
   durationNights: '3 Nights',
   price: '₹75,000',
-  heroImage: "https://images.unsplash.com/photo-1573388311283-521e63f9a334",
-  heroVideo: "https://images.unsplash.com/photo-1573388311283-521e63f9a334",
+  heroImage: "https://images.unsplash.com/photo-1633281873696-e0cc216127e0",
+  heroVideo: "https://images.unsplash.com/photo-1633281873696-e0cc216127e0",
   type: 'international',
   overview:
   'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 4-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',
