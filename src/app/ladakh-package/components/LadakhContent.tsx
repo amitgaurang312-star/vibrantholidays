@@ -9,7 +9,7 @@ interface DepartureDate {
 }
 
 const departureDates: DepartureDate[] = [
-{ date: '28 Sep 2025', month: 'September 2025' }];
+{ date: '28 Sep 2026', month: 'September 2026' }];
 
 
 const itinerary = [
@@ -248,12 +248,12 @@ export default function LadakhContent() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                       <div>
                         <p className="text-muted-foreground text-xs mb-0.5">Departure Date</p>
-                        <p className="font-semibold text-foreground">28 September 2025</p>
+                        <p className="font-semibold text-foreground">28 September 2026</p>
                         <p className="text-muted-foreground text-xs">Leh Airport Pickup</p>
                       </div>
                       <div>
                         <p className="text-muted-foreground text-xs mb-0.5">Return Date</p>
-                        <p className="font-semibold text-foreground">5 October 2025</p>
+                        <p className="font-semibold text-foreground">5 October 2026</p>
                         <p className="text-muted-foreground text-xs">Leh Airport Drop</p>
                       </div>
                     </div>
