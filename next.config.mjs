@@ -59,8 +59,6 @@ const nextConfig = {
       });
     }
 
-    // @dhiwise/component-tagger removed — was causing SSR/client hydration mismatch
-
     return config;
   },
 
