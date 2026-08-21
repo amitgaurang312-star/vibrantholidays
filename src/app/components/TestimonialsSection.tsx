@@ -1,50 +1,56 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import AppImage from '@/components/ui/AppImage';
 
 const testimonials = [
-{
-  name: 'Priya Sharma',
-  location: 'Pune',
-  rating: 5,
-  text: 'Vibrant Holidays planned our Kashmir trip perfectly. Every detail was taken care of — from Dal Lake shikara to the houseboat stay. Truly a paradise experience!',
-  trip: 'Kashmir Family Tour',
-  avatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1ecb4aca8-1763296537332.png",
-  avatarAlt: 'Indian woman smiling with dark hair, professional headshot with warm lighting',
-  color: '#0B8A8F',
-},
-{
-  name: 'Rahul & Sneha Desai',
-  location: 'Nashik',
-  rating: 5,
-  text: 'Our Maldives honeymoon was absolutely magical. The water villa, sunset cruise, and snorkeling were beyond our expectations. Best investment we ever made!',
-  trip: 'Maldives Honeymoon',
-  avatar: "https://img.rocket.new/generatedImages/rocket_gen_img_1b02b7bf9-1763301533769.png",
-  avatarAlt: 'Indian man with glasses smiling, clean background, natural daylight portrait',
-  color: '#D89A24',
-},
-{
-  name: 'Anjali Kulkarni',
-  location: 'Mumbai',
-  rating: 5,
-  text: 'Dubai was a dream! The team arranged everything from visa to desert safari. The Burj Khalifa view at night was breathtaking. Highly recommend Vibrant Holidays!',
-  trip: 'Dubai City Tour',
-  avatar: "https://images.unsplash.com/photo-1675018996213-dab82e090a2e",
-  avatarAlt: 'Indian woman with bright smile in colorful attire, outdoor natural light portrait',
-  color: '#0ABBC2',
-},
-{
-  name: 'Vikram Joshi',
-  location: 'Pune',
-  rating: 5,
-  text: 'Bali with family was seamless. The team customized our itinerary to include the Tegallalang rice terraces and Uluwatu temple. Kids loved every moment!',
-  trip: 'Bali Family Package',
-  avatar: "https://img.rocket.new/generatedImages/rocket_gen_img_195a56a22-1763296537088.png",
-  avatarAlt: 'Indian man with warm smile, casual shirt, professional headshot with soft background',
-  color: '#0B8A8F',
-}];
+  {
+    id: 'r1',
+    name: 'VRUSHALI SHITOLE',
+    avatar: 'VS',
+    location: 'Google Review',
+    rating: 5,
+    text: 'Excellent arrangements safe journey with Vibrant Holidays',
+    color: '#0B8A8F',
+  },
+  {
+    id: 'r2',
+    name: 'Sangita Navghare',
+    avatar: 'SN',
+    location: 'Google Review',
+    rating: 5,
+    text: 'Very good trip arrangement done by kedar for our Thailand, Bangkok, phuket, trip. We enjoyed the trip thoroughly, all coordination and booking done perfect. Thankyou',
+    color: '#D89A24',
+  },
+  {
+    id: 'r3',
+    name: 'Kirti Kadam',
+    avatar: 'KK',
+    location: 'Google Review',
+    rating: 5,
+    text: 'I have traveled with Vibrant Holidays multiple times with my friends and family, both domestic and international. Every trip has been well planned, with comfortable hotels, clean vehicles, and courteous drivers. Mr. Kedar and his team were always available throughout the journey, ensuring everything went smoothly. Their professionalism, prompt support, and attention to detail made each trip stress-free and memorable. I highly recommend Vibrant Holidays to anyone looking for a reliable travel partner. Looking forward to many more wonderful trips with them!',
+    color: '#0ABBC2',
+  },
+  {
+    id: 'r4',
+    name: 'Rajkumar Dhas',
+    avatar: 'RD',
+    location: 'Google Review · 2 reviews',
+    rating: 5,
+    text: 'Virant holidays has given very excellent service through out our journey. The Hotels booked for tour were 4 star categories with reasonable tariff. The vehicle provided ( Tempo Traveler) was very good condition and driver was very polite and act as our tour guide. Vehicle was very clean and neat. Our tour start at Madurai and ends at Trivendrum via Rameshwaram and Kanyakumari. Mr Kedar from Vibrant holiday was always touch with us for necessary guidance and safe journey. Thanks and will look forward for next trip. Regards Rajkumar Dhas.',
+    color: '#0B8A8F',
+  },
+];
 
+function GoogleIcon() {
+  return (
+    <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  );
+}
 
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -52,7 +58,7 @@ export default function TestimonialsSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {if (entry.isIntersecting) setVisible(true);},
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
     if (sectionRef?.current) observer?.observe(sectionRef?.current);
@@ -83,7 +89,7 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {testimonials?.map((t, i) => (
             <div
-              key={t?.name}
+              key={t?.id}
               className={`reveal-scale ${visible ? 'active' : ''} group relative bg-white rounded-2xl p-6 border border-border/60 card-hover overflow-hidden`}
               style={{
                 transitionDelay: `${i * 100}ms`,
@@ -115,18 +121,18 @@ export default function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-border/60">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2" style={{ ringColor: `${t?.color}30` }}>
-                  <AppImage
-                    src={t?.avatar}
-                    alt={t?.avatarAlt}
-                    width={40}
-                    height={40}
-                    className="object-cover w-full h-full"
-                  />
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                  style={{ background: `linear-gradient(135deg, #0B8A8F, #0ABBC2)` }}
+                >
+                  {t?.avatar}
                 </div>
                 <div className="min-w-0">
                   <p className="text-foreground font-semibold text-sm truncate">{t?.name}</p>
-                  <p className="text-muted-foreground text-xs">{t?.location} · {t?.trip}</p>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <GoogleIcon />
+                    <p className="text-muted-foreground text-xs">{t?.location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -160,7 +166,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
               </div>
-              <p className="text-muted-foreground text-xs">on Google Reviews · 100+ reviews</p>
+              <p className="text-muted-foreground text-xs">Based on 9 Google reviews</p>
             </div>
           </div>
         </div>

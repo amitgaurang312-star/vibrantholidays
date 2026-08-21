@@ -9,7 +9,6 @@ interface VisaCountry {
   flag: string;
   type: string;
   processingTime: string;
-  fee: string;
   validity: string;
   documents: string[];
   badge?: string;
@@ -22,7 +21,6 @@ const countries: VisaCountry[] = [
     flag: '🇦🇪',
     type: 'Tourist Visa',
     processingTime: '3–5 Working Days',
-    fee: '₹4,500',
     validity: '30 / 60 / 90 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Bank statement (3 months)', 'Flight itinerary', 'Hotel booking'],
     badge: 'Most Popular',
@@ -33,7 +31,6 @@ const countries: VisaCountry[] = [
     flag: '🇹🇭',
     type: 'Tourist Visa / Visa on Arrival',
     processingTime: '2–3 Working Days',
-    fee: '₹2,800',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Return flight ticket', 'Hotel booking', 'Travel insurance'],
   },
@@ -43,7 +40,6 @@ const countries: VisaCountry[] = [
     flag: '🇮🇩',
     type: 'Visa on Arrival',
     processingTime: 'On Arrival',
-    fee: '₹2,200',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Sufficient funds proof', 'Hotel booking'],
     badge: 'Easy Process',
@@ -54,7 +50,6 @@ const countries: VisaCountry[] = [
     flag: '🇸🇬',
     type: 'Tourist Visa',
     processingTime: '5–7 Working Days',
-    fee: '₹5,500',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Passport-size photos', 'Bank statement (6 months)', 'ITR / Salary slips', 'Hotel booking', 'Flight itinerary'],
   },
@@ -64,7 +59,6 @@ const countries: VisaCountry[] = [
     flag: '🇲🇾',
     type: 'Visa Free / eNTRI',
     processingTime: '1–2 Working Days',
-    fee: '₹1,500',
     validity: '15 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds'],
     badge: 'Visa Free',
@@ -75,7 +69,6 @@ const countries: VisaCountry[] = [
     flag: '🇻🇳',
     type: 'e-Visa',
     processingTime: '3 Working Days',
-    fee: '₹3,200',
     validity: '30 / 90 Days',
     documents: ['Passport (6 months validity)', 'Digital passport photo', 'Travel itinerary', 'Hotel booking'],
   },
@@ -85,7 +78,6 @@ const countries: VisaCountry[] = [
     flag: '🇱🇰',
     type: 'ETA (Electronic Travel Authorization)',
     processingTime: '24–48 Hours',
-    fee: '₹2,000',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds'],
     badge: 'Quick Approval',
@@ -96,7 +88,6 @@ const countries: VisaCountry[] = [
     flag: '🇲🇻',
     type: 'Visa on Arrival',
     processingTime: 'On Arrival',
-    fee: 'Free',
     validity: '30 Days',
     documents: ['Passport (6 months validity)', 'Return flight ticket', 'Hotel booking', 'Sufficient funds (USD 100/day)'],
     badge: 'Free Visa',
@@ -104,7 +95,7 @@ const countries: VisaCountry[] = [
 ];
 
 const steps = [
-  { step: '01', title: 'Submit Documents', desc: 'Share your documents via WhatsApp or email. We verify completeness.' },
+  { step: '01', title: 'Submit Documents', desc: 'Share your documents via email or call us. We verify completeness.' },
   { step: '02', title: 'Application Filed', desc: 'Our visa experts file your application with the embassy/consulate.' },
   { step: '03', title: 'Track Status', desc: 'We keep you updated at every stage of the visa processing.' },
   { step: '04', title: 'Visa Delivered', desc: 'Receive your approved visa digitally or by courier.' },
@@ -139,7 +130,7 @@ export default function VisaCountries() {
             Visa for <span className="text-gradient-gold">Every Destination</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Click on any country to see required documents, processing time, and fees.
+            Click on any country to see required documents and processing time.
           </p>
         </div>
 
@@ -174,10 +165,6 @@ export default function VisaCountries() {
                   <div className="hidden sm:block text-right">
                     <p className="text-xs text-muted-foreground">Processing</p>
                     <p className="text-sm font-semibold text-primary">{c.processingTime}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-muted-foreground">Fee</p>
-                    <p className="text-sm font-bold text-foreground">{c.fee}</p>
                   </div>
                   <svg
                     className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${expanded === c.id ? 'rotate-180' : ''}`}
@@ -214,16 +201,28 @@ export default function VisaCountries() {
                       ))}
                     </ul>
                   </div>
-                  <Link
-                    href="/contact"
-                    className="mt-4 inline-flex items-center gap-2 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5"
-                    style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' }}
-                  >
-                    Apply Now
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-teal hover:-translate-y-0.5"
+                      style={{ background: 'linear-gradient(135deg, #0B8A8F, #0ABBC2)' }}
+                    >
+                      Apply Now
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    <a
+                      href="tel:+918668355974"
+                      className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 text-white"
+                      style={{ background: 'linear-gradient(135deg, #0B8A8F, #067A7F)', boxShadow: '0 2px 10px rgba(11,138,143,0.25)' }}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+                      </svg>
+                      Call to Enquire
+                    </a>
+                  </div>
                 </div>
               )}
             </div>

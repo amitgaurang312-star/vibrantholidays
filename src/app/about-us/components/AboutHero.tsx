@@ -11,8 +11,8 @@ export default function AboutHero() {
         priority
         sizes="100vw"
         className="object-cover object-center"
-        style={{ transform: 'scale(1.03)' }}
-      />
+        style={{ transform: 'scale(1.03)' }} />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/45 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full opacity-12 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.5) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -34,6 +34,6 @@ export default function AboutHero() {
           <span className="text-white/70">About Us</span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

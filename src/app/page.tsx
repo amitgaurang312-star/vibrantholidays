@@ -4,11 +4,8 @@ import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import HeroSection from '@/app/components/HeroSection';
 import TrustSection from '@/app/components/TrustSection';
-import WhyChooseSection from '@/app/components/WhyChooseSection';
-import DomesticDestinations from '@/app/components/DomesticDestinations';
-import InternationalDestinations from '@/app/components/InternationalDestinations';
-import TestimonialsSection from '@/app/components/TestimonialsSection';
 import ScrollProgress from '@/app/components/ScrollProgress';
+import BelowFoldSections from '@/app/components/BelowFoldSections';
 
 export default function HomePage() {
   return (
@@ -18,10 +15,7 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <TrustSection />
-        <WhyChooseSection />
-        <DomesticDestinations />
-        <InternationalDestinations />
-        <TestimonialsSection />
+        <BelowFoldSections />
       </main>
       <Footer />
       <FloatingButtons />

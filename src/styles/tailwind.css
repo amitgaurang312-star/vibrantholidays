@@ -189,6 +189,11 @@
     animation: scroll-bounce 2s ease-in-out infinite;
   }
 
+  /* ── Hero slide image — use transform for Ken Burns, avoid layout recalc ── */
+  .hero-slide-img {
+    will-change: transform;
+  }
+
   /* ── Shimmer ── */
   .shimmer-gold {
     background: linear-gradient(90deg, #C8860E 0%, #F0BC4A 50%, #C8860E 100%);
@@ -473,3 +478,31 @@
 .delay-600 { animation-delay: 600ms; }
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
+
+/* ── Respect prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-up,
+  .reveal-scale,
+  .reveal-left {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .floating-btn {
+    animation: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+}

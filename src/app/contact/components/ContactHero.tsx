@@ -5,14 +5,14 @@ export default function ContactHero() {
   return (
     <section className="relative w-full min-h-[48vh] flex items-end overflow-hidden bg-foreground">
       <AppImage
-        src="https://images.unsplash.com/photo-1566079464511-0918b6da310d"
+        src="https://img.rocket.new/generatedImages/rocket_gen_img_1dd3975db-1777703375868.png"
         alt="Aerial view of Pune city at dusk with dim amber street lights and dark urban landscape spreading to the horizon"
         fill
         priority
         sizes="100vw"
         className="object-cover object-center"
-        style={{ transform: 'scale(1.03)' }}
-      />
+        style={{ transform: 'scale(1.03)' }} />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/48 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       <div className="absolute top-1/4 right-1/3 w-72 h-72 rounded-full opacity-12 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(11,138,143,0.5) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -34,6 +34,6 @@ export default function ContactHero() {
           <span className="text-white/70">Contact</span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

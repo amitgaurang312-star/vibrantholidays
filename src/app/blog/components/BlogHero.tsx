@@ -5,14 +5,14 @@ export default function BlogHero() {
   return (
     <section className="relative w-full min-h-[48vh] flex items-end overflow-hidden bg-foreground">
       <AppImage
-        src="https://images.unsplash.com/photo-1599371428264-b3032f512459"
+        src="https://images.unsplash.com/photo-1640624501976-610fc41da49a"
         alt="Aerial view of lush green mountains with misty valleys and golden morning light"
         fill
         priority
         sizes="100vw"
         className="object-cover object-center"
-        style={{ transform: 'scale(1.03)' }}
-      />
+        style={{ transform: 'scale(1.03)' }} />
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/45 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       <div className="absolute top-1/4 right-1/3 w-72 h-72 rounded-full opacity-12 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(10,187,194,0.5) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -34,6 +34,6 @@ export default function BlogHero() {
           <span className="text-white/70">Blog</span>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

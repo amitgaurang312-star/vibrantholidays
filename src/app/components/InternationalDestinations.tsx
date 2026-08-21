@@ -6,9 +6,10 @@ import Link from 'next/link';
 const intlDestinations = [
 {
   name: 'Dubai',
+  slug: 'dubai',
   tagline: 'City of Gold',
-  video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-  poster: "https://images.unsplash.com/photo-1617455156045-47312ebf06a1?w=800&q=80",
+  video: "https://images.unsplash.com/photo-1630356032837-12a94e7d83b8",
+  poster: "/assets/images/30.124.1-DTCM-Madinat-Jumeirah-Image-by-Dubai-Tourism-1783921705111.webp",
   duration: '4–6 Days',
   price: '₹55,000',
   highlights: ['Burj Khalifa', 'Desert Safari', 'Dubai Mall'],
@@ -16,9 +17,10 @@ const intlDestinations = [
 },
 {
   name: 'Thailand',
+  slug: 'thailand',
   tagline: 'Land of Smiles',
-  video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
-  poster: "https://images.unsplash.com/photo-1648982205053-b446f6ded2d2?w=800&q=80",
+  video: "https://img.rocket.new/generatedImages/rocket_gen_img_14ac3d215-1778481765752.png",
+  poster: "/assets/images/featured1-1783921966866.webp",
   duration: '5–7 Days',
   price: '₹45,000',
   highlights: ['Bangkok', 'Phuket', 'Phi Phi Island'],
@@ -26,9 +28,10 @@ const intlDestinations = [
 },
 {
   name: 'Bali',
+  slug: 'bali',
   tagline: 'Island of the Gods',
-  video: "https://images.unsplash.com/photo-1711238386729-4f98671b9dbc",
-  poster: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+  video: "https://img.rocket.new/generatedImages/rocket_gen_img_1969e0b6e-1770861598771.png",
+  poster: "/assets/images/HD-wallpaper-bali-rocks-ocean-beautiful-bay-summer-aerial-view-sea-waves-tropical-islands-1783922167679.jpg",
   duration: '5–7 Days',
   price: '₹48,000',
   highlights: ['Ubud', 'Seminyak', 'Uluwatu'],
@@ -36,9 +39,10 @@ const intlDestinations = [
 },
 {
   name: 'Vietnam',
+  slug: 'vietnam',
   tagline: 'Timeless Beauty',
-  video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
-  poster: "https://images.unsplash.com/photo-1579980228997-a6c603a18e4f?w=800&q=80",
+  video: "https://images.unsplash.com/photo-1622012666165-29002e9d393f",
+  poster: "/assets/images/HOI-AN-1783922319250.jpg",
   duration: '6–8 Days',
   price: '₹52,000',
   highlights: ['Ha Long Bay', 'Hanoi', 'Hoi An'],
@@ -46,9 +50,10 @@ const intlDestinations = [
 },
 {
   name: 'Singapore',
+  slug: 'singapore',
   tagline: 'Garden City',
-  video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
-  poster: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
+  video: "https://images.unsplash.com/photo-1601632758539-0a20186f070c",
+  poster: "/assets/images/shutterstock-125810687_destinationMain_1533204954238-1783922542371.jpeg",
   duration: '4–5 Days',
   price: '₹58,000',
   highlights: ['Marina Bay', 'Gardens by Bay', 'Sentosa'],
@@ -56,9 +61,10 @@ const intlDestinations = [
 },
 {
   name: 'Singapore–Malaysia',
+  slug: 'singapore-malaysia',
   tagline: 'Twin Destinations',
-  video: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
-  poster: "https://images.unsplash.com/photo-1703254438528-d4a715fa546c?w=800&q=80",
+  video: "https://img.rocket.new/generatedImages/rocket_gen_img_1910882f1-1785450623751.png",
+  poster: "/assets/images/Singapore-malaysia-thailand-tour-packages-1783922727558.jpg",
   duration: '6–8 Days',
   price: '₹65,000',
   highlights: ['Petronas Towers', 'Langkawi', 'Clarke Quay'],
@@ -66,9 +72,10 @@ const intlDestinations = [
 },
 {
   name: 'Sri Lanka',
+  slug: 'sri-lanka',
   tagline: 'Pearl of the Indian Ocean',
-  video: "https://images.unsplash.com/photo-1706460559180-2de3cfee882b",
-  poster: "https://images.unsplash.com/photo-1711238386729-4f98671b9dbc",
+  video: "https://images.unsplash.com/photo-1588512146804-0f342441cecf",
+  poster: "/assets/images/Sri-Lankan-tourism-growing-ambitious-targets-for-2024-1783922957243.jpeg",
   duration: '5–7 Days',
   price: '₹38,000',
   highlights: ['Kandy', 'Ella', 'Sigiriya'],
@@ -76,10 +83,11 @@ const intlDestinations = [
 },
 {
   name: 'Maldives',
+  slug: 'maldives',
   tagline: 'Heaven on Water',
   video: "https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4",
   poster: "https://images.unsplash.com/photo-1599826602562-e083aa659710?w=800&q=80",
-  duration: '4–6 Days',
+  duration: '3–4 Days',
   price: '₹75,000',
   highlights: ['Water Villas', 'Snorkeling', 'Sunset Cruise'],
   span: 'lg:col-span-3'
@@ -118,7 +126,7 @@ function IntlCard({ dest, index, visible }: {dest: typeof intlDestinations[0];in
       </div>
 
       {/* Scrim */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/25 to-black/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
       <div className="destination-card-overlay absolute inset-0" />
 
       <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
@@ -135,8 +143,8 @@ function IntlCard({ dest, index, visible }: {dest: typeof intlDestinations[0];in
         </div>
 
         <div>
-          <p className="text-white/65 text-xs font-semibold uppercase tracking-widest mb-1.5">{dest.tagline}</p>
-          <h3 className="font-display text-card-lg text-white font-semibold mb-3 drop-shadow-sm">{dest.name}</h3>
+          <p className="text-white text-xs font-semibold uppercase tracking-widest mb-1.5" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{dest.tagline}</p>
+          <h3 className="font-display text-card-lg text-white font-semibold mb-3" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{dest.name}</h3>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {dest.highlights?.map((h) =>
             <span key={h} className="text-white text-xs px-2.5 py-1 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -145,7 +153,7 @@ function IntlCard({ dest, index, visible }: {dest: typeof intlDestinations[0];in
             )}
           </div>
           <Link
-            href="/tour-packages"
+            href={`/packages/${dest.slug}`}
             className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2.5 rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0"
             style={{ transition: 'opacity 0.35s cubic-bezier(0.23,1,0.32,1), transform 0.35s cubic-bezier(0.23,1,0.32,1), background-color 0.2s ease, color 0.2s ease', boxShadow: '0 4px 16px rgba(0,0,0,0.2)' }}>
             

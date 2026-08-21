@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 
@@ -61,16 +61,25 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5500);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
+  const advanceSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   }, []);
 
   useEffect(() => {
+    // Check prefers-reduced-motion — skip auto-advance if user prefers reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    intervalRef.current = setInterval(advanceSlide, 5500);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [advanceSlide]);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     const subTimer = setInterval(() => {
       setSubIdx((prev) => (prev + 1) % subheadingItems.length);
     }, 2500);
@@ -80,45 +89,45 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-foreground" aria-label="Hero">
       {/* Slides */}
-      {heroSlides.map((slide, i) => (
-        <div
-          key={slide.label}
-          className="absolute inset-0 transition-opacity"
-          style={{ opacity: i === currentSlide ? 1 : 0, transitionDuration: '1800ms' }}
-        >
+      {heroSlides.map((slide, i) =>
+      <div
+        key={slide.label}
+        className="absolute inset-0 transition-opacity"
+        style={{
+          opacity: i === currentSlide ? 1 : 0,
+          transitionDuration: '1800ms',
+          // Only promote active slide to compositor layer
+          willChange: i === currentSlide ? 'opacity' : 'auto'
+        }}>
+
           <AppImage
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className="object-cover object-center"
-            style={{ transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)', transition: 'transform 5500ms ease-out' }}
-          />
+          src={slide.src}
+          alt={slide.alt}
+          fill
+          loading={i === 0 ? 'eager' : 'lazy'}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+          quality={i === 0 ? 80 : 65}
+          className="object-cover object-center hero-slide-img"
+          style={{
+            transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)',
+            transition: 'transform 5500ms ease-out'
+          }} />
+
           {/* Multi-layer scrims for depth */}
           <div className="absolute inset-0 hero-scrim" />
           <div className="absolute inset-0 hero-scrim-side" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,27,42,0.4) 0%, transparent 30%)' }} />
         </div>
-      ))}
+      )}
 
-      {/* Floating ambient particles */}
-      <div className="absolute inset-0 pointer-events-none z-5">
+      {/* Floating ambient particles — hidden on mobile to save GPU */}
+      <div className="absolute inset-0 pointer-events-none z-5 hidden sm:block" aria-hidden="true">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, rgba(10,187,194,0.6) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 8s ease-in-out infinite' }} />
         <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full opacity-8" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.5) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 10s ease-in-out infinite reverse' }} />
       </div>
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-16 pt-32 px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto w-full">
-        {/* Location pill */}
-        <div className={`mb-5 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-          <span className="glass-panel text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-white/70 text-xs uppercase tracking-widest">{heroSlides[currentSlide].country}</span>
-            <span className="w-px h-3 bg-white/20" />
-            {heroSlides[currentSlide].tagline}
-          </span>
-        </div>
 
         {/* Headline */}
         <h1 className={`font-display text-hero-xl text-white font-semibold leading-tight mb-5 max-w-4xl opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
@@ -133,57 +142,67 @@ export default function HeroSection() {
             <span
               key={subIdx}
               className="animate-fade-in-up"
-              style={{ display: 'inline-block' }}
-            >
+              style={{ display: 'inline-block' }}>
+
               {subheadingItems[subIdx]}
             </span>
           </p>
         </div>
 
         {/* CTAs */}
-        <div className={`flex flex-col sm:flex-row gap-4 mb-14 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
+        <div className={`flex flex-col sm:flex-row gap-4 mb-6 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
           <Link
             href="/tour-packages"
             className="flex items-center justify-center gap-2.5 text-white px-9 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}
-          >
+            style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}>
+
             Book Your Trip
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </Link>
           <Link
             href="/#destinations"
-            className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5"
-          >
+            className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
+
             Explore Destinations
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </Link>
         </div>
 
+        {/* Location pill */}
+        <div className={`mb-14 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+          <span className="glass-panel text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2.5 w-fit" style={{ border: '1px solid rgba(216,154,36,0.35)' }}>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-white/70 text-xs uppercase tracking-widest">{heroSlides[currentSlide].country}</span>
+            <span className="w-px h-3 bg-white/20" />
+            {heroSlides[currentSlide].tagline}
+          </span>
+        </div>
+
         {/* Slide indicators */}
         <div className={`flex items-center gap-3 opacity-0 ${loaded ? 'animate-fade-in' : ''}`} style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
-          {heroSlides.map((slide, i) => (
-            <button
-              key={slide.label}
-              onClick={() => setCurrentSlide(i)}
-              aria-label={`Go to slide ${slide.label}`}
-              className="transition-all duration-400 group"
-            >
+          {heroSlides.map((slide, i) =>
+          <button
+            key={slide.label}
+            onClick={() => setCurrentSlide(i)}
+            aria-label={`Go to slide ${slide.label}`}
+            className="transition-all duration-400 group">
+
               <span
-                className="block h-1 rounded-full transition-all duration-500"
-                style={{
-                  width: i === currentSlide ? 36 : 8,
-                  background: i === currentSlide
-                    ? 'linear-gradient(90deg, #D89A24, #F0BC4A)'
-                    : 'rgba(255,255,255,0.35)',
-                  boxShadow: i === currentSlide ? '0 0 8px rgba(216,154,36,0.6)' : 'none',
-                }}
-              />
+              className="block h-1 rounded-full transition-all duration-500"
+              style={{
+                width: i === currentSlide ? 36 : 8,
+                background: i === currentSlide ?
+                'linear-gradient(90deg, #D89A24, #F0BC4A)' :
+                'rgba(255,255,255,0.35)',
+                boxShadow: i === currentSlide ? '0 0 8px rgba(216,154,36,0.6)' : 'none'
+              }} />
+
             </button>
-          ))}
+          )}
           <span className="ml-3 text-white/50 text-xs font-medium uppercase tracking-widest">
             {heroSlides[currentSlide].label}
           </span>
@@ -191,7 +210,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-10 z-10 hidden sm:flex flex-col items-center gap-2">
+      <div className="absolute bottom-8 right-10 z-10 hidden sm:flex flex-col items-center gap-2" aria-hidden="true">
         <span className="text-white/35 text-xs uppercase tracking-widest font-medium" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
         <div className="scroll-indicator">
           <svg className="w-4 h-4 text-white/35" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,11 +220,11 @@ export default function HeroSection() {
       </div>
 
       {/* Slide counter */}
-      <div className="absolute bottom-8 left-10 z-10 hidden sm:flex items-center gap-2">
+      <div className="absolute bottom-8 left-10 z-10 hidden sm:flex items-center gap-2" aria-hidden="true">
         <span className="text-white/35 text-xs font-medium tabular-nums">
           {String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
         </span>
       </div>
-    </section>
-  );
+    </section>);
+
 }
