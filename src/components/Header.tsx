@@ -17,11 +17,29 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+const defaultHeaderStyle = {
+  background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(235,248,255,0.97) 35%, rgba(210,235,255,0.92) 70%, rgba(190,225,255,0.85) 100%)',
+  backdropFilter: 'blur(8px)',
+  WebkitBackdropFilter: 'blur(8px)',
+  borderBottom: '1px solid rgba(180,210,255,0.25)',
+  boxShadow: '0 2px 24px rgba(180,210,255,0.3)',
+} as const;
+
+const scrolledHeaderStyle = {
+  background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.98) 40%, rgba(224,240,255,0.95) 100%)',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+  borderBottom: '1px solid rgba(180,210,255,0.35)',
+  boxShadow: '0 4px 32px rgba(180,210,255,0.45), 0 1px 0 rgba(255,255,255,0.9)',
+} as const;
+
 export default function Header() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -36,32 +54,21 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
+  // Use defaultHeaderStyle on server and first client render to ensure SSR match
+  const headerStyle = mounted && scrolled ? scrolledHeaderStyle : defaultHeaderStyle;
+
   return (
     <>
       <header
+        suppressHydrationWarning
         className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2"
-        style={
-          scrolled
-            ? {
-                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.98) 40%, rgba(224,240,255,0.95) 100%)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                borderBottom: '1px solid rgba(180,210,255,0.35)',
-                boxShadow: '0 4px 32px rgba(180,210,255,0.45), 0 1px 0 rgba(255,255,255,0.9)',
-              }
-            : {
-                background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(235,248,255,0.97) 35%, rgba(210,235,255,0.92) 70%, rgba(190,225,255,0.85) 100%)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                borderBottom: '1px solid rgba(180,210,255,0.25)',
-                boxShadow: '0 2px 24px rgba(180,210,255,0.3)',
-              }
-        }
+        style={headerStyle}
       >
-        {/* Soft cloud puff accents */}
+        {/* Soft cloud puff accents — hidden on mobile, visible on desktop via Tailwind */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
           style={{ zIndex: 0 }}
+          suppressHydrationWarning
         >
           <div style={{
             position: 'absolute', top: '-18px', left: '8%',
@@ -95,22 +102,26 @@ export default function Header() {
           }} />
         </div>
 
-        <div className="max-w-screen-xl mx-auto px-3 sm:px-5 flex items-center justify-between relative gap-2" style={{ zIndex: 1 }}>
-          {/* Logo — constrained width so nav fits on one line */}
+        <div
+          suppressHydrationWarning
+          className="max-w-screen-xl mx-auto px-3 sm:px-5 flex items-center justify-between relative gap-2"
+          style={{ zIndex: 1 }}
+        >
+          {/* Logo — fixed width so nav fits on one line */}
           <Link href="/" className="flex items-center flex-shrink-0 group" style={{ maxWidth: '140px' }}>
             <AppLogo size={140} className="transition-transform duration-300 group-hover:scale-105 w-full h-auto" />
           </Link>
 
           {/* Desktop Nav — tight spacing to fit all links in one row */}
           <nav className="hidden lg:flex items-center flex-1 justify-center" style={{ gap: '0' }}>
-            {navLinks?.map((link) => (
+            {navLinks.map((link) => (
               <Link
-                key={link?.href}
-                href={link?.href}
+                key={link.href}
+                href={link.href}
                 className="nav-link-underline whitespace-nowrap font-semibold tracking-wide transition-colors duration-200 text-slate-700 hover:text-blue-600 px-2 xl:px-3"
                 style={{ fontSize: '0.78rem' }}
               >
-                {link?.label}
+                {link.label}
               </Link>
             ))}
           </nav>
@@ -142,8 +153,8 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      {mobileOpen && (
+      {/* Mobile Menu Overlay — only rendered client-side after mount */}
+      {mounted && mobileOpen && (
         <div
           className="fixed inset-0 z-[60] lg:hidden"
           style={{ background: 'rgba(13,27,42,0.55)', backdropFilter: 'blur(4px)' }}
@@ -157,7 +168,7 @@ export default function Header() {
               borderLeft: '1px solid rgba(11,138,143,0.12)',
               boxShadow: '-20px 0 60px rgba(13,27,42,0.15)',
             }}
-            onClick={(e) => e?.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Mobile Header — logo + close */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-border">
@@ -175,16 +186,16 @@ export default function Header() {
 
             {/* Nav Links */}
             <nav className="flex flex-col gap-1 px-4 py-4 flex-1 overflow-y-auto">
-              {navLinks?.map((link, i) => (
+              {navLinks.map((link, i) => (
                 <Link
-                  key={link?.href}
-                  href={link?.href}
+                  key={link.href}
+                  href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-3 text-foreground font-medium py-3 px-4 rounded-xl hover:bg-primary/8 hover:text-primary transition-all duration-200 text-base group"
                   style={{ animationDelay: `${i * 40}ms` }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary/30 group-hover:bg-primary transition-colors duration-200" />
-                  {link?.label}
+                  {link.label}
                 </Link>
               ))}
             </nav>
