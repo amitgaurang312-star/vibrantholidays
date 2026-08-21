@@ -1,13 +1,11 @@
 'use client';
 
-import React, { Suspense, useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
-
-const WhyChooseSection = dynamic(() => import('@/app/components/WhyChooseSection'), { ssr: false });
-const DomesticDestinations = dynamic(() => import('@/app/components/DomesticDestinations'), { ssr: false });
-const InternationalDestinations = dynamic(() => import('@/app/components/InternationalDestinations'), { ssr: false });
-const TravelMemoriesSection = dynamic(() => import('@/app/components/TravelMemoriesSection'), { ssr: false });
-const TestimonialsSection = dynamic(() => import('@/app/components/TestimonialsSection'), { ssr: false });
+import React, { useEffect, useRef, useState } from 'react';
+import WhyChooseSection from '@/app/components/WhyChooseSection';
+import DomesticDestinations from '@/app/components/DomesticDestinations';
+import InternationalDestinations from '@/app/components/InternationalDestinations';
+import TravelMemoriesSection from '@/app/components/TravelMemoriesSection';
+import TestimonialsSection from '@/app/components/TestimonialsSection';
 
 function LazySection({ children, minHeight = '400px' }: { children: React.ReactNode; minHeight?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,7 +36,7 @@ function LazySection({ children, minHeight = '400px' }: { children: React.ReactN
 
 export default function BelowFoldSections() {
   return (
-    <Suspense fallback={null}>
+    <>
       <LazySection minHeight="500px">
         <WhyChooseSection />
       </LazySection>
@@ -54,6 +52,6 @@ export default function BelowFoldSections() {
       <LazySection minHeight="400px">
         <TestimonialsSection />
       </LazySection>
-    </Suspense>
+    </>
   );
 }
