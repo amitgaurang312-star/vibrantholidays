@@ -55,11 +55,12 @@ export default function Header() {
 
   // Use defaultHeaderStyle on server and first client render to ensure SSR match
   const headerStyle = mounted && scrolled ? scrolledHeaderStyle : defaultHeaderStyle;
+  const headerPadding = mounted && scrolled ? 'py-2' : 'py-2.5';
 
   return (
     <>
       <header
-        className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2"
+        className={`relative top-0 left-0 right-0 z-50 transition-all duration-500 ${headerPadding}`}
         style={headerStyle}
       >
         {/* Soft cloud puff accents */}
