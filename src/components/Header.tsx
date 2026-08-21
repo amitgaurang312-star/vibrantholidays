@@ -8,7 +8,6 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Destinations', href: '/#destinations' },
   { label: 'Fixed Departures', href: '/fixed-departures' },
-  { label: 'Ladakh Package', href: '/ladakh-package' },
   { label: 'Tour Packages', href: '/tour-packages' },
   { label: 'Visa Services', href: '/visa-services' },
   { label: 'Reviews', href: '/reviews' },
