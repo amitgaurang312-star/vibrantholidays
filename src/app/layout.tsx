@@ -45,17 +45,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://img.rocket.new" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
-        {/* Preload hero LCP image for mobile */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://images.unsplash.com/photo-1459735676691-2c21eea54445?w=828&q=75&fm=webp"
-          fetchPriority="high"
-        />
 
         {/* Google Tag Manager — deferred to not block mobile parse */}
         <script
