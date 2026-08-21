@@ -507,7 +507,7 @@ export const packages: PackageData[] = [
   durationNights: '6 Nights',
   price: '₹20,000',
   heroImage: "/assets/images/637763055824686983YZ3CT8-1783921618740.jpg",
-  heroVideo: "https://images.unsplash.com/photo-1585210812897-754cb694cc35",
+  heroVideo: "https://images.unsplash.com/photo-1580503563600-c84b97aa1877",
   type: 'domestic',
   overview:
   'The North East of India is the country\'s best-kept secret — a region of extraordinary biodiversity, ancient tribal cultures, living root bridges, and landscapes that seem to belong to another world. The Seven Sisters Wilderness Trail takes you through three of the most captivating states: Meghalaya (the "Abode of Clouds"), Assam (land of tea and one-horned rhinos), and Sikkim (the Himalayan kingdom). This 7-day journey is for the curious traveller who seeks authenticity over luxury, and wonder over comfort.',
@@ -1453,8 +1453,8 @@ export const packages: PackageData[] = [
   duration: '4 Days / 3 Nights',
   durationNights: '3 Nights',
   price: '₹75,000',
-  heroImage: "https://images.unsplash.com/photo-1633281873696-e0cc216127e0",
-  heroVideo: "https://images.unsplash.com/photo-1633281873696-e0cc216127e0",
+  heroImage: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
+  heroVideo: "https://images.unsplash.com/photo-1613554056624-6a592123958f",
   type: 'international',
   overview:
   'The Maldives is the world\'s ultimate tropical escape — a nation of 1,200 coral islands scattered across the Indian Ocean like turquoise jewels, where the water is so clear you can see the coral from your overwater bungalow, where bioluminescent plankton light up the beach at night, and where the only sounds are the lapping of waves and the call of seabirds. The Azure Atoll Luxury Retreat is a 4-day immersion into this paradise: a private island resort, overwater bungalow experience, world-class snorkelling and diving, and the most spectacular sunsets on the planet.',

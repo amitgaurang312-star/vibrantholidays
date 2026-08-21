@@ -69,7 +69,7 @@ const nextConfig = {
       `font-src 'self' https://fonts.gstatic.com data:`,
       `img-src 'self' data: blob: https: http:`,
       `frame-src https://www.googletagmanager.com https://td.doubleclick.net https://googleads.g.doubleclick.net https://www.google.com`,
-      `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net https://*.g.doubleclick.net https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://google.com https://region1.google-analytics.com https://fonts.googleapis.com https://api.resend.com https://appanalytics.rocket.new https://static.rocket.new`,
+      `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net https://*.g.doubleclick.net https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://google.com https://www.google.co.in https://region1.google-analytics.com https://fonts.googleapis.com https://api.resend.com https://appanalytics.rocket.new https://static.rocket.new`,
       `media-src 'self'`,
       `object-src 'none'`,
       `base-uri 'self'`,
