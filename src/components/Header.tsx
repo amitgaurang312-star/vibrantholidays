@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2.5"
+        className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2"
         style={
           scrolled
             ? {
@@ -95,19 +95,20 @@ export default function Header() {
           }} />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between relative" style={{ zIndex: 1 }}>
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <AppLogo size={192} className="transition-transform duration-400 group-hover:scale-105" />
+        <div className="max-w-screen-xl mx-auto px-3 sm:px-5 flex items-center justify-between relative gap-2" style={{ zIndex: 1 }}>
+          {/* Logo — constrained width so nav fits on one line */}
+          <Link href="/" className="flex items-center flex-shrink-0 group" style={{ maxWidth: '140px' }}>
+            <AppLogo size={140} className="transition-transform duration-300 group-hover:scale-105 w-full h-auto" />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
+          {/* Desktop Nav — tight spacing to fit all links in one row */}
+          <nav className="hidden lg:flex items-center flex-1 justify-center" style={{ gap: '0' }}>
             {navLinks?.map((link) => (
               <Link
                 key={link?.href}
                 href={link?.href}
-                className="nav-link-underline text-sm font-semibold tracking-wide transition-colors duration-200 text-slate-700 hover:text-blue-600"
+                className="nav-link-underline whitespace-nowrap font-semibold tracking-wide transition-colors duration-200 text-slate-700 hover:text-blue-600 px-2 xl:px-3"
+                style={{ fontSize: '0.78rem' }}
               >
                 {link?.label}
               </Link>
@@ -115,13 +116,13 @@ export default function Header() {
           </nav>
 
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Link
               href="/tour-packages"
-              className="hidden sm:flex items-center gap-2 bg-gold-gradient text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5 hover:scale-105"
-              style={{ boxShadow: '0 4px 16px rgba(216,154,36,0.35)' }}
+              className="hidden lg:flex items-center gap-1.5 bg-gold-gradient text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5 hover:scale-105 whitespace-nowrap"
+              style={{ fontSize: '0.78rem', boxShadow: '0 4px 16px rgba(216,154,36,0.35)' }}
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
               Book Now
@@ -158,9 +159,9 @@ export default function Header() {
             }}
             onClick={(e) => e?.stopPropagation()}
           >
-            {/* Mobile Header — single logo + close button */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border">
-              <AppLogo size={168} />
+            {/* Mobile Header — logo + close */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+              <AppLogo size={130} />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center hover:bg-primary/10 transition-colors duration-200"
