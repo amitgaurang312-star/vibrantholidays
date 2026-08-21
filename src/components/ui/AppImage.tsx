@@ -80,7 +80,13 @@ const AppImage = memo(function AppImage({
         };
 
         if (priority) {
-            baseProps.priority = true;
+            // For external/unoptimized images, use loading="eager" instead of priority
+            // to avoid generating a preload link with a URL that won't match the actual request
+            if (resolvedUnoptimized) {
+                baseProps.loading = 'eager';
+            } else {
+                baseProps.priority = true;
+            }
         } else {
             baseProps.loading = loading;
         }

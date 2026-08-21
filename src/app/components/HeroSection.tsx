@@ -90,7 +90,7 @@ export default function HeroSection() {
           src={slide.src}
           alt={slide.alt}
           fill
-          priority={i === 0}
+          loading={i === 0 ? 'eager' : 'lazy'}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           quality={i === 0 ? 80 : 65}
           className="object-cover object-center"
