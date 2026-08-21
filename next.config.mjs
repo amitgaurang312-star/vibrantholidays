@@ -33,7 +33,8 @@ const nextConfig = {
   webpack(
     config,
     {
-      dev: dev
+      dev: dev,
+      isServer: isServer
     }
   ) {
     if (dev) {

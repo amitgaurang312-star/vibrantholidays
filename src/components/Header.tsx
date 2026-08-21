@@ -60,13 +60,11 @@ export default function Header() {
   return (
     <>
       <header
-        suppressHydrationWarning
         className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2"
         style={headerStyle}
       >
         {/* Soft cloud puff accents */}
         <div
-          suppressHydrationWarning
           className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
           style={{ zIndex: 0 }}
         >
@@ -103,20 +101,18 @@ export default function Header() {
         </div>
 
         <div
-          suppressHydrationWarning
           className="max-w-screen-xl mx-auto px-3 sm:px-5 flex items-center justify-between relative gap-2"
           style={{ zIndex: 1 }}
         >
           {/* Logo */}
-          <Link suppressHydrationWarning href="/" className="flex items-center flex-shrink-0 group" style={{ maxWidth: '140px' }}>
+          <Link href="/" className="flex items-center flex-shrink-0 group" style={{ maxWidth: '140px' }}>
             <AppLogo size={140} className="transition-transform duration-300 group-hover:scale-105 w-full h-auto" />
           </Link>
 
           {/* Desktop Nav */}
-          <nav suppressHydrationWarning className="hidden lg:flex items-center flex-1 justify-center gap-0">
+          <nav className="hidden lg:flex items-center flex-1 justify-center gap-0">
             {navLinks.map((link) => (
               <Link
-                suppressHydrationWarning
                 key={link.href}
                 href={link.href}
                 className="nav-link-underline whitespace-nowrap font-semibold tracking-wide transition-colors duration-200 text-slate-700 hover:text-blue-600 px-2 xl:px-3"
@@ -128,14 +124,13 @@ export default function Header() {
           </nav>
 
           {/* CTA + Hamburger */}
-          <div suppressHydrationWarning className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Link
-              suppressHydrationWarning
               href="/tour-packages"
               className="hidden lg:flex items-center gap-1.5 bg-gold-gradient text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5 hover:scale-105 whitespace-nowrap"
               style={{ fontSize: '0.78rem', boxShadow: '0 4px 16px rgba(216,154,36,0.35)' }}
             >
-              <svg suppressHydrationWarning className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
               Book Now
@@ -143,7 +138,6 @@ export default function Header() {
 
             {/* Hamburger */}
             <button
-              suppressHydrationWarning
               className="lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 hover:bg-blue-50"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
