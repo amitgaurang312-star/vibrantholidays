@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import AppLogo from '@/components/ui/AppLogo';
 
@@ -36,12 +36,22 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => {
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 60);
+        rafRef.current = null;
+      });
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -63,10 +73,11 @@ export default function Header() {
         className={`relative top-0 left-0 right-0 z-50 transition-all duration-500 ${headerPadding}`}
         style={headerStyle}
       >
-        {/* Soft cloud puff accents */}
+        {/* Soft cloud puff accents — desktop only, no blur on mobile */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
           style={{ zIndex: 0 }}
+          aria-hidden="true"
         >
           <div style={{
             position: 'absolute', top: '-18px', left: '8%',
@@ -130,7 +141,7 @@ export default function Header() {
               className="hidden lg:flex items-center gap-1.5 bg-gold-gradient text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 hover:shadow-gold hover:-translate-y-0.5 hover:scale-105 whitespace-nowrap"
               style={{ fontSize: '0.78rem', boxShadow: '0 4px 16px rgba(216,154,36,0.35)' }}
             >
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
               Book Now
@@ -141,6 +152,7 @@ export default function Header() {
               className="lg:hidden flex flex-col gap-1.5 p-2 rounded-xl transition-colors duration-200 hover:bg-blue-50"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-slate-700 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
               <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 bg-slate-700 ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
@@ -204,7 +216,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-2 bg-gold-gradient text-white py-3.5 rounded-2xl font-semibold text-sm shadow-gold"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
                 Book Your Trip
@@ -213,7 +225,7 @@ export default function Header() {
                 href="tel:+918668355974"
                 className="flex items-center justify-center gap-2 bg-muted text-foreground py-3.5 rounded-2xl font-medium text-sm hover:bg-primary/10 hover:text-primary transition-colors duration-200"
               >
-                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
                 </svg>
                 Call Us

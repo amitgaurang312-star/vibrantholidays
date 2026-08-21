@@ -19,6 +19,7 @@ interface AppImageProps {
     fallbackSrc?: string;
     loading?: 'lazy' | 'eager';
     unoptimized?: boolean;
+    style?: React.CSSProperties;
     [key: string]: any;
 }
 
@@ -29,7 +30,7 @@ const AppImage = memo(function AppImage({
     height,
     className = '',
     priority = false,
-    quality = 85,
+    quality = 75,
     placeholder = 'empty',
     blurDataURL,
     fill = false,
@@ -38,10 +39,10 @@ const AppImage = memo(function AppImage({
     fallbackSrc = '/assets/images/no_image.png',
     loading = 'lazy',
     unoptimized = false,
+    style,
     ...props
 }: AppImageProps) {
     const [imageSrc, setImageSrc] = useState(src);
-    const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
     const isExternalUrl = useMemo(() => typeof imageSrc === 'string' && imageSrc.startsWith('http'), [imageSrc]);
@@ -52,13 +53,7 @@ const AppImage = memo(function AppImage({
             setImageSrc(fallbackSrc);
             setHasError(true);
         }
-        setIsLoading(false);
     }, [hasError, imageSrc, fallbackSrc]);
-
-    const handleLoad = useCallback(() => {
-        setIsLoading(false);
-        setHasError(false);
-    }, []);
 
     const imageClassName = useMemo(() => {
         const classes = [className];
@@ -66,44 +61,39 @@ const AppImage = memo(function AppImage({
         return classes.filter(Boolean).join(' ');
     }, [className, onClick]);
 
-    const imageProps = useMemo(() => {
-        const baseProps: any = {
-            src: imageSrc,
-            alt,
-            className: imageClassName,
-            quality,
-            placeholder,
-            unoptimized: resolvedUnoptimized,
-            onError: handleError,
-            onLoad: handleLoad,
-            onClick,
-        };
-
+    // Determine loading strategy
+    const loadingProps = useMemo(() => {
         if (priority) {
             // For external/unoptimized images, use loading="eager" instead of priority
             // to avoid generating a preload link with a URL that won't match the actual request
             if (resolvedUnoptimized) {
-                baseProps.loading = 'eager';
-            } else {
-                baseProps.priority = true;
+                return { loading: 'eager' as const };
             }
-        } else {
-            baseProps.loading = loading;
+            return { priority: true };
         }
+        return { loading };
+    }, [priority, resolvedUnoptimized, loading]);
 
-        if (blurDataURL && placeholder === 'blur') {
-            baseProps.blurDataURL = blurDataURL;
-        }
-
-        return baseProps;
-    }, [imageSrc, alt, imageClassName, quality, placeholder, blurDataURL, resolvedUnoptimized, priority, loading, handleError, handleLoad, onClick]);
+    const baseProps = {
+        src: imageSrc,
+        alt,
+        className: imageClassName,
+        quality,
+        placeholder,
+        unoptimized: resolvedUnoptimized,
+        onError: handleError,
+        onClick,
+        style,
+        ...(blurDataURL && placeholder === 'blur' ? { blurDataURL } : {}),
+        ...loadingProps,
+    };
 
     if (fill) {
         return (
             <Image
-                {...imageProps}
+                {...baseProps}
                 fill
-                sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+                sizes={sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'}
                 {...props}
             />
         );
@@ -111,10 +101,10 @@ const AppImage = memo(function AppImage({
 
     return (
         <Image
-            {...imageProps}
+            {...baseProps}
             width={width || 400}
             height={height || 300}
-            sizes={sizes}
+            sizes={sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'}
             {...props}
         />
     );

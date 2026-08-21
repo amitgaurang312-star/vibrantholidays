@@ -6,7 +6,12 @@ export default function AirplaneAnimation() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 2000);
+    // Skip on mobile (small screens) and when user prefers reduced motion
+    const isMobile = window.innerWidth < 768;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)')?.matches;
+    if (isMobile || prefersReduced) return;
+
+    const timer = setTimeout(() => setVisible(true), 3000);
     return () => clearTimeout(timer);
   }, []);
 

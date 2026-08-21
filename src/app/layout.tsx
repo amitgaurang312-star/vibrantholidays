@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, DM_Sans } from 'next/font/google';
 import '../styles/tailwind.css';
-import LeadPopup from '@/components/LeadPopup';
+import LeadPopupWrapper from '@/components/LeadPopupWrapper';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -45,21 +45,34 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://img.rocket.new" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-        {/* Google Tag Manager — deferred to not block mobile parse */}
+        {/* Google Tag Manager — deferred via requestIdleCallback to not block mobile parse */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WPBZT456');`,
+            __html: `(function(){
+  function loadGTM(){
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WPBZT456');
+  }
+  if(window.requestIdleCallback){
+    requestIdleCallback(loadGTM,{timeout:3000});
+  } else {
+    setTimeout(loadGTM,2000);
+  }
+})();`,
           }}
         />
         {/* End Google Tag Manager */}
 
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvibranthol4186back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></head>
+        {/* Rocket platform scripts — deferred, non-blocking */}
+      
+      <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvibranthol4186back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
+      <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></head>
       <body className={dmSans.className}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -71,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://w
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <LeadPopup />
+        <LeadPopupWrapper />
         {children}
       </body>
     </html>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 
@@ -13,7 +13,7 @@ const heroSlides = [
   country: 'India'
 },
 {
-  src: "https://images.unsplash.com/photo-1671829348972-d1593bddbb90",
+  src: "https://img.rocket.new/generatedImages/rocket_gen_img_16a8f9e8f-1772369782420.png",
   alt: 'Kerala backwaters at sunset with traditional wooden houseboat gliding through calm golden waters',
   label: 'Kerala',
   tagline: "God\'s Own Country",
@@ -61,16 +61,25 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5500);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
+  const advanceSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   }, []);
 
   useEffect(() => {
+    // Check prefers-reduced-motion — skip auto-advance if user prefers reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    intervalRef.current = setInterval(advanceSlide, 5500);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [advanceSlide]);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     const subTimer = setInterval(() => {
       setSubIdx((prev) => (prev + 1) % subheadingItems.length);
     }, 2500);
@@ -84,7 +93,12 @@ export default function HeroSection() {
       <div
         key={slide.label}
         className="absolute inset-0 transition-opacity"
-        style={{ opacity: i === currentSlide ? 1 : 0, transitionDuration: '1800ms' }}>
+        style={{
+          opacity: i === currentSlide ? 1 : 0,
+          transitionDuration: '1800ms',
+          // Only promote active slide to compositor layer
+          willChange: i === currentSlide ? 'opacity' : 'auto'
+        }}>
 
           <AppImage
           src={slide.src}
@@ -93,8 +107,11 @@ export default function HeroSection() {
           loading={i === 0 ? 'eager' : 'lazy'}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           quality={i === 0 ? 80 : 65}
-          className="object-cover object-center"
-          style={{ transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)', transition: 'transform 5500ms ease-out' }} />
+          className="object-cover object-center hero-slide-img"
+          style={{
+            transform: i === currentSlide ? 'scale(1.06)' : 'scale(1)',
+            transition: 'transform 5500ms ease-out'
+          }} />
 
           {/* Multi-layer scrims for depth */}
           <div className="absolute inset-0 hero-scrim" />
@@ -104,7 +121,7 @@ export default function HeroSection() {
       )}
 
       {/* Floating ambient particles — hidden on mobile to save GPU */}
-      <div className="absolute inset-0 pointer-events-none z-5 hidden sm:block">
+      <div className="absolute inset-0 pointer-events-none z-5 hidden sm:block" aria-hidden="true">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, rgba(10,187,194,0.6) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 8s ease-in-out infinite' }} />
         <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full opacity-8" style={{ background: 'radial-gradient(circle, rgba(216,154,36,0.5) 0%, transparent 70%)', filter: 'blur(40px)', animation: 'orb-float 10s ease-in-out infinite reverse' }} />
       </div>
@@ -140,7 +157,7 @@ export default function HeroSection() {
             style={{ background: 'linear-gradient(135deg, #C8860E 0%, #D89A24 50%, #F0BC4A 100%)', boxShadow: '0 8px 32px rgba(216,154,36,0.45), 0 2px 8px rgba(0,0,0,0.2)' }}>
 
             Book Your Trip
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </Link>
@@ -149,7 +166,7 @@ export default function HeroSection() {
             className="flex items-center justify-center gap-2.5 glass-panel text-white px-9 py-4 rounded-full font-medium text-base transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5">
 
             Explore Destinations
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </Link>
@@ -193,7 +210,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-10 z-10 hidden sm:flex flex-col items-center gap-2">
+      <div className="absolute bottom-8 right-10 z-10 hidden sm:flex flex-col items-center gap-2" aria-hidden="true">
         <span className="text-white/35 text-xs uppercase tracking-widest font-medium" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
         <div className="scroll-indicator">
           <svg className="w-4 h-4 text-white/35" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +220,7 @@ export default function HeroSection() {
       </div>
 
       {/* Slide counter */}
-      <div className="absolute bottom-8 left-10 z-10 hidden sm:flex items-center gap-2">
+      <div className="absolute bottom-8 left-10 z-10 hidden sm:flex items-center gap-2" aria-hidden="true">
         <span className="text-white/35 text-xs font-medium tabular-nums">
           {String(currentSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
         </span>

@@ -30,6 +30,14 @@ const nextConfig = {
     optimizePackageImports: ['@heroicons/react', 'recharts'],
   },
 
+  // Optimize output for production
+  output: process.env.NODE_ENV === 'production' ? undefined : undefined,
+
+  // Reduce bundle size by removing unused polyfills
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  },
+
   webpack(
     config,
     {
