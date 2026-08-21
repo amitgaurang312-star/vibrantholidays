@@ -59,8 +59,7 @@ const nextConfig = {
       });
     }
 
-    // @dhiwise/component-tagger disabled — was causing SSR/client hydration mismatch
-    // (server and client webpack passes produced different data-component-id line numbers)
+    // @dhiwise/component-tagger removed — was causing SSR/client hydration mismatch
 
     return config;
   },
