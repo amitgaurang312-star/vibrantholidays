@@ -64,7 +64,7 @@ export default function Header() {
         className="relative top-0 left-0 right-0 z-50 transition-all duration-500 py-2"
         style={headerStyle}
       >
-        {/* Soft cloud puff accents — hidden on mobile, visible on desktop via Tailwind */}
+        {/* Soft cloud puff accents */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block"
           style={{ zIndex: 0 }}
@@ -107,13 +107,13 @@ export default function Header() {
           className="max-w-screen-xl mx-auto px-3 sm:px-5 flex items-center justify-between relative gap-2"
           style={{ zIndex: 1 }}
         >
-          {/* Logo — fixed width so nav fits on one line */}
+          {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0 group" style={{ maxWidth: '140px' }}>
             <AppLogo size={140} className="transition-transform duration-300 group-hover:scale-105 w-full h-auto" />
           </Link>
 
-          {/* Desktop Nav — tight spacing to fit all links in one row */}
-          <nav className="hidden lg:flex items-center flex-1 justify-center" style={{ gap: '0' }}>
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center flex-1 justify-center gap-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
